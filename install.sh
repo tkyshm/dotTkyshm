@@ -4,12 +4,20 @@ SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 # Ubuntu install
 sudo apt-get install python-dev build-essential libperl-dev lua5.2 liblua5.2-dev git curl mercurial tmux
 
-# Zsh config
+# dot Files
+#cp dot.Xdefaults ~/.Xdefaults
 cp -r dot.zsh.d ~/.zsh.d
-cp dot.zshrc ~/.zshrc
 cp -r dot.vim ~/.vim
+cp dot.zshrc ~/.zshrc
+cp dot.vimrc ~/.vimrc
+cp dot.tmux.conf ~/.tmux.conf
 
-# Vim install
+##
+# to install
+# python-dev, liblua, lua, perl, libperl
+# mercurl
+##
+# Vim install(Ubuntu)
 hg clone https://vim.googlecode.com/hg/ vim
 cd vim/src
 ./configure --with-features=huge \
@@ -47,10 +55,10 @@ wget -O mig1m.zip 'http://sourceforge.jp/frs/redir.php?m=jaist&f=%2Fmix-mplus-ip
 unzip mig1m.zip
 rm mig1m.zip 
 sh ricty_generator.sh auto
-#cp Ricty-Regular.ttf Ricty-Bold.ttf ~/.vim/bundle/powerline/font
-#cd ~/.vim/bundle/powerline/font
-#fontforge -lang=py -script fontpatcher.py Ricty-Regular.ttf
-#fontforge -lang=py -script fontpatcher.py Ricty-Bold.ttf
+cp Ricty-Regular.ttf Ricty-Bold.ttf ~/.vim/bundle/powerline/font
+cd ~/.vim/bundle/powerline/font
+fontforge -lang=py -script fontpatcher.py Ricty-Regular.ttf
+fontforge -lang=py -script fontpatcher.py Ricty-Bold.ttf
 cp -f Ricty* ~/.fonts
 fc-cache -vf
 cd $SCRIPT_DIR
@@ -64,10 +72,4 @@ echo 'KERL_CONFIGURE_OPTIONS="--disable-hipe --enable-smp-support --enable-threa
 
 ~/bin/kerl list releases 
 ~/bin/kerl update releases 
-
-# dot Files
-#cp dot.Xdefaults ~/.Xdefaults
-#cp -r dot.zsh.d ~/.zsh.d
-#cp dot.zshrc ~/.zshrc
-cp dot.vimrc ~/.vimrc
-cp dot.tmux.conf ~/.tmux.conf
+#~/bin/kerl releases 
