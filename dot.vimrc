@@ -14,6 +14,7 @@ set shiftwidth=2
 set expandtab " replace to use a tab as space
 set laststatus=2 " StatuLineの表示
 "set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set modifiable
 
 set encoding=utf-8
 set hlsearch
@@ -21,6 +22,11 @@ set incsearch
 """"""""""""""""""""""""""""""""""""""
 set foldenable " 折りたたみON
 """""""""""""""""""""""""""""""""""""
+"" 画面の分割ショートカット"" 
+nnoremap <C-h>o <C-w>s
+nnoremap <C-h>e <C-w>v
+nnoremap <C-h>x <C-w>c
+""""""
 ""------------------------
 "" autocmd list
 ""------------------------
