@@ -103,7 +103,8 @@ zstyle ':vcs_info:*' actionformats \
 ###   %{%b%}: 太字を元に戻す。
 ###   %D{%Y/%m/%d %H:%M}: 日付。「年/月/日 時:分」というフォーマット。
 prompt_bar_left_self="%{%F{green}%}(%{%B%}%n%{%b%f%}%{%F{cyan}%}@%{%F{green}%}%{%B%}%m%{%b%})%{%f%}"
-my_prompt_left="%F{green}%{%B%}%n%{%b%f%}%{%F{cyan}%}@%{%F{green}%}%{%B%}%m%{%b%}~%(1j,(%j),)%{%B%F{green}%}%#%{%b%}%{%f%} "
+my_prompt_left="+[ %{%B%}%{%F{green}%}@%m%{%b%}%(1j,(%j),)%{%B%F{green}%}%{%b%}%{%f%} ] %{%F{blue}%}%{%B%}~>%{%f%}%{%b%} "
+### my_prompt_left="[%F{green}%{%B%}%n%{%b%f%}%{%F{cyan}%}@%{%F{green}%}%{%B%}%m%{%b%}~%(1j,(%j),)%{%B%F{green}%}%#%{%b%}%{%f%}] "
 prompt_bar_left_status="(%{%B%F{white}%(?.%K{green}.%K{red})%}%?%{%k%f%b%})"
 prompt_bar_left_date="<%{%B%}%D{%Y/%m/%d %H:%M}%{%b%}>"
 prompt_bar_left="~${prompt_bar_left_self}"
