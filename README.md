@@ -9,3 +9,7 @@
  > dot.Xdefaultsはurxvtの設定ファイル
 * vim
  > dot.vimrc 
+
+### Xmonadの設定
+* xmonadの設定
+ > https://github.com/gegenokitaro/dot
