@@ -3,6 +3,9 @@ SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 
 # Ubuntu install
 sudo apt-get install python-dev build-essential libperl-dev lua5.2 liblua5.2-dev git curl mercurial tmux
+sudo apt-get install gtk-chtheme gtk2-engine compto hsetroot htop zsh
+sudo apt-get install scrot
+sudo apt-get install xmonad
 
 # dot Files
 #cp dot.Xdefaults ~/.Xdefaults
