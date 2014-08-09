@@ -22,13 +22,14 @@ date="date +%d"
 month="date +%B | tr '[:lower:]' '[:upper:]'"
 year="date +%Y"
 
+sleep 2
 while :; do
 echo " ^fg($pink)$(date +%A | tr '[:lower:]' '[:upper:]')^fg() \
 ^fg($red)^i($icon)^fg() \
 ^fg($yellow)$(date +%d) \
 ^fg($magenta)$(date +%B | tr '[:lower:]' '[:upper:]') \
 ^fg($blue2)$(date +%Y) \
-$(weather) ^fg($red)^i($icon) ^fg(orange)$(date +%R)^fg() "
+$(weather) ^fg($red)^i($icon) ^fg(orange)$(date +%R):$(date +%S)^fg() "
 sleep 1
 #done | dzen2 -p -w 580 -x 700 -y 1004 -ta r -h 22 -bg "#101010" -fn "M+ 1m-8" -e 'button3=' -title-name dzencorner && sleep .01s && transset-df -n dzencorner 0.9
 done | dzen2 -p -w 580 -x 1330 -y 1600 -ta r -h 22 -bg "#101010" -fn "M+ 1m-8" -e 'button3=' -title-name dzencorner && sleep .01s && transset-df -n dzencorner 0.9

@@ -6,6 +6,7 @@ import XMonad.Hooks.SetWMName
 import XMonad.Layout.Spacing
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.Decoration -- themes, decorated layouts
+import XMonad.Hooks.ManageHelpers -- Full screen for FlashPlayer, media player, and so on.
 import XMonad.Util.EZConfig
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.Image
@@ -31,7 +32,14 @@ warnaAbuGelap   = "#353535"
 -- myLayout = simplestFloat
 wallPaperSetUp :: X()
 wallPaperSetUp = do
-   spawn "hsetroot -solid '#ffffff' -full Pictures/43023995.png -blur 2"
+   spawn "hsetroot -solid '#ffffff' -fill $HOME/Pictures/44292048.jpg -blur 0"
+
+fullScreenSetup =  composeOne [ 
+                                isKDETrayWindow -?> doIgnore,
+                                transience,
+                                isFullscreen -?> doFullFloat, 
+                                resource =? "stalonetray" -?> doIgnore 
+                              ]
 
 mpdStartup :: X()
 mpdStartup = do
@@ -52,7 +60,7 @@ main = do
 	xmonad $ defaultConfig
 	--xmonad $ gnomeConfig
 		--{ manageHook = manageDocks <+> manageHook gnomeConfig
-		{ manageHook = manageDocks <+> manageHook defaultConfig
+		{ manageHook = manageDocks <+> fullScreenSetup <+> manageHook defaultConfig
 		, startupHook = startUp <+> wallPaperSetUp <+> mpdStartup <+> setWMName "xmonad"
   , borderWidth = 1
 		, focusedBorderColor = "#427de7"
