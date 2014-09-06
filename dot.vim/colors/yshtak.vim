@@ -12,7 +12,7 @@ endif
 let colors_name = "yshtak"
 
 " background
-hi Normal         gui=NONE   guifg=#dddddd   guibg=#333333
+hi Normal         gui=NONE   guifg=#dddddd   guibg=#111111
 hi CursorLine     gui=underline    guibg=#444444
 
 hi IncSearch      gui=BOLD   guifg=#303030   guibg=#cd8b60

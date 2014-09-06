@@ -20,7 +20,7 @@ set encoding=utf-8
 set hlsearch
 set incsearch
 """"""""""""""""""""""""""""""""""""""
-set foldenable " 折りたたみON
+""set foldenable " 折りたたみON
 """""""""""""""""""""""""""""""""""""
 "" 画面の分割ショートカット"" 
 nnoremap <C-h>o <C-w>s
@@ -30,13 +30,14 @@ nnoremap <C-h>x <C-w>c
 ""------------------------
 "" autocmd list
 ""------------------------
+autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 autocmd FileType python let g:pydiction_location = '~/.vim/pydiction/complete-dict'
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
 autocmd FileType html setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
 
-autocmd FileType erlang setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+autocmd FileType erlang setl expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent
 autocmd BufNewFile,BufRead *.erl set nowrap tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
 "au BufNewFile,BufRead *.rb set nowrap tabstop=1 shiftwidth=1 softtabstop=1
@@ -59,8 +60,8 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'vim-scripts/CSApprox'
 " Color Scheme
 NeoBundle 'tomasr/molokai'
-NeoBundle 'ciaranm/inkpot'
-NeoBundle 'jonathanfilip/vim-lucius'
+"NeoBundle 'ciaranm/inkpot'
+NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'nanotech/jellybeans'
 
 " for Erlang
@@ -460,8 +461,10 @@ syntax on
 set t_Co=256
 "let g:inkpot_black_background=0 
 set background=dark
+let g:solarized_termcolors=256
+"colorscheme solarized
 colorscheme yshtak
+""" for terminal user
 "colorscheme molokai
-"colorscheme lucius 
 "let g:molokai_original = 1
 "let g:rehash256 = 1
