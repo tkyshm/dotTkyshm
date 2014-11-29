@@ -18,6 +18,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 #alias sudo='sudo env PATH=$PATH'
-alias nautilus='nautilus --no-desktop --browser'
-#
+#alias nautilus='nautilus --no-desktop --browser'
 #archey3
+
+

@@ -4,13 +4,13 @@ import commands
 import urllib
 
 # Path where the images are saved
-imgpath = "/home/hokage/.config/ario/covers/"
+imgpath = "/home/tkyshm/.config/ario/covers/"
 
 # Path where 'artist-only' images can be found
-artistimgpath = "/home/hokage/.config/ario/covers/"
+artistimgpath = "/home/tkyshm/.config/ario/covers/"
 
 # Image displayed when no image found
-noimg = "/home/hokage/.config/airo/nocover.jpg"
+noimg = "/home/tkyshm/.config/airo/nocover.jpg"
 
 # Cover displayed by conky
 cover = "/tmp/cover.jpg"

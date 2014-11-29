@@ -6,8 +6,10 @@ blue2="#85D7FF"
 orange="#FFB557"
 pink="#FFB1ED"
 yellow="#FFF585"
+x_width=`xdpyinfo | grep dimensions | awk '{print $2}' | awk -F "x" '{print $1}'`
+corner_width=`expr $x_width - 590`
 
-icon="/home/tkyshm/.icons/xbm8x8/arrow_mini_01.xbm"
+icon="$HOME/.icons/xbm8x8/arrow_mini_01.xbm"
 
 weather() {
 	get='curl -s "http://weather.yahooapis.com/forecastrss?w=1044316&u=c" -o ~/.cache/weather.xml'
@@ -21,6 +23,7 @@ day="date +%A | tr '[:lower:]' '[:upper:]'"
 date="date +%d"
 month="date +%B | tr '[:lower:]' '[:upper:]'"
 year="date +%Y"
+second="date +%S"
 
 sleep 2
 while :; do
@@ -32,4 +35,5 @@ echo " ^fg($pink)$(date +%A | tr '[:lower:]' '[:upper:]')^fg() \
 $(weather) ^fg($red)^i($icon) ^fg(orange)$(date +%R):$(date +%S)^fg() "
 sleep 1
 #done | dzen2 -p -w 580 -x 700 -y 1004 -ta r -h 22 -bg "#101010" -fn "M+ 1m-8" -e 'button3=' -title-name dzencorner && sleep .01s && transset-df -n dzencorner 0.9
-done | dzen2 -p -w 580 -x 1330 -y 1600 -ta r -h 22 -bg "#101010" -fn "M+ 1m-8" -e 'button3=' -title-name dzencorner && sleep .01s && transset-df -n dzencorner 0.9
+done | dzen2 -p -w 580 -x $corner_width -y 1600 -ta r -h 22 -bg "#101010" -fn "M+ 1m-8" -e 'button3=' -title-name dzencorner && sleep .01s && transset-df -n dzencorner 0.9
+#done | dzen2 -p -w 580 -x 1330 -y 1600 -ta r -h 22 -bg "#101010" -fn "M+ 1m-8" -e 'button3=' -title-name dzencorner && sleep .01s && transset-df -n dzencorner 0.9

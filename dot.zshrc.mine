@@ -1,0 +1,9 @@
+export JAVA_HOME=/opt/jdk1.8
+export PATH=$PATH:$JAVA_HOME/bin
+#. ~/erlang/17.0/activate
+. ~/erlang/17.3/activate
+#. ~/erlang/17.0/activate
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/gocobe
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+#

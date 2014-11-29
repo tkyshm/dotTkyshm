@@ -1,4 +1,4 @@
-spkr="/home/tkyshm/.icons/xbm8x8/spkr_01.xbm"
+spkr="$HOME/.icons/xbm8x8/spkr_01.xbm"
 
 vol() {
 	speaker=$(amixer sget Master | grep -m1 "%]" | cut -d "[" -f2 | cut -d "]" -f1)

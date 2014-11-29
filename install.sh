@@ -76,3 +76,16 @@ echo 'KERL_CONFIGURE_OPTIONS="--disable-hipe --enable-smp-support --enable-threa
 ~/bin/kerl list releases 
 ~/bin/kerl update releases 
 #~/bin/kerl releases 
+
+
+## Install golang
+wget https://storage.googleapis.com/golang/go1.3.3.linux-amd64.tar.gz
+mv go1.3.3.linux-amd64.tar.gz /usr/local
+cd /usr/local/
+tar -xvf go1.3.3.linux-amd64.tar.gz
+cd
+echo "export GOROOT=/usr/local/go" >> .zshrc.mine
+echo "export GOPATH=$HOME/gocobe" >> .zshrc.mine
+echo "export PATH=$PATH:$GOROOT/bin:$GOPATH/bin" >> .zshrc.mine
+source .zshrc
+go get github.com/nsf/gocode

@@ -40,6 +40,8 @@ autocmd FileType html setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
 autocmd FileType erlang setl expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent
 autocmd BufNewFile,BufRead *.erl set nowrap tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
+autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
 "au BufNewFile,BufRead *.rb set nowrap tabstop=1 shiftwidth=1 softtabstop=1
 "filetype off
 filetype plugin indent on
@@ -448,6 +450,13 @@ function! MyFilename()
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
+
+""
+"" Golang Setting
+""
+set rtp+=$GOROOT/misc/vim
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
 
 " 
 " -------------------------------------------

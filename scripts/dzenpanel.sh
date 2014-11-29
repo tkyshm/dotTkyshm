@@ -5,8 +5,8 @@ font2="M+ 1m-9"
 
 gdvtc="gdbar -s v"
 
-icon1="/home/tkyshm/.icons/xbm8x8"
-icon2="/home/tkyshm/.icons/xpm"
+icon1="$HOME/.icons/xbm8x8"
+icon2="$HOME/.icons/xpm"
 
 ar="^i($icon1/arrow_big_01.xbm)"
 

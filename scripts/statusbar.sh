@@ -26,8 +26,8 @@ LMAGENTA="#8542FF"
 CYAN="#0088CC"
 LCYAN="#42717B"
 
-ICON="/home/hokage/.icons/xbm8x8/"
-ICON2="/home/hokage/.icons/stlarch/"
+ICON="$HOME/.icons/xbm8x8/"
+ICON2="$HOME/.icons/stlarch/"
 
 bat()
 {

@@ -2,23 +2,24 @@ import XMonad
 import Control.Monad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.Spacing
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.Decoration -- themes, decorated layouts
-import XMonad.Hooks.ManageHelpers -- Full screen for FlashPlayer, media player, and so on.
 import XMonad.Util.EZConfig
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.Image
 import System.IO
 import XMonad.Config.Xfce
 
+
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import qualified GHC.IO.Handle.Types as H			
 
 myWorkspace	:: [String]
-myWorkspace	= clickable . (map dzenEscape) $ ["  戦  場  ", "  調  達  ", "  伝  令  ", "  平  和  ", "  休  息  "]
+myWorkspace	= clickable . (map dzenEscape) $ ["  01  ", "  02  ", "  03  ", "  04  ", "  05  ", "  06  ", "  07  ", "  08  ","  09  ", "  10  "]
 	where clickable l = [ "^ca(1,xdotool key super+" ++show (n) ++ ")" ++ ws ++ "^ca()" |
 			      (i,ws) <- zip [1..] l,
 			      let n = i ]
@@ -32,14 +33,7 @@ warnaAbuGelap   = "#353535"
 -- myLayout = simplestFloat
 wallPaperSetUp :: X()
 wallPaperSetUp = do
-   spawn "hsetroot -solid '#ffffff' -fill $HOME/Pictures/44292048.jpg -blur 0"
-
-fullScreenSetup =  composeOne [ 
-                                isKDETrayWindow -?> doIgnore,
-                                transience,
-                                isFullscreen -?> doFullFloat, 
-                                resource =? "stalonetray" -?> doIgnore 
-                              ]
+   spawn "hsetroot -solid '#ffffff' -full Pictures/43023995.png -blur 2"
 
 mpdStartup :: X()
 mpdStartup = do
@@ -48,6 +42,12 @@ mpdStartup = do
 startUp :: X()
 startUp = do
 	  spawn "compton"
+
+myFullscreenHook = composeOne [ isKDETrayWindow -?> doIgnore,
+                                transience,
+                                isFullscreen -?> doFullFloat,
+                                resource =? "stalonetray" -?> doIgnore
+                              ]
 
 main = do
 	bar <- spawnPipe status
@@ -60,9 +60,9 @@ main = do
 	xmonad $ defaultConfig
 	--xmonad $ gnomeConfig
 		--{ manageHook = manageDocks <+> manageHook gnomeConfig
-		{ manageHook = manageDocks <+> fullScreenSetup <+> manageHook defaultConfig
+		{ manageHook = manageDocks <+> myFullscreenHook <+> manageHook defaultConfig
 		, startupHook = startUp <+> wallPaperSetUp <+> mpdStartup <+> setWMName "xmonad"
-  , borderWidth = 1
+  , borderWidth = 2
 		, focusedBorderColor = "#427de7"
 		, normalBorderColor = "#404040"
 		, terminal = "gnome-terminal"
@@ -87,7 +87,7 @@ myKeys =
 	[ ((controlMask, xK_9), spawn "dmenu_run")
 	, ((mod4Mask, xK_Return), spawn "terminator")
 	, ((0, xK_Print), spawn "terminator")
-	]
+ ]
 
 myLogHook h = dynamicLogWithPP $ myDzenPP { ppOutput = hPutStrLn h }
 

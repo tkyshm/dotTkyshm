@@ -1,11 +1,13 @@
-icon="/home/tkyshm/.icons/xbm8x8/arrow_big_02.xbm"
-phones="/home/tkyshm/.icons/xbm8x8/phones.xbm"
+icon="$HOME/.icons/xbm8x8/arrow_big_02.xbm"
+phones="$HOME/.icons/xbm8x8/phones.xbm"
 
 pink="#E65C73"
 green="#49C259"
 blue="#5DBFFF"
 yellow="#E0DA37"
 magenta="#C768C8"
+x_width=`xdpyinfo | grep dimensions | awk '{print $2}' | awk -F "x" '{print $1}'`
+x_height=`xdpyinfo | grep dimensions | awk '{print $2}' | awk -F "x" '{print $1}'`
 
 music() {
 	artist=$(mpc -f %artist% current)
@@ -23,7 +25,7 @@ volmpd() {
 line="^fg(#101010)^ib(2)^pa(0;0)^r(1280x3) ^ib(2)^pa(0;23)^r(1280x3)^fg()"
 
 while :; do
-echo "^ca(1, sh /home/tkyshm/scripts/mpdcontrol.sh)$(music)^ca()$(volmpd) "
-sleep 1
+echo "^ca(1, sh $HOME/scripts/mpdcontrol.sh)$(music)^ca()$(volmpd) "
+#sleep 3
 #done | dzen2 -p -h 22 -ta l -y 1600 -w 1920 -bg "#101010" -fg "#000000" -fn "M+ 1m-8" -e 'button3=' -title-name dzenbottom && sleep .01s && transset-df -n dzenbottom 0.9
-done | dzen2 -p -h 22 -ta l -y 1600 -w 1920 -bg "#101010" -fg "#000000" -fn "M+ 1m-8" -e 'button3=' -title-name dzenbottom && sleep .01s && transset-df -n dzenbottom 0.9
+done | dzen2 -p -h 22 -ta l -y 1600 -w $x_width -bg "#101010" -fg "#000000" -fn "M+ 1m-8" -e 'button3=' -title-name dzenbottom && sleep .01s && transset-df -n dzenbottom 0.9
