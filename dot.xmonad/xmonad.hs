@@ -86,7 +86,8 @@ stop		= "^ca(1,mpc stop)^i(/home/tkyshm/.icons/xbm8x8/stop.xbm)^ca()"
 myKeys = 
 	[ ((controlMask, xK_9), spawn "dmenu_run")
 	, ((mod4Mask, xK_Return), spawn "terminator")
-	, ((0, xK_Print), spawn "terminator")
+	, ((controlMask, xK_Print), spawn "scrot $HOME/Pictures/window_%Y-%m-%d-%H-%M-%S_scrot.png -d 2 -u")
+	, ((0, xK_Print), spawn "scrot $HOME/Pictures/screen_%Y-%m-%d-%H-%M-%S_scrot.png -d 2")
  ]
 
 myLogHook h = dynamicLogWithPP $ myDzenPP { ppOutput = hPutStrLn h }
