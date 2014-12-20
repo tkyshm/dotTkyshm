@@ -3,12 +3,16 @@ echo -e "\e[32m<< Install script for Ubuntu >>\e[39m"
 SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 
 # Ubuntu install
-sudo apt-get update
-sudo apt-get install build-essential lua5.2 git curl mercurial tmux openssl
-sudo apt-get install libssl-dev zlib1g zlib1g-dev libperl-dev liblua5.2-dev python-dev
-sudo apt-get install gtk-chtheme gtk2-engine compto hsetroot htop zsh
-sudo apt-get install scrot
-sudo apt-get install xmonad
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install -y build-essential lua5.2 git curl mercurial tmux openssl
+sudo apt-get install -y libssl-dev zlib1g zlib1g-dev libperl-dev liblua5.2-dev python-dev
+sudo apt-get install -y gtk-chtheme gtk2-engine compto hsetroot htop zsh
+sudo apt-get install -y scrot
+sudo apt-get install -y xautolock
+sudo apt-get install -y libnotify-bin
+sudo apt-get install -y xmonad
+sudo apt-get install -y ctags exuberant-ctags
 
 # GTK themes install(Numix).
 sudo add-apt-repository ppa:numix/ppa
@@ -32,6 +36,11 @@ cp dot.gtkrc-2.0 ~/.gtkrc-2.0
 echo -e "\e[34m[INFO] Copy dot.gtkrc-2.0 to home directory.\e[39m"
 cp dot.gtkrc.mine ~/.gtkrc.mine
 echo -e "\e[34m[INFO] Copy dot.gtkrc.mine to home directory.\e[39m"
+cp dot.git_tmp ~/.git_tmp
+echo -e "\e[34m[INFO] Copy dot.git_tmp to home directory.\e[39m"
+
+echo -e "\e[34m[INFO] ~/.git_tmp has been set the template dirctory for git.\e[39m"
+git config --global init.templatedir '.git_tmp'
 
 ##
 # to install

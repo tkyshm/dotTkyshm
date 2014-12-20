@@ -19,6 +19,7 @@ set modifiable
 set encoding=utf-8
 set hlsearch
 set incsearch
+
 """"""""""""""""""""""""""""""""""""""
 ""set foldenable " 折りたたみON
 """""""""""""""""""""""""""""""""""""
@@ -65,6 +66,10 @@ NeoBundle 'tomasr/molokai'
 "NeoBundle 'ciaranm/inkpot'
 NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'nanotech/jellybeans'
+" sudo.vim
+NeoBundle 'sudo.vim'
+" auto ctags
+NeoBundle 'soramugi/auto-ctags.vim'
 
 " for Erlang
 NeoBundle 'jimenezrick/vimerl'
@@ -450,6 +455,13 @@ function! MyFilename()
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
+""
+" auto-ctags setting
+""
+set tags+=.git/tags
+set tags+=.svn/tags
+let g:auto_ctags = 1
+let g:auto_ctags_directory_list = ['.git', '.svn']
 
 ""
 "" Golang Setting
