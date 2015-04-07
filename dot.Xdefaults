@@ -44,8 +44,10 @@ URxvt*cursorColor: 	#F2C2CA
 URxvt*scrollBar:	false
 URxvt*termName: rxvt-256color
 
-URxvt*font: xft:Inconsolata:pixelsize=14
-URxvt*boldFont: xft:Inconsolata:pixelsize=14
+!URxvt*font: xft:Inconsolata:pixelsize=14
+!URxvt*boldFont: xft:Inconsolata:pixelsize=14
+URxvt*font: xft:Inconsolata for Powerline:pixelsize=12;antialias=true
+URxvt*boldFont: xft:Inconsolata for Powerline:pixelsize=12;antialias=true
 
 
 !--------------!
