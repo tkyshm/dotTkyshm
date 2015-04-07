@@ -1,0 +1,11 @@
+#!/bin/bash
+SUM_MEM_VALUE=`free -h | grep Mem |tail -n 1 | gawk '{print $2}'`
+MEM_USAGE=`free -h | grep Mem |tail -n 1 | gawk '{print $3}'`
+MEM_PERCENT=`free | grep Mem | awk '{print $3/$2 * 100.0}'`
+CPU_USAGE=`top -bn 2 -d 0.01 | grep '^%Cpu' | tail -n 1 | gawk '{print $2+$4+$6}'`
+
+CPU_INFO="  ^fg(#19B5FE)^i(./dzen_icons/cpu.xbm) ^fg(#F8F8F8)${CPU_USAGE}"
+MEM_INFO="  ^fg(#36D7B7)^i(./dzen_icons/mem.xbm) ^fg(#F8F8F8)$MEM_USAGE($MEM_PERCENT%)"
+USER_NAME=`whoami`
+USER_FIELD="^fg(#F2F1EF)^i(./dzen_icons/corner.xbm) ${USER_NAME}"
+echo -e "   ^fg(#F4D03F)^i(./dzen_icons/corner.xbm) bspwm > ${USER_FIELD} > $CPU_INFO > $MEM_INFO > "

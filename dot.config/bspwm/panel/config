@@ -1,23 +1,28 @@
 # Fonts defined in xfontsel (xft not yet supported)
-FONT1="-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1"
-FONT2="-lokaltog-fixed-medium-r-normal--10-100-75-75-c-60-iso8859-1"
-FONT2="-*-dweep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*"
+#FONT1="-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+#FONT2="-lokaltog-fixed-medium-r-normal--10-100-75-75-c-60-iso8859-1"
+FONT1="xft:Inconsolata for Powerline:pixelsize=10"
+FONT2="xft:Inconsolata for Powerline:pixelsize=10"
+#FONT1="-misc-tamsyn-medium-r-normal--14-*-*-*-*-*-*-*"
+#FONT2="-*-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
 
-COLOR_BACKGROUND="#FF1f1f1f"
-COLOR_FOREGROUND="#FFc0b18b"
-COLOR_ICON="#FF775759"
-COLOR_ACTIVE="#FFaf865a"
-COLOR_OCCUPIED="#FF4A3637"
-COLOR_URGENT="#FFd17b49"
+ICON="`pwd`/dzen_icons/"
+
+COLOR_BACKGROUND="#2b2b2b"
+COLOR_FOREGROUND="#ffffff"
+COLOR_ICON="#757978"
+COLOR_ACTIVE="#c1c4bc"
+COLOR_OCCUPIED="#46423b"
+COLOR_URGENT="#a04363"
 
 # Height of underlines / overlines
 LINEHEIGHT="3"
 
 # Panel geometry
-PANEL_HEIGHT=14
+PANEL_HEIGHT=18
 PANEL_WIDTH=''
 PANEL_GEOMETRY="${PANEL_WIDTH}x${PANEL_HEIGHT}+0+0"
-PANEL_FIFO="panellog.log"
+PANEL_FIFO="/tmp/panel-fifo"
 
 # Notification geometry
 NOTIFY_HEIGHT=$PANEL_HEIGHT

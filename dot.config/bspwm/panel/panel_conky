@@ -3,8 +3,9 @@ background yes
 out_to_console yes
 out_to_x no
 # Update interval in seconds
-update_interval 3
-update_interval_on_battery 5
+update_interval 1
+#update_interval_on_battery 5
 
 TEXT
-S${execi 1 ./panel_temperature}  ${execi 1 ./panel_wifi} ${wireless_essid wlan0}   ${execi 1 ./panel_battery}${battery_percent}   ${time %I:%M %P} %{-u}
+S${execi 1 ./panel_temperature} ${time %Y/%m/%d - %H:%M:%S} %{-u} 
+#S${execi 1 ./panel_temperature}  ${execi 1 ./panel_wifi} ${wireless_essid wlan0}   ${execi 1 ./panel_battery}${battery_percent}   ${time %I:%M %P} %{-u}

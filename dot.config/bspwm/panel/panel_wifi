@@ -1,11 +1,11 @@
 #!/bin/bash
-source $HOME/.config/bspwm/panel/config
+source $(dirname $0)/config
 
 # WIFI ICONS
 # 
 
-QUAL=`iwconfig wlp1s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $3}'`
-MAX=`iwconfig wlp1s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $4}'`
+QUAL=`iwconfig wlan0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $3}'`
+MAX=`iwconfig wlan0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $4}'`
 PERC=`echo $QUAL*100/$MAX | bc`
 
 icon=""
