@@ -12,6 +12,8 @@ export PATH="$JAVA_HOME/bin:$PATH:"
 
 eval "$(rbenv init -)"
 
+zstyle ':completion:*' rehash true
+
 alias be='bundle exec'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
