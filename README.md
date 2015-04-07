@@ -11,5 +11,7 @@
  > dot.vimrc 
 
 ### Xmonadの設定
-* xmonadの設定
- > https://github.com/gegenokitaro/dot
+ * > https://github.com/gegenokitaro/dot
+
+### bspwmの設定
+ * > https://github.com/windelicato/dotfiles 
