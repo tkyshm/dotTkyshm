@@ -1,7 +1,7 @@
 imap <C-e> <End>
 imap <C-h> <Home>
 set backspace=indent,eol,start
-set pastetoggle=<C-E> " ペーストモードの切り替え
+set pastetoggle=<C-b> " ペーストモードの切り替え
 set cursorline " Cursol lineの表示
 set cursorcolumn
 set number " 行番号表示
@@ -19,6 +19,9 @@ set modifiable
 set encoding=utf-8
 set hlsearch
 set incsearch
+
+" Turn off paste mode when leaving insert
+autocmd InsertLeave * set nopaste
 
 """"""""""""""""""""""""""""""""""""""
 ""set foldenable " 折りたたみON
@@ -183,7 +186,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
+inoremap <expr><C-c>  neocomplete#cancel_popup()
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -322,8 +325,6 @@ autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
 "au BufNewFile,BufRead *.rb set nowrap tabstop=1 shiftwidth=1 softtabstop=1
 "filetype off
-" Turn off paste mode when leaving insert
-autocmd InsertLeave * set nopaste
 
 "----------
 " VimFiler
@@ -409,6 +410,7 @@ command Vf :VimFiler -split -simple -winwidth=35 -no-quit
 
 let g:vimfiler_safe_mode_by_default = 0
 """""
+" Keybind
 
 syntax on
 set t_Co=256
