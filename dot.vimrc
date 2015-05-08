@@ -113,33 +113,7 @@ function! s:bundleLoadDepends(bundle_names) "{{{
 endfunction
 "}}}
 NeoBundle 'wting/rust.vim'
-
-" ------------------------
-" neocomplcacheの色設定
-" ------------------------
-"highlight Pmenu ctermbg=245
-"highlight Pmenu ctermfg=255
-"highlight PmenuSel ctermbg=204
-"highlight PmenuSel ctermfg=234
-"highlight PMenuSbar ctermbg=245
-"highlight PMenuSbar ctermfg=255
-
-"----------------------------------------
-" neocomplcache
-" ---------------------------------------
-" 補完・履歴 neocomplcache "{{{
-"set infercase
-"let g:neocomplcache_enable_at_startup = 1
-"imap <C-k> <Plug>(neocomplcache_snippets_expand)
-"smap <C-k> <Plug>(neocomplcache_snippets_expand)
-"" default config"{{{
-"let g:neocomplcache_force_overwrite_completefunc = 1
-""let g:neocomplcache#sources#rsense#home_directory = expand('~/.bundle/rsense-0.3')
-"let g:neocomplcache_enable_camel_case_completion = 1
-"let g:neocomplcache_enable_underbar_completion = 1
-"let g:neocomplcache_skip_auto_completion_time = '0.3'
-""}}}
-
+NeoBundle 'Yggdroot/indentLine'
 " ------------------------------------
 "  neocomplete
 " ------------------------------------
@@ -388,17 +362,27 @@ function! MyFilename()
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
-""
+
+""--------------------------------------------
+" indentLine 
+""--------------------------------------------
+"let g:indentLine_color_term = 239
+"let g:indentLine_color_tty_light = 7 " (default: 4)
+"let g:indentLine_color_dark = 1 " (default: 2)
+let g:indentLine_char = ':'
+"let g:indentLine_enabled = 0
+
+""--------------------------------------------
 " auto-ctags setting
-""
+""--------------------------------------------
 set tags+=.git/tags
 set tags+=.svn/tags
 let g:auto_ctags = 1
 let g:auto_ctags_directory_list = ['.git', '.svn']
 
-""
+""--------------------------------------------
 "" Golang Setting
-""
+""--------------------------------------------
 set rtp+=$GOROOT/misc/vim
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
