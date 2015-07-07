@@ -1,7 +1,7 @@
 imap <C-e> <End>
 imap <C-h> <Home>
 set backspace=indent,eol,start
-set pastetoggle=<C-b> " ペーストモードの切り替え
+set pastetoggle=<C-E> " ペーストモードの切り替え
 set cursorline " Cursol lineの表示
 set cursorcolumn
 set number " 行番号表示
@@ -20,9 +20,6 @@ set encoding=utf-8
 set hlsearch
 set incsearch
 
-" Turn off paste mode when leaving insert
-autocmd InsertLeave * set nopaste
-
 """"""""""""""""""""""""""""""""""""""
 ""set foldenable " 折りたたみON
 """""""""""""""""""""""""""""""""""""
@@ -31,18 +28,34 @@ nnoremap <C-h>o <C-w>s
 nnoremap <C-h>e <C-w>v
 nnoremap <C-h>x <C-w>c
 """"""
+""------------------------
+"" autocmd list
+""------------------------
+autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+autocmd FileType python let g:pydiction_location = '~/.vim/pydiction/complete-dict'
+autocmd FileType python setl autoindent
+autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
+autocmd FileType html setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
+
+autocmd FileType erlang setl expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent
+autocmd BufNewFile,BufRead *.erl set nowrap tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+
+autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
+"au BufNewFile,BufRead *.rb set nowrap tabstop=1 shiftwidth=1 softtabstop=1
+"filetype off
+filetype plugin indent on
+
 """""""""""""""""""""""""""""""""""
 "" Neobundle
 """""""""""""""""""""""""""""""""""
+set nocompatible
 
 if has('vim_starting')
  set runtimepath+=~/.vim/bundle/neobundle.vim
- " call neobundle#rc(expand('~/.vim/bundle/'))
- call neobundle#begin(expand('~/.vim/bundle'))
- NeoBundleFetch 'Shougo/neobundle.vim'
- call neobundle#end()
+ call neobundle#rc(expand('~/.vim/bundle/'))
 endif
-" 
 " Debug plugin
 NeoBundle 'scrooloose/syntastic'
 " originalrepos on git hub
@@ -60,9 +73,8 @@ NeoBundle 'soramugi/auto-ctags.vim'
 
 " for Erlang
 NeoBundle 'jimenezrick/vimerl'
-NeoBundle 'vim-erlang/vim-erlang-tags'
-set runtimepath^=/path/to/vim-erlang-tags
-NeoBundle 'edkolev/erlang-motions.vim'
+NeoBundle 'vim-erlang/vim-erlang-runtime'
+NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
 
 " HTML5 syntax
 NeoBundle 'othree/html5.vim'
@@ -112,8 +124,34 @@ function! s:bundleLoadDepends(bundle_names) "{{{
   au! RailsLazyPlugins
 endfunction
 "}}}
-NeoBundle 'wting/rust.vim'
-NeoBundle 'Yggdroot/indentLine'
+
+
+" ------------------------
+" neocomplcacheの色設定
+" ------------------------
+"highlight Pmenu ctermbg=245
+"highlight Pmenu ctermfg=255
+"highlight PmenuSel ctermbg=204
+"highlight PmenuSel ctermfg=234
+"highlight PMenuSbar ctermbg=245
+"highlight PMenuSbar ctermfg=255
+
+"----------------------------------------
+" neocomplcache
+" ---------------------------------------
+" 補完・履歴 neocomplcache "{{{
+"set infercase
+"let g:neocomplcache_enable_at_startup = 1
+"imap <C-k> <Plug>(neocomplcache_snippets_expand)
+"smap <C-k> <Plug>(neocomplcache_snippets_expand)
+"" default config"{{{
+"let g:neocomplcache_force_overwrite_completefunc = 1
+""let g:neocomplcache#sources#rsense#home_directory = expand('~/.bundle/rsense-0.3')
+"let g:neocomplcache_enable_camel_case_completion = 1
+"let g:neocomplcache_enable_underbar_completion = 1
+"let g:neocomplcache_skip_auto_completion_time = '0.3'
+""}}}
+
 " ------------------------------------
 "  neocomplete
 " ------------------------------------
@@ -160,7 +198,28 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-c>  neocomplete#cancel_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+" For cursor moving in insert mode(Not recommended)
+"inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
+"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
+"inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
+"inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
+" Or set this.
+"let g:neocomplete#enable_cursor_hold_i = 1
+" Or set this.
+"let g:neocomplete#enable_insert_char_pre = 1
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -264,10 +323,67 @@ aug MyAutoCmd
   au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>KK :<C-U>Unite -no-start-insert ref/ri   -input=<C-R><C-W><CR>
   au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>K  :<C-U>Unite -no-start-insert ref/refe -input=<C-R><C-W><CR>
 aug END
+"}}}
+"------------------------------------
+" Unite-rails.vim
+"------------------------------------
+"{{{
+"function! UniteRailsSetting()
+"  nnoremap <buffer><C-H><C-H><C-H>  :<C-U>Unite rails/view<CR>
+"  nnoremap <buffer><C-H><C-H>       :<C-U>Unite rails/model<CR>
+"  nnoremap <buffer><C-H>            :<C-U>Unite rails/controller<CR>
+" 
+"  nnoremap <buffer><C-H>c           :<C-U>Unite rails/config<CR>
+"  nnoremap <buffer><C-H>s           :<C-U>Unite rails/spec<CR>
+"  nnoremap <buffer><C-H>m           :<C-U>Unite rails/db -input=migrate<CR>
+"  nnoremap <buffer><C-H>l           :<C-U>Unite rails/lib<CR>
+"  nnoremap <buffer><expr><C-H>g     ':e '.b:rails_root.'/Gemfile<CR>'
+"  nnoremap <buffer><expr><C-H>r     ':e '.b:rails_root.'/config/routes.rb<CR>'
+"  nnoremap <buffer><expr><C-H>se    ':e '.b:rails_root.'/db/seeds.rb<CR>'
+"  nnoremap <buffer><C-H>ra          :<C-U>Unite rails/rake<CR>
+"  nnoremap <buffer><C-H>h           :<C-U>Unite rails/heroku<CR>
+"endfunction
+"aug MyAutoCmd
+"  au User Rails call UniteRailsSetting()
+"aug END
+"}}}
+
+"------------------------------------
+" vim-rails
+"------------------------------------
+""{{{
+"有効化
+"let g:rails_default_file='config/database.yml'
+"let g:rails_level = 4
+"let g:rails_mappings=1
+"let g:rails_modelines=0
+" let g:rails_some_option = 1
+"let g:rails_statusline = 1
+" let g:rails_subversion=0
+" let g:rails_syntax = 1
+" let g:rails_url='http://localhost:3000'
+" let g:rails_ctags_arguments='--languages=-javascript'
+" let g:rails_ctags_arguments = ''
+"function! SetUpRailsSetting()
+"  nnoremap <buffer><Space>r :R<CR>
+"  nnoremap <buffer><Space>a :A<CR>
+"  nnoremap <buffer><Space>m :Rmodel<Space>
+"  nnoremap <buffer><Space>c :Rcontroller<Space>
+"  nnoremap <buffer><Space>v :Rview<Space>
+"  nnoremap <buffer><Space>p :Rpreview<CR>
+"endfunction
+" 
+"aug MyAutoCmd
+"  au User Rails call SetUpRailsSetting()
+"aug END
+" 
+"aug RailsDictSetting
+"  au!
+"aug END
+"}}}
 "------------------------------------
 " vimerl
 "---------------------------------
-"let g:erlang_force_use_vimerl_indent = 1
 "let g:erlangHightlightBif=1
 "let g:erlang_folding=1
 ""----------------------------------
@@ -280,26 +396,6 @@ let g:syntastic_haskell_checkers=['ghc-mod', 'hlint', 'hdevtools']
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': ['erlang','ruby','haskell'],
   \ 'passive_filetypes': [] }
-""------------------------
-"" autocmd list
-""------------------------
-filetype plugin indent on
-set nocompatible
-set autoindent
-autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
-autocmd FileType python let g:pydiction_location = '~/.vim/pydiction/complete-dict'
-autocmd FileType python setl autoindent
-autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd FileType python setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
-autocmd FileType html setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
-autocmd FileType erlang setl expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent
-"autocmd BufNewFile,BufRead *.erl set nowrap tabstop=2 shiftwidth=2 softtabstop=2 autoindent
-
-autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
-"au BufNewFile,BufRead *.rb set nowrap tabstop=1 shiftwidth=1 softtabstop=1
-"filetype off
-
 "----------
 " VimFiler
 "----------
@@ -362,27 +458,17 @@ function! MyFilename()
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != MyModified() ? ' ' . MyModified() : '')
 endfunction
-
-""--------------------------------------------
-" indentLine 
-""--------------------------------------------
-"let g:indentLine_color_term = 239
-"let g:indentLine_color_tty_light = 7 " (default: 4)
-"let g:indentLine_color_dark = 1 " (default: 2)
-let g:indentLine_char = ':'
-"let g:indentLine_enabled = 0
-
-""--------------------------------------------
+""
 " auto-ctags setting
-""--------------------------------------------
+""
 set tags+=.git/tags
 set tags+=.svn/tags
 let g:auto_ctags = 1
 let g:auto_ctags_directory_list = ['.git', '.svn']
 
-""--------------------------------------------
+""
 "" Golang Setting
-""--------------------------------------------
+""
 set rtp+=$GOROOT/misc/vim
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
@@ -394,7 +480,6 @@ command Vf :VimFiler -split -simple -winwidth=35 -no-quit
 
 let g:vimfiler_safe_mode_by_default = 0
 """""
-" Keybind
 
 syntax on
 set t_Co=256
