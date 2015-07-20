@@ -119,6 +119,8 @@ if has('vim_starting')
  "" Lua 
  NeoBundle 'xolox/vim-lua-ftplugin'
  NeoBundle 'xolox/vim-misc'
+ "" vim css color
+ NeoBundle 'lilydjwg/colorizer'
  call neobundle#end()
 endif
 
@@ -419,7 +421,7 @@ set t_Co=256
 set background=dark
 let g:solarized_termcolors=256
 "colorscheme solarized
-colorscheme yshtak
+colorscheme tkyshm
 """ for terminal user
 "colorscheme molokai
 "let g:molokai_original = 1
