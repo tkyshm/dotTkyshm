@@ -57,7 +57,8 @@ if has('vim_starting')
  NeoBundle 'sudo.vim'
  " auto ctags
  NeoBundle 'soramugi/auto-ctags.vim'
-
+ " QuickRun
+ NeoBundle 'thinca/vim-quickrun'
  " for Erlang
  NeoBundle 'jimenezrick/vimerl'
  NeoBundle 'vim-erlang/vim-erlang-tags'
@@ -121,6 +122,9 @@ if has('vim_starting')
  NeoBundle 'xolox/vim-misc'
  "" vim css color
  NeoBundle 'lilydjwg/colorizer'
+ "" Perl plugins
+ NeoBundle 'vim-perl/vim-perl'
+
  call neobundle#end()
 endif
 
