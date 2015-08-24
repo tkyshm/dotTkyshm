@@ -13,7 +13,7 @@ let colors_name = "tkyshm"
 
 " background
 hi Normal         gui=NONE   guifg=#dddddd   guibg=#343434
-hi CursorLine     gui=underline    guibg=#444444
+hi CursorLine     gui=underline    guibg=#294d73
 
 hi IncSearch      gui=BOLD   guifg=#ffffff   guibg=#cd8b60
 hi Search         gui=NONE   guifg=#ffffff   guibg=#ad7b57
@@ -55,7 +55,7 @@ hi SpecialKey     gui=BOLD   guifg=#ab508d   guibg=NONE
 hi Title          gui=BOLD   guifg=#af4f4b   guibg=NONE
 hi Visual         gui=NONE   guifg=#eeeeee   guibg=#4e4e8f
 
-hi Comment        gui=NONE   guifg=#6d8bb0   guibg=NONE
+hi Comment        gui=NONE   guifg=#dddddd   guibg=#2744c3
 "hi Constant       gui=NONE   guifg=#ffcd8b   guibg=NONE
 hi Constant       gui=NONE   guifg=#ff6d6b   guibg=NONE
 hi String         gui=NONE   guifg=#cfad7b   guibg=#404040
@@ -69,7 +69,7 @@ hi PreProc        gui=BOLD   guifg=#60c0c0   guibg=NONE
 hi Special        gui=NONE   guifg=#c080d0   guibg=NONE
 hi SpecialChar    gui=NONE   guifg=#c080d0   guibg=#404040
 hi Statement      gui=BOLD   guifg=#808bed   guibg=NONE
-hi Todo           gui=BOLD   guifg=#303030   guibg=#d0a060
+hi Todo           gui=BOLD   guifg=#efefef   guibg=#279983
 hi Type           gui=NONE   guifg=#efcb4f   guibg=NONE
 "hi Type           gui=NONE   guifg=#ff8bff   guibg=NONE
 hi Underlined     gui=BOLD   guifg=#df9f2d   guibg=NONE
@@ -107,7 +107,7 @@ endif
 if v:version >= 703
   hi Conceal      gui=NONE      guifg=#c080d0   guibg=NONE
   "hi ColorColumn  gui=NONE                      guibg=#2e2e2e
-  hi CursorColumn gui=NONE     guibg=#444444
+  hi CursorColumn gui=NONE     guibg=#294d73
 endif
 
 " vim: set et :
