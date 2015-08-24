@@ -4,7 +4,7 @@ SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 INSTALLER_DIR=$SCRIPT_DIR/installer-kits
 
 # standard pacakges
-sudo pacman -S openssh
+sudo pacman -S --noconfirm ag openssh
 yaourt -Sy --noconfirm mercurial git zsh lua 
 yaourt -Sy --noconfirm file-roller transmission-gtk feh
 yaourt -Sy --noconfirm ncmpcpp mpd weechat thunar
