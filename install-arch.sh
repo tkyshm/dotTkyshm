@@ -4,39 +4,40 @@ SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 INSTALLER_DIR=$SCRIPT_DIR/installer-kits
 
 # standard pacakges
-yaourt -Sy mercurial git zsh lua 
-yaourt -Sy file-roller transmission-gtk feh
-yaourt -Sy ncmpcpp mpd weechat thunar
-yaourt -S tcl tcllib aspell
-yaourt -S sound-theme-freedesktop 
-yaourt -Sy scrot hsetroot rxvt-unicode dzen2 conky
-yaourt -Sy bspwm-git sxhkd-git
-yaourt -Sy compton dmenu xorg-server unclutter xcalib
-yaourt -S tint2 xdotool vnstat docky mpc mpd 
-yaourt -S smc pm
-yaourt -S otf-ipaexfont
+sudo pacman -S openssh
+yaourt -Sy --noconfirm mercurial git zsh lua 
+yaourt -Sy --noconfirm file-roller transmission-gtk feh
+yaourt -Sy --noconfirm ncmpcpp mpd weechat thunar
+yaourt -S --noconfirm tcl tcllib aspell
+yaourt -S --noconfirm sound-theme-freedesktop 
+yaourt -Sy --noconfirm scrot feh rxvt-unicode dzen2 conky
+yaourt -Sy --noconfirm bspwm-git sxhkd-git
+yaourt -Sy --noconfirm compton dmenu xorg-server unclutter xcalib
+yaourt -S --noconfirm tint2 xdotool vnstat docky mpc mpd 
+yaourt -S --noconfirm smc pm
+yaourt -S --noconfirm otf-ipaexfont
 # for conky panel
-yaourt -S acpi bc
+yaourt -S --noconfirm acpi bc
 # You must check VIDEO CARD
 # lspci | grep VGA
-yaourt -S xf86-video-intel
-yaourt -S xorg-server xorg-server-utils xorg-utils
-yaourt -S xcb-util xcb-util-keysyms libxcb xcb-util-wm
+yaourt -S --noconfirm xf86-video-intel
+yaourt -S --noconfirm xorg-server xorg-server-utils xorg-utils
+yaourt -S --noconfirm xcb-util xcb-util-keysyms libxcb xcb-util-wm
 # Input method
-yaourt -S fcitx-im fcitx-mozc fcitx-configtool fcitx-qt4 fcitx-gtk2
+yaourt -S --noconfirm fcitx-im fcitx-mozc fcitx-configtool fcitx-qt4 fcitx-gtk2
 # font
-yaourt -S fontforge-git
+yaourt -S --noconfirm fontforge-git
 # performance tool 
-yaourt -S wget htop lsof net-tools iotop sysstat iftop nmon
-yaourt -S tcpdump 
+yaourt -S --noconfirm wget htop lsof net-tools iotop sysstat iftop nmon
+yaourt -S --noconfirm tcpdump 
 # Numix theme
-yaourt -S numix-circle-icon-theme-git numix-themes-git
-yaourt -S gtk-chtheme gtk-theme-switch2 gtk2_prefs
+yaourt -S --noconfirm numix-circle-icon-theme-git numix-themes-git
+yaourt -S --noconfirm gtk-chtheme gtk-theme-switch2 gtk2_prefs
 # other applications
-yaourt -S zathura terminator ranger
+yaourt -S --noconfirm zathura terminator ranger
 # Sound packages
-sudo pacman -S alsa-utils asoundconf
-sudo pacman -S pulseaudio pulseaudio-alsa paprefs pavucontrol
+sudo pacman -S --noconfirm alsa-utils asoundconf
+sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa paprefs pavucontrol
 
 # lemonbar install
 git clone https://github.com/LemonBoy/bar.git ~/bar

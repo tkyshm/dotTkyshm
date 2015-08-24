@@ -57,11 +57,14 @@ xcalib $HOME/x230.icm &
 #esac
 xcalib $HOME/x230.icm &
 xsetroot -cursor_name left_ptr
-xrandr --output HDMI1 --right-of HDMI2 --mode 1920x1080
+#xrandr --output HDMI1 --right-of HDMI2 --mode 1920x1080
+xrandr --output DP1 --right-of HDMI2 --mode 1920x1080
 unclutter -grab -noevents -root &
 
 if [[ "`acpi -b | awk '{gsub(/,/,""); print $3}'`" != "Discharging" ]] ; then
-  hsetroot -tile $HOME/Pictures/bg001.jpg &
+  #hsetroot -fill $HOME/Pictures/bg001.jpg &
+  bgnum=$((1 + RANDOM % 13))
+  feh --bg-fill --no-xinerama $HOME/Pictures/bg${bgnum}.jpg
   compton &
   #$HOME/scripts/docky-launch &
 fi
