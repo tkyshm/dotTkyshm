@@ -1,0 +1,7 @@
+#!/bin/bash
+
+now=$(expr `date +%M`)
+if [ $now -eq 0 ] ; then
+  bgnum=$((1 + RANDOM % 13))
+  feh --bg-fill --no-xinerama $HOME/Pictures/bg${bgnum}.jpg
+fi
