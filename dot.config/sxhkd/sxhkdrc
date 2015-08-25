@@ -28,10 +28,10 @@ super + {grave,Tab}
 super + apostrophe
 	bspc window -s last
 
-super + {o,i}
-	bspc control --record-history off; \
-	bspc window {older,newer} -f; \
-	bspc control --record-history on
+#super + {o,i}
+#	bspc control --record-history off; \
+#	bspc window {older,newer} -f; \
+#	bspc control --record-history on
 
 super + y
 	bspc window -w last.manual
@@ -49,6 +49,7 @@ super + {comma,period}
 	bspc desktop -C {backward,forward}
 
 super + bracket{left,right}
+#super + {left,right}
 	bspc desktop -f {prev,next}
 
 super + ctrl + {h,j,k,l}
@@ -66,8 +67,11 @@ super + alt + shift + {h,j,k,l}
 super + ctrl + {1-9}
 	bspc window -r 0.{1-9}
 
+# bspc {desktop -f, window -d} $(bspc query -M -m)/{i,ii,iii,iv,v,vi,vii,viii,ix,x}
+#bash $HOME/bin/move_ws {desktop -f, window -d} {i,ii,iii,iv,v,vi,vii,viii,ix,x}
+#bspc {desktop -f, window -d} \^$(bspc query -M -m):\^{i,ii,iii,iv,v,vi,vii,viii,ix,x} && \
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} ^{1-9,10}
+ bspc {desktop -f, window -d} $(bspc query -M -m)/{i,ii,iii,iv,v,vi,vii,viii,ix,x}
 
 ~button1
 	bspc pointer -g focus
@@ -80,6 +84,11 @@ super + !button{1-3}
 
 super + @button{1-3}
 	bspc pointer -u
+
+# window split manual mode
+super + {y,u,i,o}
+ bspc window -p {left,down,up,right}
+
 #
 # wm independent hotkeys
 #

@@ -57,6 +57,7 @@ if [ "$install_ok" = "y" ] ; then
 fi
 
 ## Cloning my dotfiles.
+mkdir -p $HOME/bin
 git clone https://github.com/tkyshm/dotTkyshm.git ~/dotTkyshm
 cd ~/dotTkyshm
 
@@ -76,6 +77,9 @@ cp dot.Xresources ~/.Xresources
 cp dot.xinitrc ~/.xinitrc
 cp dot.compton.conf ~/.compton.conf
 cp dot.gtkrc.mine ~/.gtkrc.mine
+
+# executable shellscript
+cp bin/* $HOME/bin
 
 # background
 mkdir -p ~/Pictures
