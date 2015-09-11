@@ -48,8 +48,7 @@ super + {_,shift + }c
 super + {comma,period}
 	bspc desktop -C {backward,forward}
 
-super + bracket{left,right}
-#super + {left,right}
+super + {Left,Right}
 	bspc desktop -f {prev,next}
 
 super + ctrl + {h,j,k,l}
@@ -98,6 +97,9 @@ super + Return
 
 ctrl + 9
  dmenu_run
+
+ctrl + 8
+ $HOME/scripts/lens 
 
 Print
  scrot $HOME/Pictures/scrot-%Y-%m-%d-%H-%M-%S.png -d 2 

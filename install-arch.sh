@@ -16,6 +16,7 @@ yaourt -Sy --noconfirm compton dmenu xorg-server unclutter xcalib
 yaourt -S --noconfirm tint2 xdotool vnstat docky mpc mpd 
 yaourt -S --noconfirm smc pm
 yaourt -S --noconfirm otf-ipaexfont
+sudo pacman -S --noconfirm gmrun
 # for conky panel
 yaourt -S --noconfirm acpi bc
 # You must check VIDEO CARD
