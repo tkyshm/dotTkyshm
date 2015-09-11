@@ -61,11 +61,13 @@ mkdir -p $HOME/bin
 git clone https://github.com/tkyshm/dotTkyshm.git ~/dotTkyshm
 cd ~/dotTkyshm
 
+## Oh my zsh install
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
 ## dot files copy.
-cp dot.zshrc ~/.zshrc
-cp -r dot.zsh.d ~/.zsh.d
-cp dot.zshrc.mine ~/.zshrc.mine
-cp dot.zshenv ~/.zshenv
+cp oh-my-zsh/dot.zshrc.mine ~/.zshrc.mine
+cp oh-my-zsh/dot.zshrc ~/.zshrc 
+cp oh-my-zsh/custom/tkyshm.zsh-theme ~/.oh-my-zsh/custom/tkyshm.zsh-theme 
 cp dot.vimrc ~/.vimrc
 cp -r dot.vim ~/.vim
 sudo cp profiles/* /etc/zsh
