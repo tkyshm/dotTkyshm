@@ -65,10 +65,15 @@ cd ~/dotTkyshm
 ## Oh my zsh install
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
+## Prezto install
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md\(.N\); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
 ## dot files copy.
-cp oh-my-zsh/dot.zshrc.mine ~/.zshrc.mine
-cp oh-my-zsh/dot.zshrc ~/.zshrc 
-cp oh-my-zsh/custom/tkyshm.zsh-theme ~/.oh-my-zsh/custom/tkyshm.zsh-theme 
+cp zprezto/zpreztorc $HOME/.zprezto/runcoms/zpreztorc 
 cp dot.vimrc ~/.vimrc
 cp -r dot.vim ~/.vim
 sudo cp profiles/* /etc/zsh
