@@ -1,0 +1,20 @@
+#!/bin/bash
+# bitbacket walk!
+HOST="https://bitbucket.org/" # bitbacket host
+OPEN_CMD="xdg-open" # depends on your os
+REPO="your default repogitory" # settting your default bitbacket repogitory
+
+main() {
+    case $1 in
+        i) 
+            $OPEN_CMD $HOST/$REPO/issues;;
+        w) 
+            $OPEN_CMD $HOST/$REPO/wiki/browse;;
+        p) 
+            $OPEN_CMD $HOST/$REPO/pull-request;;
+        *) 
+            $OPEN_CMD $HOST/$REPO;;
+    esac
+}
+
+main $@
