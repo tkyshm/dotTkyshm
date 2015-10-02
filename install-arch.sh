@@ -75,7 +75,9 @@ cp dot.Xresources ~/.Xresources
 cp dot.xinitrc ~/.xinitrc
 cp dot.compton.conf ~/.compton.conf
 cp dot.gtkrc.mine ~/.gtkrc.mine
-
+cp dot.gtkrc-2.0 ~/.gtkrc-2.0
+cp -ru dot.config/bspwm ~/.config/
+cp -ru dot.config/sxhkd ~/.config/
 # background
 mkdir -p ~/Pictures
 wget http://feelgrafix.com/data_images/out/16/907950-triangle-wallpaper.jpg bg001.jpg
@@ -83,7 +85,7 @@ mv 907950-triangle-wallpaper.jpg bg001.jpg
 mv bg001.jpg ~/Pictures/
 
 # Fonts Configuration
-$INSTALLER_DIR/fonts-installer.sh $SCRIPT_DIR
+$INSTALLER_DIR/fonts-installer.sh $INSTALLER_DIR
 ## Install software 
 $INSTALLER_DIR/vim-installer.sh
 $INSTALLER_DIR/erlang-insteller.sh
