@@ -57,7 +57,8 @@ if has('vim_starting')
  NeoBundle 'sudo.vim'
  " auto ctags
  NeoBundle 'soramugi/auto-ctags.vim'
-
+ " QuickRun
+ NeoBundle 'thinca/vim-quickrun'
  " for Erlang
  NeoBundle 'jimenezrick/vimerl'
  NeoBundle 'vim-erlang/vim-erlang-tags'
@@ -121,6 +122,9 @@ if has('vim_starting')
  NeoBundle 'xolox/vim-misc'
  "" vim css color
  NeoBundle 'lilydjwg/colorizer'
+ "" Perl plugins
+ NeoBundle 'vim-perl/vim-perl'
+
  call neobundle#end()
 endif
 
@@ -228,58 +232,52 @@ endif
 nnoremap <silent> <Space>nes  :<C-u>NeoSnippetEdit<CR>
 
 "====================================
-" Unite Buffer
+" Unite Setting
 "===================================
 " UB でBUffer検索する
-nnoremap <silent>UB :<C-u>Unite buffer<CR>
+nnoremap <silent>UB :<C-u>Unite -start-insert buffer<CR>
+" UF でファイル名検索する
+nnoremap <silent>UF :<C-u>Unite -start-insert file_rec/async:!<CR>
+" UG or ,g で全文検索する
+nnoremap <silent>,g :<C-u>Unite -start-insert grep:.<CR>
+nnoremap <silent>UG :<C-u>Unite -start-insert grep:.<CR>
 
-"------------------------------------
-" Unite-reek, Unite-rails_best_practices
-"------------------------------------
-" {{{
-nnoremap <silent> [unite]<C-R>      :<C-u>Unite -no-quit reek<CR>
-" insertモードで開始
-let g:unite_enable_start_insert=1
-" 大文字小文字を区別しない
-let g:unite_enable_ignore_case=1
-let g:unite_enable_smart_case=1
-" grep 検索
-nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-" カーソル位置の単語をgrep検索
-nnoremap <silent> ,cg :<C-u> Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-" grep検索結果の再呼出
-nnoremap <silent> ,r :<C-u>UniteResume search-buffer<CR>
-" unite grepにag(The silver searcher)を利用
+"=====================================
+" Unite ag
+"=====================================
+
 if executable('ag')
-  let g:unite_source_grep_command='ag'
-  let g:unite_source_grep_default_opts='--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt=''
+  let g:unite_source_rec_async_command='ag --nocolor --nogroup --hidden -g ""'
+  ""let g:unite_source_rec_async_command=['ag', '--nocolor', '--nogroup', '--hidden', '-g', '""']
+  let g:unite_source_find_command ='ag --nocolor --nogroup --hidden -g ""'
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+  ""let g:unite_enable_smart_case
 endif
-"unite grep
-"nnoremap <silent> [unite]<C-R><C-R> :<C-u>Unite -no-quit rails_best_practices<CR>
-" }}}
-"}}}
 
 "----------------------------------------
 " vim-ref
 "----------------------------------------
 "{{{
-let g:ref_open                    = 'split'
-let g:ref_refe_cmd                = expand('~/.vim/ref/ruby-ref1.9.2/refe-1_9_2')
- 
-nnoremap rr :<C-U>Unite ref/refe     -default-action=split -input=
-nnoremap ri :<C-U>Unite ref/ri       -default-action=split -input=
- 
-aug MyAutoCmd
-  au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>KK :<C-U>Unite -no-start-insert ref/ri   -input=<C-R><C-W><CR>
-  au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>K  :<C-U>Unite -no-start-insert ref/refe -input=<C-R><C-W><CR>
-aug END
+"let g:ref_open                    = 'split'
+"let g:ref_refe_cmd                = expand('~/.vim/ref/ruby-ref1.9.2/refe-1_9_2')
+" 
+"nnoremap rr :<C-U>Unite ref/refe     -default-action=split -input=
+"nnoremap ri :<C-U>Unite ref/ri       -default-action=split -input=
+" 
+"aug MyAutoCmd
+"  au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>KK :<C-U>Unite -no-start-insert ref/ri   -input=<C-R><C-W><CR>
+"  au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>K  :<C-U>Unite -no-start-insert ref/refe -input=<C-R><C-W><CR>
+"aug END
+
 "------------------------------------
 " vimerl
 "---------------------------------
 "let g:erlang_force_use_vimerl_indent = 1
 "let g:erlangHightlightBif=1
 "let g:erlang_folding=1
+
 ""----------------------------------
 " Syntactic
 ""----------------------------------
@@ -410,7 +408,6 @@ let g:lua_define_completefunc = 1
 " Start up setting
 " -------------------------------------------
 command Vf :VimFiler -split -simple -winwidth=35 -no-quit 
-
 let g:vimfiler_safe_mode_by_default = 0
 """""
 " Keybind
@@ -420,7 +417,6 @@ set t_Co=256
 "let g:inkpot_black_background=0 
 set background=dark
 let g:solarized_termcolors=256
-"colorscheme solarized
 colorscheme tkyshm
 """ for terminal user
 "colorscheme molokai

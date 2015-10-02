@@ -1,0 +1,60 @@
+#
+# Defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
+
+# My configuration
+fpath+=(~/.zsh.d/site-functions $fpath)
+fpath+=(~/.zsh.d/zsh-completions/src $fpath)
+
+# rbenv path
+eval "$(rbenv init -)"
+
+# Auto rehash
+zstyle ':completion:*' rehash true
+
+# Alias
+alias be='bundle exec'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias yao='yaourt'
+alias g='git'
+alias gad='git add'
+alias gt='git status'
+alias gtt='git status -uno'
+alias glogo='git log --oneline'
+alias glog='git log'
+alias gpul='git pull'
+alias gpus='git push'
+alias globi='hub browse kayac/nakamap'
+
+# Lua path
+export LUA_PATH='/home/tkyshm/.luarocks/share/lua/5.3/?.lua;/home/tkyshm/.luarocks/share/lua/5.3/?/init.lua;/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua'
+export LUA_CPATH='/home/tkyshm/.luarocks/lib/lua/5.3/?.so;/usr/lib/lua/5.3/?.so;/usr/lib/lua/5.3/loadall.so;./?.so'
+
+# Java path
+export JAVA_HOME=/opt/jdk1.8
+
+# Erlang Path
+. ~/erlang/18.0/activate
+# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export LC_CTYPE=ja_JP.UTF-8
+
+# Golang path
+export GOROOT=/usr/local/go
+export GOPATH=/home/tkyshm/gocode
+
+# PATH
+export PATH=$PATH:/opt/jdk1.8/bin:/usr/local/bin:/home/tkyshm/bin/:/home/tkyshm/.rbenv/bin:/usr/bin:/opt/jdk1.8/bin:/usr/local/go/bin:/home/tkyshm/gocobe/bin:/bin:/usr/sbin/:::/usr/local/go/bin:/home/tkyshm/gocobe/bin
+export PATH=$PATH:$HOME/.anyenv/bin
+export PATH=$PATH:/usr/local/node/node-v0.12.2/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
