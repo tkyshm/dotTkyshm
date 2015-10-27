@@ -27,7 +27,15 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias yao='yaourt'
-
+alias g='git'
+alias gad='git add'
+alias gt='git status'
+alias gtt='git status -uno'
+alias glogo='git log --oneline'
+alias glog='git log'
+alias gpul='git pull'
+alias gpus='git push'
+alias globi='hub browse kayac/nakamap'
 
 # Lua path
 export LUA_PATH='/home/tkyshm/.luarocks/share/lua/5.3/?.lua;/home/tkyshm/.luarocks/share/lua/5.3/?/init.lua;/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua'
@@ -50,5 +58,3 @@ export PATH=$PATH:/opt/jdk1.8/bin:/usr/local/bin:/home/tkyshm/bin/:/home/tkyshm/
 export PATH=$PATH:$HOME/.anyenv/bin
 export PATH=$PATH:/usr/local/node/node-v0.12.2/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-
-archey3

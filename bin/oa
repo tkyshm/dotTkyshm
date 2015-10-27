@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ "$2" != "" ] ; then
+    hub browse $1 $2
+else
+    case $1 in
+        i)
+            hub browse kayac/nakamap issues
+            ;;
+        c)
+            hub browse kayac/nakamap commits
+            ;;
+        p)
+            hub browse kayac/nakamap pulls
+            ;;
+        w)
+            hub browse kayac/nakamap wiki
+            ;;
+        infra)
+            hub browse kayac/nakamap labels\/インフラ
+            ;;
+        *)
+            hub browse kayac/nakamap $1
+            ;;
+    esac
+fi
