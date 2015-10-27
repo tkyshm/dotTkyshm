@@ -10,9 +10,9 @@ set smarttab
 set tabstop=1
 set smartindent
 " タブを挿入するときの幅
-set shiftwidth=2
 set expandtab " replace to use a tab as space
-set laststatus=2 " StatuLineの表示
+set shiftwidth=4
+set laststatus=4 " StatuLineの表示
 "set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set modifiable
 
@@ -57,14 +57,13 @@ if has('vim_starting')
  NeoBundle 'sudo.vim'
  " auto ctags
  NeoBundle 'soramugi/auto-ctags.vim'
- " QuickRun
- NeoBundle 'thinca/vim-quickrun'
+
  " for Erlang
  NeoBundle 'jimenezrick/vimerl'
- NeoBundle 'vim-erlang/vim-erlang-tags'
- set runtimepath^=/path/to/vim-erlang-tags
- NeoBundle 'edkolev/erlang-motions.vim'
- NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
+ "NeoBundle 'vim-erlang/vim-erlang-tags'
+ "NeoBundle 'vim-erlang/vim-erlang-runtime'
+ "NeoBundle 'edkolev/erlang-motions.vim'
+ "NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
 
  " HTML5 syntax
  NeoBundle 'othree/html5.vim'
@@ -122,9 +121,8 @@ if has('vim_starting')
  NeoBundle 'xolox/vim-misc'
  "" vim css color
  NeoBundle 'lilydjwg/colorizer'
- "" Perl plugins
- NeoBundle 'vim-perl/vim-perl'
-
+ "" golang
+ NeoBundle 'vim-jp/vim-go-extra'
  call neobundle#end()
 endif
 
@@ -172,9 +170,9 @@ endfunction
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-c>  neocomplete#cancel_popup()
+inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y> neocomplete#close_popup()
+inoremap <expr><C-c> neocomplete#cancel_popup()
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -253,30 +251,66 @@ if executable('ag')
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_rec_max_cache_files = 15000
+  let g:unite_source_rec_min_cache_files = 1000
   ""let g:unite_enable_smart_case
 endif
+
+"------------------------------------
+" Unite-reek, Unite-rails_best_practices
+"------------------------------------
+" {{{
+nnoremap <silent> [unite]<C-R>      :<C-u>Unite -no-quit reek<CR>
+" insertモードで開始
+let g:unite_enable_start_insert=1
+" 大文字小文字を区別しない
+let g:unite_enable_ignore_case=1
+let g:unite_enable_smart_case=1
+" grep 検索
+nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" カーソル位置の単語をgrep検索
+nnoremap <silent> ,cg :<C-u> Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" grep検索結果の再呼出
+nnoremap <silent> ,r :<C-u>UniteResume search-buffer<CR>
+" unite grepにag(The silver searcher)を利用
+if executable('ag')
+  let g:unite_source_grep_command='ag'
+  let g:unite_source_grep_default_opts='--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt=''
+endif
+"unite grep
+"nnoremap <silent> [unite]<C-R><C-R> :<C-u>Unite -no-quit rails_best_practices<CR>
+" }}}
+"}}}
 
 "----------------------------------------
 " vim-ref
 "----------------------------------------
 "{{{
-"let g:ref_open                    = 'split'
-"let g:ref_refe_cmd                = expand('~/.vim/ref/ruby-ref1.9.2/refe-1_9_2')
-" 
-"nnoremap rr :<C-U>Unite ref/refe     -default-action=split -input=
-"nnoremap ri :<C-U>Unite ref/ri       -default-action=split -input=
-" 
-"aug MyAutoCmd
-"  au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>KK :<C-U>Unite -no-start-insert ref/ri   -input=<C-R><C-W><CR>
-"  au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>K  :<C-U>Unite -no-start-insert ref/refe -input=<C-R><C-W><CR>
-"aug END
-
+let g:ref_open                    = 'split'
+let g:ref_refe_cmd                = expand('~/.vim/ref/ruby-ref1.9.2/refe-1_9_2')
+ 
+nnoremap rr :<C-U>Unite ref/refe     -default-action=split -input=
+nnoremap ri :<C-U>Unite ref/ri       -default-action=split -input=
+ 
+aug MyAutoCmd
+  au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>KK :<C-U>Unite -no-start-insert ref/ri   -input=<C-R><C-W><CR>
+  au FileType ruby,eruby,ruby.rspec nnoremap <silent><buffer>K  :<C-U>Unite -no-start-insert ref/refe -input=<C-R><C-W><CR>
+aug END
 "------------------------------------
 " vimerl
 "---------------------------------
-"let g:erlang_force_use_vimerl_indent = 1
+let g:erlang_force_use_vimerl_indent = 1
+let g:erlang_completion_cache = 1
+let g:erlang_skel_header = {
+    \ "author": "tkyshm",
+    \ "owner" : "tkyshm", 
+    \ "year"  : "1988"
+    \ }
 "let g:erlangHightlightBif=1
 "let g:erlang_folding=1
+"set runtimepath^=~/vim/bundle/vim-erlang-tags
+"set runtimepath^=~/.vim/bundle/vim-erlang-runtime/
 
 ""----------------------------------
 " Syntactic
@@ -284,6 +318,7 @@ endif
 let g:syntastic_erlang_checkers=['escript']
 let g:syntastic_ruby_checkers=['mri', 'rubylint', 'rubocop']
 let g:syntastic_haskell_checkers=['ghc-mod', 'hlint', 'hdevtools']
+let g:syntastic_go_checkers = ['go', 'golint', 'govet']
 
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': ['erlang','ruby','haskell'],
@@ -294,17 +329,20 @@ let g:syntastic_mode_map = { 'mode': 'active',
 filetype plugin indent on
 set nocompatible
 set autoindent
-autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+autocmd FileType ruby setl expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent
 autocmd FileType python let g:pydiction_location = '~/.vim/pydiction/complete-dict'
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
 autocmd FileType html setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
-autocmd FileType erlang setl expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent
-"autocmd BufNewFile,BufRead *.erl set nowrap tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+autocmd FileType erlang setl expandtab tabstop=8 shiftwidth=4 softtabstop=4 autoindent
+au BufNewFile,BufRead *.erl setf erlang
+au FileType erlang setlocal errorformat=%f:%l:\ %m
+"autocmd BufNewFile,BufRead *.erl set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
 
 autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
 "au BufNewFile,BufRead *.rb set nowrap tabstop=1 shiftwidth=1 softtabstop=1
 "filetype off
 
@@ -385,8 +423,8 @@ let g:indentLine_char = ':'
 ""--------------------------------------------
 set tags+=.git/tags
 set tags+=.svn/tags
-let g:auto_ctags = 1
-let g:auto_ctags_directory_list = ['.git', '.svn']
+"let g:auto_ctags = 1
+"let g:auto_ctags_directory_list = ['.git', '.svn']
 
 ""--------------------------------------------
 "" Golang Setting
@@ -407,18 +445,10 @@ let g:lua_define_completefunc = 1
 " -------------------------------------------
 " Start up setting
 " -------------------------------------------
+syntax on
 command Vf :VimFiler -split -simple -winwidth=35 -no-quit 
 let g:vimfiler_safe_mode_by_default = 0
-"""""
-" Keybind
-
-syntax on
 set t_Co=256
-"let g:inkpot_black_background=0 
 set background=dark
-let g:solarized_termcolors=256
 colorscheme tkyshm
-""" for terminal user
-"colorscheme molokai
-"let g:molokai_original = 1
-"let g:rehash256 = 1
+
