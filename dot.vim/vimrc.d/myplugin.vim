@@ -1,0 +1,13 @@
+" Return top level directory path of Git project.
+function GitTopDir()
+    return system("git rev-parse --show-toplevel")
+endfunction
+" 
+function UniteFileSearch()
+    if isdirectory(GitTopDir() . "/.git")
+        call Unite -start-insert file_rec/git:--cached:--others:--exclude-standard
+    else
+        call Unite -start-insert file_rec/async:!
+    endif
+endfunction
+
