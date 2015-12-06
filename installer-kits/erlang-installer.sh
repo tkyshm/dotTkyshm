@@ -14,11 +14,9 @@ do
 
       ~/bin/kerl list releases 
       ~/bin/kerl update releases 
-      ~/bin/kerl build 17.3 17.3
-      ~/bin/kerl install 17.3 ~/erlang/17.3
-      ~/bin/kerl build 17.5 17.5
-      ~/bin/kerl install 17.3 ~/erlang/17.5
-      . ~/erlang/17.3/activate
+      ~/bin/kerl build 18.1 18.1
+      ~/bin/kerl install 18.1 ~/erlang/18.1
+      . ~/erlang/18.1/activate
       break
       ;;
     "n" | "N" | [Nn]o )

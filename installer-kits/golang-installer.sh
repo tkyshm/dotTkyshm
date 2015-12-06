@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Install golang
-go_version="1.4.2"
+go_version="1.5.1"
 echo -e "\e[32m Do you want to install golang? (y/n) > "
 while :
 do
@@ -18,7 +18,7 @@ do
       #echo "export GOPATH=$HOME/gocode" >> .zshrc.mine
       #echo "export PATH=$PATH:$GOROOT/bin:$GOPATH/bin" >> .zshrc.mine
       #source ~/.zshrc
-      #go get github.com/nsf/gocode
+      go get github.com/nsf/gocode
       exit 1
       ;;
     "n" | "N" | [Nn]o )
