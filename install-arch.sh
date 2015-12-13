@@ -62,9 +62,6 @@ mkdir -p $HOME/bin
 git clone https://github.com/tkyshm/dotTkyshm.git ~/dotTkyshm
 cd ~/dotTkyshm
 
-## Oh my zsh install
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-
 ## Prezto install
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 setopt EXTENDED_GLOB
@@ -73,22 +70,23 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md\(.N\); do
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
-## dot files copy.
-cp zprezto/zpreztorc $HOME/.zprezto/runcoms/zpreztorc 
-cp dot.vimrc ~/.vimrc
-cp -r dot.vim ~/.vim
+## Install dot files.
 sudo cp profiles/* /etc/zsh
-cp dot.tmux.conf ~/.tmux.conf
-cp dot.kerlrc ~/.kerlrc
-cp -r .git_tmp ~/.git_tmp
-cp dot.Xdefaults ~/.Xdefaults
-cp dot.Xresources ~/.Xresources
 cp dot.xinitrc ~/.xinitrc
-cp dot.compton.conf ~/.compton.conf
-cp dot.gtkrc.mine ~/.gtkrc.mine
-cp dot.gtkrc-2.0 ~/.gtkrc-2.0
-cp -ru dot.config/bspwm ~/.config/
-cp -ru dot.config/sxhkd ~/.config/
+ln -s $SCRIPT_DIR/zprezto/zpreztorc $HOME/.zprezto/runcoms/zpreztorc 
+ln -s $SCRIPT_DIR/dot.vimrc $HOME/.vimrc
+ln -s $SCRIPT_DIR/dot.vim $HOME/.vim
+ln -s $SCRIPT_DIR/dot.tmux.conf $HOME/.tmux.conf
+ln -s $SCRIPT_DIR/dot.kerlrc $HOME/.kerlrc
+ln -s $SCRIPT_DIR/dot.git_tmp $HOME/.git_tmp
+ln -s $SCRIPT_DIR/dot.Xdefaults $HOME/.Xdefaults
+ln -s $SCRIPT_DIR/dot.Xresources $HOME/.Xresources
+ln -s $SCRIPT_DIR/dot.compton.conf $HOME/.compton.conf
+ln -s $SCRIPT_DIR/dot.gtkrc.mine $HOME/.gtkrc.mine
+ln -s $SCRIPT_DIR/dot.gtkrc-2.0 $HOME/.gtkrc-2.0
+ln -s $SCRIPT_DIR/dot.config/bspwm $HOME/.config/bspwm
+ln -s $SCRIPT_DIR/dot.config/sxhkd ~/.config/sxhkd
+
 # background
 mkdir -p ~/Pictures
 wget http://feelgrafix.com/data_images/out/16/907950-triangle-wallpaper.jpg bg001.jpg
@@ -97,13 +95,10 @@ mv bg001.jpg ~/Pictures/
 
 # Fonts Configuration
 $INSTALLER_DIR/fonts-installer.sh $INSTALLER_DIR
+
 ## Install software 
 $INSTALLER_DIR/vim-installer.sh
 $INSTALLER_DIR/erlang-insteller.sh
 $INSTALLER_DIR/golang-installer.sh
 $INSTALLER_DIR/rust-installer.sh
 $INSTALLER_DIR/rbenv-installer.sh
-## Bspwm & sxhd
-
-
-## erlang install

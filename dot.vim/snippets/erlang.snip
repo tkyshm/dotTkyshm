@@ -1,3 +1,20 @@
+snippet lager_compile 
+alias lagacom
+ -compile({parse_transform, lager_transform}).
+
+snippet module
+alias m
+ -module(`expand("%:t:r")`).
+
+snippet eunit
+alias test
+ -include_lib("eunit/include/eunit.hrl").
+
+snippet common test
+alias ct
+ -include_lib("common_test/include/ct.hrl").
+ -export([init_per_suite/1, end_per_suite/1, all/0]).
+
 ## for Webmachine snippet
 snippet webmachine_resource_snippet
 alias wb_r

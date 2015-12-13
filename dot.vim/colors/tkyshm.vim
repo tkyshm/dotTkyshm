@@ -12,7 +12,7 @@ endif
 let colors_name = "tkyshm"
 
 " background
-hi Normal         gui=NONE   guifg=#dddddd   guibg=#343434
+hi Normal         gui=NONE   guifg=#dddddd   guibg=#222222
 hi CursorLine     gui=underline    guibg=#294d73
 
 hi IncSearch      gui=BOLD   guifg=#ffffff   guibg=#cd8b60
