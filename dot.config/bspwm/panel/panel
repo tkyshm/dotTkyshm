@@ -17,7 +17,7 @@ bspc control --subscribe > "$PANEL_FIFO" &
 echo "W" > "$PANEL_FIFO" &
 #while true; do echo "S$(source panel_dzen)" > "$PANEL_FIFO"; sleep 2; done &
 while true; do echo "S$(./panel_system_info)" > "$PANEL_FIFO"; sleep 1; done &
-while true; do echo "C$(date +%H:%M:%S)" > "$PANEL_FIFO"; sleep 2; done &
+while true; do echo "C$(date '+%Y/%m/%d %H:%M:%S')" > "$PANEL_FIFO"; sleep 1; done &
 #echo "T" >  "$PANEL_FIFO" &
 #conky -c ./panel_conky > "$PANEL_FIFO" &
 ./notify_mpd -d &

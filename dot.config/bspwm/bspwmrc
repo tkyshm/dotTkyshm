@@ -39,6 +39,9 @@ bspc rule -a Conky sticky=on manage=off lower=on
 #bspc rule -a astime sticky=on
 bspc rule -a feh floating=on manage=off
 
+# window split setting
+bspc window --presel up
+
 $HOME/.config/bspwm/panel/panel &
 #urxvtc &
 #conky -c $HOME/.config/dzen_bar/.conky_dzen
