@@ -71,7 +71,8 @@ while read -r line ; do
 								;;
 							f*)
 								# free desktop
-								FG=$COLOR_BACKGROUND
+								#FG=$COLOR_BACKGROUND
+								FG=$COLOR_INACTIVE
 								BG=$COLOR_BACKGROUND
 								;;
 							u*)
