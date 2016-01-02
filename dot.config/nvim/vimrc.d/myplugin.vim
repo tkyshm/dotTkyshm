@@ -2,6 +2,7 @@
 function GitTopDir()
     return system("git rev-parse --show-toplevel")
 endfunction
+
 " 
 function UniteFileSearch()
     if isdirectory(GitTopDir() . "/.git")

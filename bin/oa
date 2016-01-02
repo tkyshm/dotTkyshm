@@ -1,26 +1,41 @@
 #!/bin/bash
 
-if [ "$2" != "" ] ; then
-    hub browse $1 $2
-else
+HOST="https://github.com/"
+OPEN_CMD="xdg-open"
+REPO="kayac/nakamap"
+QUERY='?utf8=✓&q='
+
+main() {
     case $1 in
         i)
-            hub browse kayac/nakamap issues
+            $OPEN_CMD "$HOST/$REPO/issues${QUERY}$2"
             ;;
         c)
-            hub browse kayac/nakamap commits
+            $OPEN_CMD "$HOST/$REPO/commits${QUERY}$2"
             ;;
         p)
-            hub browse kayac/nakamap pulls
+            $OPEN_CMD "$HOST/$REPO/pulls${QUERY}$2"
             ;;
         w)
-            hub browse kayac/nakamap wiki
+            $OPEN_CMD "$HOST/$REPO/wiki${QUERY}$2"
+            ;;
+        s)
+            __search $2
+            ;;
+        search)
+            __search $2
             ;;
         infra)
-            hub browse kayac/nakamap labels\/インフラ
+            $OPEN_CMD "$HOST/$REPO/labels/インフラ${QUERY}$2"
             ;;
         *)
-            hub browse kayac/nakamap $1
+            $OPEN_CMD "$HOST/$REPO/$1"
             ;;
     esac
-fi
+}
+
+__search() {
+    $OPEN_CMD "$HOST/$REPO/search${QUERY}${1}&type=issues"
+}
+
+main $@

@@ -47,7 +47,6 @@ autocmd FileType erlang setl expandtab tabstop=8 shiftwidth=4 softtabstop=4 auto
 au BufNewFile,BufRead *.erl setf erlang
 au FileType erlang setlocal errorformat=%f:%l:\ %m
 
-autocmd FileType go autocmd BufWritePre <buffer> Fmt<CR>
 autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
 
@@ -73,9 +72,7 @@ let g:vimfiler_safe_mode_by_default = 0
 syntax on
 set t_Co=256
 set background=dark
+colorscheme umineko 
 " in case t_Co alone doesn't work, add this as well:
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
-let g:airline_theme='kalisi'
-let g:solarized_termcolors=256
-colorscheme umineko 

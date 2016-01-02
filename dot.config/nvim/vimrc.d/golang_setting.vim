@@ -3,4 +3,7 @@
 ""--------------------------------------------
 set rtp+=$GOROOT/misc/vim
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-set completeopt=menu,preview
+set completeopt=menuone,preview
+
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
