@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+HOST="https://metacpan.org/pod"
+OPEN_CMD="xdg-open"
+
+$OPEN_CMD $HOST/$1
+
