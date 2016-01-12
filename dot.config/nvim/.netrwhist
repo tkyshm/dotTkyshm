@@ -1,5 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/tkyshm/.config'
-let g:netrw_dirhist_2='/home/tkyshm/programs/nakamap/web/lib/Nakamap/Push'
-let g:netrw_dirhist_3='/home/tkyshm/go/src/github.com/takyoshi/go-apns2/conf'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/tkyshm/go/src/github.com/tkyshm/apns2/cmd/push_bench'
+let g:netrw_dirhist_2='/home/tkyshm/dotTkyshm/dot.config/nvim/vimrc.d'

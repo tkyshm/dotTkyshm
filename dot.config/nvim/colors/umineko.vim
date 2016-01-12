@@ -4,8 +4,8 @@ let g:colors_name = "umineko"
 hi Normal ctermbg=236 ctermfg=255
 hi CursorLine ctermbg=58 term=none cterm=none
 hi CursorColumn ctermbg=58
-hi NonText ctermbg=237 ctermfg=102
-hi Conceal ctermbg=237 ctermfg=230
+hi NonText ctermbg=236 ctermfg=102
+hi Conceal ctermbg=236 ctermfg=230
 hi Comment ctermfg=254 ctermbg=26
 hi CommentURL cterm=underline ctermfg=69
 hi CommentEmail cterm=underline ctermfg=69
@@ -20,7 +20,7 @@ hi Function ctermfg=213 cterm=bold
 hi Statement cterm=bold ctermfg=213
 hi Conditional cterm=bold ctermfg=228
 hi Repeat cterm=bold ctermfg=110
-hi Label cterm=bold ctermfg=91
+hi Label cterm=bold ctermfg=171
 hi Operator ctermfg=183 cterm=bold
 hi Keyword ctermfg=105 cterm=bold
 hi Exception cterm=bold ctermfg=9

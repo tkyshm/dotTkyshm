@@ -28,6 +28,7 @@ yaourt -S --noconfirm xcb-util xcb-util-keysyms libxcb xcb-util-wm
 yaourt -S --noconfirm fcitx-im fcitx-mozc fcitx-configtool fcitx-qt4 fcitx-gtk2
 # font
 yaourt -S --noconfirm fontforge-git
+yaourt -S --noconfirm otf-inconsolata-dz-powerline
 # performance tool 
 yaourt -S --noconfirm wget htop lsof net-tools iotop sysstat iftop nmon
 yaourt -S --noconfirm tcpdump 
