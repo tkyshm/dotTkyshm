@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/tkyshm/.config'
 let g:netrw_dirhist_2='/home/tkyshm/programs/nakamap/web/lib/Nakamap/Push'
 let g:netrw_dirhist_3='/home/tkyshm/go/src/github.com/takyoshi/go-apns2/conf'
+let g:netrw_dirhist_4='/home/tkyshm/dotTkyshm/dot.config/nvim'
+let g:netrw_dirhist_5='/home/tkyshm/dotTkyshm/dot.config/nvim/colors'
+let g:netrw_dirhist_6='/home/tkyshm/programs/ruby/animeojisan/db/seeds'
+let g:netrw_dirhist_7='/home/tkyshm/programs/ruby/shiori/lib/shiori'
