@@ -20,7 +20,7 @@ hi Function ctermfg=213 cterm=bold
 hi Statement cterm=bold ctermfg=213
 hi Conditional cterm=bold ctermfg=228
 hi Repeat cterm=bold ctermfg=110
-hi Label cterm=bold ctermfg=91
+hi Label cterm=bold ctermfg=171
 hi Operator ctermfg=183 cterm=bold
 hi Keyword ctermfg=105 cterm=bold
 hi Exception cterm=bold ctermfg=9

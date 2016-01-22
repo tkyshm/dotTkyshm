@@ -1,2 +1,4 @@
 *.swp
 /dot.vim/bundle
+*.init.vim-rplugin~
+*.netrwhist
