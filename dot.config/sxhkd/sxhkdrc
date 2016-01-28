@@ -16,6 +16,9 @@ super + w
 super + t
 	bspc desktop -l next
 
+super + ctrl + t
+	bspc window focused -m next
+
 super + b
 	bspc desktop -B
 
