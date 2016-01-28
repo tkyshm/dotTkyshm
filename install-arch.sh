@@ -5,6 +5,7 @@ INSTALLER_DIR=$SCRIPT_DIR/installer-kits
 
 # standard pacakges
 sudo pacman -S --noconfirm ag openssh
+sudo pacman -S --noconfirm xsel xclip neovim
 yaourt -Sy --noconfirm mercurial git zsh lua 
 yaourt -Sy --noconfirm file-roller transmission-gtk feh
 yaourt -Sy --noconfirm ncmpcpp mpd weechat thunar
@@ -40,6 +41,9 @@ yaourt -S --noconfirm zathura terminator ranger
 # Sound packages
 sudo pacman -S --noconfirm alsa-utils asoundconf
 sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa paprefs pavucontrol
+
+# neovim python plugin 
+sudo pip3 install neovim
 
 # lemonbar install
 git clone https://github.com/LemonBoy/bar.git ~/bar
@@ -87,6 +91,7 @@ ln -s $SCRIPT_DIR/dot.gtkrc.mine $HOME/.gtkrc.mine
 ln -s $SCRIPT_DIR/dot.gtkrc-2.0 $HOME/.gtkrc-2.0
 ln -s $SCRIPT_DIR/dot.config/bspwm $HOME/.config/bspwm
 ln -s $SCRIPT_DIR/dot.config/sxhkd ~/.config/sxhkd
+ln -s $SCRIPT_DIR/dot.config/nvim ~/.config/nvim
 
 # background
 mkdir -p ~/Pictures

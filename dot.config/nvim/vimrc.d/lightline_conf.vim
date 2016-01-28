@@ -15,8 +15,8 @@ let g:lightline = {
       \   'modified': 'LightLineModified',
       \   'filename': 'LightLineFilename'
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b3", 'right': "\ue0b1" }
       \ }
 
 function! LightLineModified()
@@ -35,7 +35,7 @@ function! LightLineReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return "⭤"
+    return "\ue0a2"
   else
     return ""
   endif
@@ -45,19 +45,21 @@ function! LightLineFugitive()
   return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
+function! LightLineFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? "\ue0a0" ._ : ''
+  endif
+  return ''
+endfunction
+
 function! LightLineFilename()
   return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
 
-function! LightLineFugitive()
-  if exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
-  endif
-  return ''
-endfunction
+
 
 "let g:lightline = {
 "      \ 'colorscheme': 'solarized',

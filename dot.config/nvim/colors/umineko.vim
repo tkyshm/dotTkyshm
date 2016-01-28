@@ -27,7 +27,7 @@ hi Exception cterm=bold ctermfg=9
 hi PreProc cterm=bold ctermfg=39
 hi Include cterm=bold ctermfg=105
 hi Define cterm=bold ctermfg=105
-hi Macro ctermfg=62
+hi Macro ctermfg=36
 hi PreCondit ctermfg=110
 hi Type ctermfg=226
 hi StorageClass ctermfg=71 cterm=none
