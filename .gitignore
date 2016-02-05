@@ -2,4 +2,4 @@
 /dot.vim/bundle
 *.init.vim-rplugin~
 *.netrwhist
-/dot.config/nvim/bundle/
+/dot.config/nvim/bundle
