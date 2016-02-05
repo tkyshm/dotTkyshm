@@ -65,10 +65,6 @@ function! StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 
-" Start up setting
-command Vf :VimFiler -split -simple -winwidth=35 -no-quit 
-let g:vimfiler_safe_mode_by_default = 0
-
 " colorscheme
 syntax on
 set t_Co=256

@@ -24,6 +24,8 @@ if has('vim_starting')
  NeoBundle 'edkolev/erlang-motions.vim'
  NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
  NeoBundle 'vim-erlang/vim-compot'
+ NeoBundle 'vim-erlang/vim-erlang-skeletons'
+
  " HTML5 syntax
  NeoBundle 'othree/html5.vim'
  " Status Line plugin
