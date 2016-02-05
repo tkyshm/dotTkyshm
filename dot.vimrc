@@ -10,7 +10,6 @@ set encoding=utf-8
 set expandtab 
 set hlsearch
 set incsearch
-set laststatus=4 
 set modifiable
 set nocompatible
 set number 
@@ -20,6 +19,7 @@ set showmatch
 set smarttab
 set smartindent
 set tabstop=1
+set clipboard+=unnamed,autoselect
 
 " filetype
 filetype plugin indent on
@@ -28,9 +28,9 @@ filetype plugin indent on
 autocmd InsertLeave * set nopaste
 
 "" 画面の分割ショートカット
-nnoremap <C-h>o <C-w>s
-nnoremap <C-h>e <C-w>v
-nnoremap <C-h>x <C-w>c
+nnoremap <C-y>o <C-w>s
+nnoremap <C-y>e <C-w>v
+nnoremap <C-y>x <C-w>c
 
 "" autocmd list
 autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
@@ -47,7 +47,6 @@ autocmd FileType erlang setl expandtab tabstop=8 shiftwidth=4 softtabstop=4 auto
 au BufNewFile,BufRead *.erl setf erlang
 au FileType erlang setlocal errorformat=%f:%l:\ %m
 
-autocmd FileType go autocmd BufWritePre <buffer> Fmt<CR>
 autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
 
@@ -65,13 +64,11 @@ function! StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 
-" Start up setting
-command Vf :VimFiler -split -simple -winwidth=35 -no-quit 
-let g:vimfiler_safe_mode_by_default = 0
-
 " colorscheme
 syntax on
 set t_Co=256
 set background=dark
-let g:solarized_termcolors=256
-colorscheme tkyshm
+colorscheme umineko 
+" in case t_Co alone doesn't work, add this as well:
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"

@@ -1,18 +1,17 @@
 """""""""""""""""""""""""""""""""""
 "" Neobundle
 """""""""""""""""""""""""""""""""""
-
 if has('vim_starting')
- set runtimepath+=~/.vim/bundle/neobundle.vim
+ set runtimepath+=~/.config/nvim/bundle/neobundle.vim
  " call neobundle#rc(expand('~/.vim/bundle/'))
  call neobundle#begin(expand('~/.vim/bundle'))
  NeoBundleFetch 'Shougo/neobundle.vim'
- " 
  " Debug plugin
  NeoBundle 'scrooloose/syntastic'
- " originalrepos on git hub
+ NeoBundle 'osyo-manga/vim-watchdogs'
+ NeoBundle 'osyo-manga/shabadou.vim'
  " vim-scripts
- NeoBundle 'vim-scripts/CSApprox'
+ NeoBundle 'freeo/vim-kalisi'
  " sudo.vim
  NeoBundle 'sudo.vim'
  " auto ctags
@@ -20,11 +19,12 @@ if has('vim_starting')
  " QuickRun
  NeoBundle 'thinca/vim-quickrun'
  " for Erlang
- NeoBundle 'jimenezrick/vimerl'
- NeoBundle 'vim-erlang/vim-erlang-tags'
- set runtimepath^=/path/to/vim-erlang-tags
+ NeoBundle 'vim-erlang/vim-erlang-runtime'
+ NeoBundle 'vim-erlang/vim-erlang-compiler'
  NeoBundle 'edkolev/erlang-motions.vim'
  NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
+ NeoBundle 'vim-erlang/vim-compot'
+ NeoBundle 'vim-erlang/vim-erlang-skeletons'
 
  " HTML5 syntax
  NeoBundle 'othree/html5.vim'
@@ -38,7 +38,7 @@ if has('vim_starting')
  NeoBundle 'digitaltoad/vim-jade'
  NeoBundle 'briancollins/vim-jst'
  NeoBundle 'pangloss/vim-javascript'
- "
+ " YankRing
  NeoBundle 'YankRing.vim'
  "" for Rails and ruby
  NeoBundle 'vim-ruby/vim-ruby'
@@ -53,7 +53,16 @@ if has('vim_starting')
        \    },
        \ }
  " 補完 {{{
- NeoBundle 'Shougo/neocomplete'
+ NeoBundle 'Shougo/deoplete.nvim' 
+ if has('nvim')
+   NeoBundleLazy 'Shougo/deoplete.nvim', {
+         \ "autoload": {"insert": 1}}
+ else
+   NeoBundleLazy 'Shougo/neocomplete.vim', {
+         \ "autoload": {"insert": 1}}
+ endif
+ 
+
  NeoBundle 'Shougo/neosnippet'
  NeoBundle 'Shougo/neosnippet-snippets'
 

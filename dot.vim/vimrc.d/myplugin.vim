@@ -2,12 +2,12 @@
 function GitTopDir()
     return system("git rev-parse --show-toplevel")
 endfunction
-" 
+
 function UniteFileSearch()
     if isdirectory(GitTopDir() . "/.git")
-        call Unite -start-insert file_rec/git:--cached:--others:--exclude-standard
+        command Unite -start-insert file_rec/git:--cached:--others:--exclude-standard
     else
-        call Unite -start-insert file_rec/async:!
+        command Unite -start-insert file/async:!
     endif
 endfunction
 
