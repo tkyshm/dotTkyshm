@@ -1,0 +1,8 @@
+#compdef goenv
+
+_goenv() {
+    local versions=`ls /usr/local/goenv`
+    _values $versions
+}
+
+compdef _goenv goenv
