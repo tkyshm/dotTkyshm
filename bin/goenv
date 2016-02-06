@@ -1,24 +1,83 @@
 #!/bin/bash
-version=$1
+goenv_path=/usr/local/goenv
 
-__usage(){
-    echo -e "\e[31m[ERROR] Does not exist version (/usr/local/goenv): go$version"
-    echo -e "\e[39m"
-    echo -e "You have versions:"
-    echo -n -e "\t"
-    echo `ls /usr/local/goenv`
-    echo -e "\e[39m"
-    echo -e " \e[36mNOTE: you must only specify number of version, without 'go' literal."
-    echo -e "\e[39m"
+function goenv() {
+    typeset -a modes
+
+    help() {
+        echo -e "\e[31m[ERROR] Does not exist version (/usr/local/goenv): $version"
+        echo -e "\e[39m"
+        echo -e "You have versions:"
+        echo -n -e "\t"
+        echo `ls /usr/local/goenv`
+        echo -e "\e[39m"
+        echo -e " \e[36mNOTE: you must only specify number of version, without 'go' literal."
+        echo -e "\e[39m"
+    }
+
+    list() {
+        echo `ls $goenv_path`
+    }
+
+    use() {
+        if [[ $# -ne 1 ]] ; then
+            help
+            return
+        fi
+
+        local version=$1
+        if [[ -d /usr/local/goenv/$version ]] ; then 
+            # remove symlink
+            rm -f /usr/local/go 
+            ln -s $goenv_path/$version /usr/local/go
+            echo -n -e "\e[36m"
+            echo -e `go version`
+            echo -n -e "\e[39m"
+        else
+            help 
+        fi
+    }
+
+    case $1 in
+        help)
+            help
+            return 
+            ;;
+        list)
+            list
+            return
+            ;;
+        use)
+            use $2
+            return
+            ;;
+        *)
+            help
+            return
+            ;;
+    esac
 }
 
-if [[ -d /usr/local/goenv/go$version ]] ; then 
-    # remove symlink
-    rm -f /usr/local/go 
-    ln -s /usr/local/goenv/go$version /usr/local/go
-    echo -n -e "\e[36m"
-    echo -e `go version`
-    echo -n -e "\e[39m"
-else
-    __usage
-fi
+goenv $@
+#__usage(){
+#    echo -e "\e[31m[ERROR] Does not exist version (/usr/local/goenv): $version"
+#    echo -e "\e[39m"
+#    echo -e "You have versions:"
+#    echo -n -e "\t"
+#    echo `ls /usr/local/goenv`
+#    echo -e "\e[39m"
+#    echo -e " \e[36mNOTE: you must only specify number of version, without 'go' literal."
+#    echo -e "\e[39m"
+#}
+#
+#if [[ -d /usr/local/goenv/$version ]] ; then 
+#    # remove symlink
+#    rm -f /usr/local/go 
+#    ln -s $goenv_path/$version /usr/local/go
+#    echo -n -e "\e[36m"
+#    echo -e `go version`
+#    echo -n -e "\e[39m"
+#else
+#    __usage
+#fi
+#
