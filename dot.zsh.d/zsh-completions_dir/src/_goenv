@@ -1,8 +1,22 @@
 #compdef goenv
 
 _goenv() {
-    local versions=`ls /usr/local/goenv`
-    _values $versions
+    local -a cmds
+    if (( CURRENT == 2 )) ; then
+        _values 'mode' \
+            'help[display how to use command.]' \
+            'list[lists your go versions.]' \
+            'install[install go.]' \
+            'use[switches the version of your installed go.]'
+    else
+        case $words[CURRENT-1] in
+            use)
+                _values "installed your go versions" `ls $HOME/.goenv/root`
+                ;;
+            help)
+                _values "command list" list install use 
+        esac
+    fi
 }
 
 compdef _goenv goenv
