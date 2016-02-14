@@ -1,10 +1,12 @@
 " Settings
 hi clear
 let g:colors_name = "umineko"
-hi Normal ctermbg=236 ctermfg=255
+hi Normal ctermbg=none ctermfg=255
+"hi Normal ctermbg=236 ctermfg=255
 hi CursorLine ctermbg=58 term=none cterm=none
 hi CursorColumn ctermbg=58
-hi NonText ctermbg=236 ctermfg=102
+hi NonText ctermbg=none ctermfg=102
+"hi NonText ctermbg=236 ctermfg=102
 hi Conceal ctermbg=236 ctermfg=230
 hi Comment ctermfg=254 ctermbg=26
 hi CommentURL cterm=underline ctermfg=69
