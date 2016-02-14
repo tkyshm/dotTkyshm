@@ -28,9 +28,9 @@ filetype plugin indent on
 autocmd InsertLeave * set nopaste
 
 "" 画面の分割ショートカット
-nnoremap <C-y>o <C-w>s
-nnoremap <C-y>e <C-w>v
-nnoremap <C-y>x <C-w>c
+nnoremap <C-h>o <C-w>s
+nnoremap <C-h>e <C-w>v
+nnoremap <C-h>x <C-w>c
 
 "" autocmd list
 autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
