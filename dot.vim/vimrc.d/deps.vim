@@ -2,8 +2,8 @@
 "" Neobundle
 """""""""""""""""""""""""""""""""""
 if has('vim_starting')
- set runtimepath+=~/.config/nvim/bundle/neobundle.vim
- " call neobundle#rc(expand('~/.vim/bundle/'))
+ "set runtimepath+=~/.config/nvim/bundle/neobundle.vim
+ set runtimepath+=~/.vim/bundle/neobundle.vim
  call neobundle#begin(expand('~/.vim/bundle'))
  NeoBundleFetch 'Shougo/neobundle.vim'
  " Debug plugin
@@ -25,6 +25,8 @@ if has('vim_starting')
  NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
  NeoBundle 'vim-erlang/vim-compot'
  NeoBundle 'vim-erlang/vim-erlang-skeletons'
+ " Csearch
+ NeoBundle 'brandonbloom/csearch.vim'
 
  " HTML5 syntax
  NeoBundle 'othree/html5.vim'
