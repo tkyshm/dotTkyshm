@@ -19,7 +19,7 @@ set showmatch
 set smarttab
 set smartindent
 set tabstop=1
-set clipboard+=unnamed,autoselect
+set clipboard=unnamed,autoselect
 
 " filetype
 filetype plugin indent on
