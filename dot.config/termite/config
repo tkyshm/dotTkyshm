@@ -43,14 +43,7 @@ cursor_shape = block
 ## colors from color0 to color254 can be set
 ## Solarized dark color scheme
 
-## Solarized-light
-#[colors]
-#foreground = #657b83
-#foreground_bold = #073642
-##foreground_dim = #888888
-#background = #fdf6e3
-#cursor = #586e75
-#
+
 ## if unset, will reverse foreground and background
 ##highlight = #839496
 #
@@ -77,8 +70,7 @@ cursor_shape = block
 foreground = #ffffff
 foreground_bold = #eee8d5
 #foreground_dim = #888888
-#background = #002b36
-background = rgba(22, 43, 54, 0.85)
+background = rgba(85, 78, 70, 0.95)
 cursor = #a3c1c1
 
 # if unset, will reverse foreground and background
