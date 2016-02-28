@@ -77,8 +77,8 @@ cursor_shape = block
 foreground = #ffffff
 foreground_bold = #eee8d5
 #foreground_dim = #888888
-background = #002b36
-background = rgba(00, 43, 54, 0.85)
+#background = #002b36
+background = rgba(22, 43, 54, 0.85)
 cursor = #a3c1c1
 
 # if unset, will reverse foreground and background
