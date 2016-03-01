@@ -4,6 +4,12 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+# completion
+fpath=(~/.zsh.d/site-functions $fpath)
+fpath=(~/.zsh.d/zsh-completions_dir/src $fpath)
+
+# setting termite
+. /etc/profile.d/vte.sh
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
@@ -45,7 +51,7 @@ export LUA_CPATH='/home/tkyshm/.luarocks/lib/lua/5.3/?.so;/usr/lib/lua/5.3/?.so;
 export JAVA_HOME=/opt/jdk1.8
 
 # Erlang Path
-. ~/erlang/18.0/activate
+. ~/erlang/18.2/activate
 # export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export LC_CTYPE=ja_JP.UTF-8
 
