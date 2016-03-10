@@ -100,7 +100,9 @@ if has('vim_starting')
 
  "" Slim
  NeoBundle 'slim-template/vim-slim'
+
+ "" quick string quote plugins
+ NeoBundle 'tpope/vim-surround'
  call neobundle#end()
 endif
-
 
