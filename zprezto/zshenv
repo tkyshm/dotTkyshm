@@ -48,7 +48,7 @@ export LUA_PATH='/home/tkyshm/.luarocks/share/lua/5.3/?.lua;/home/tkyshm/.luaroc
 export LUA_CPATH='/home/tkyshm/.luarocks/lib/lua/5.3/?.so;/usr/lib/lua/5.3/?.so;/usr/lib/lua/5.3/loadall.so;./?.so'
 
 # Java path
-export JAVA_HOME=/opt/jdk1.8
+#export JAVA_HOME=/opt/jdk1.8
 
 # Erlang Path
 . ~/erlang/18.2/activate

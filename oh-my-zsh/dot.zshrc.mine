@@ -22,9 +22,6 @@ archey3
 export LUA_PATH='/home/tkyshm/.luarocks/share/lua/5.3/?.lua;/home/tkyshm/.luarocks/share/lua/5.3/?/init.lua;/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua'
 export LUA_CPATH='/home/tkyshm/.luarocks/lib/lua/5.3/?.so;/usr/lib/lua/5.3/?.so;/usr/lib/lua/5.3/loadall.so;./?.so'
 
-# Java path
-export JAVA_HOME=/opt/jdk1.8
-
 # Editor setting
 export EDITOR=/usr/local/bin/vim
 
