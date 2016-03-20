@@ -35,7 +35,9 @@ if has('vim_starting')
  " HTML5 syntax
  NeoBundle 'othree/html5.vim'
  " Status Line plugin
- NeoBundle 'itchyny/lightline.vim'
+ "NeoBundle 'itchyny/lightline.vim'
+ NeoBundle 'vim-airline/vim-airline'
+ NeoBundle 'vim-airline/vim-airline-themes'
  NeoBundle 'airblade/vim-gitgutter'
  NeoBundle 'tpope/vim-fugitive'
  " Regex
@@ -104,7 +106,9 @@ if has('vim_starting')
 
  "" Slim
  NeoBundle 'slim-template/vim-slim'
+
+ "" quick string quote plugins
+ NeoBundle 'tpope/vim-surround'
  call neobundle#end()
 endif
-
 
