@@ -7,7 +7,7 @@ set backspace=indent,eol,start
 set cursorcolumn
 set cursorline 
 set encoding=utf-8
-set expandtab 
+set expandtab
 set hlsearch
 set incsearch
 set modifiable
@@ -21,6 +21,7 @@ set smartindent
 set tabstop=1
 set clipboard=unnamed,autoselect
 
+
 " filetype
 filetype plugin indent on
 
@@ -32,6 +33,15 @@ nnoremap <C-h>o <C-w>s
 nnoremap <C-h>e <C-w>v
 nnoremap <C-h>x <C-w>c
 
+"" insert completion
+inoremap { {  }<left><left>
+inoremap [ [  ]<left><left>
+inoremap ( (  )<left><left>
+
+inoremap {<Enter> {}<left><CR><ESC><S-o>
+inoremap [<Enter> []<left><CR><ESC><S-o>
+inoremap (<Enter> ()<left><CR><ESC><S-o>
+
 "" autocmd list
 autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
@@ -42,10 +52,11 @@ autocmd FileType python setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
 
 autocmd FileType html setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
 
-autocmd FileType erlang setl expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent
-autocmd FileType erlang setl expandtab tabstop=8 shiftwidth=4 softtabstop=4 autoindent
-au BufNewFile,BufRead *.erl setf erlang
-au FileType erlang setlocal errorformat=%f:%l:\ %m
+" erlang fmt
+"set equalprg=$HOME/bin/efmt
+autocmd FileType erlang setl expandtab shiftwidth=4 
+au BufNewFile,BufRead *.?rl setf erlang
+"au FileType erlang setlocal errorformat=%f:%l:\ %m
 
 autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent

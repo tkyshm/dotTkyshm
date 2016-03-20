@@ -16,6 +16,10 @@ if has('vim_starting')
  NeoBundle 'sudo.vim'
  " auto ctags
  NeoBundle 'soramugi/auto-ctags.vim'
+ " Vim rooter
+ NeoBundle 'airblade/vim-rooter'
+ " Documentation reference
+ NeoBundle 'thinca/vim-ref'
  " QuickRun
  NeoBundle 'thinca/vim-quickrun'
  " for Erlang

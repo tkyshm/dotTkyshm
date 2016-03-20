@@ -1,12 +1,13 @@
 " Settings
 hi clear
+set background=dark
 let g:colors_name = "umineko"
-hi Normal ctermbg=none ctermfg=255
-"hi Normal ctermbg=236 ctermfg=255
-hi CursorLine ctermbg=58 term=none cterm=none
-hi CursorColumn ctermbg=58
-hi NonText ctermbg=none ctermfg=102
-"hi NonText ctermbg=236 ctermfg=102
+"hi Normal ctermbg=none ctermfg=255
+hi Normal ctermbg=236 ctermfg=255 guibg=#38444e guifg=#eee
+hi CursorLine ctermbg=58 term=none cterm=none guibg=#766
+hi CursorColumn ctermbg=58 guibg=#766
+"hi NonText ctermbg=none ctermfg=102
+hi NonText ctermbg=236 ctermfg=102 guibg=#38444e guifg=#eee
 hi Conceal ctermbg=236 ctermfg=230
 hi Comment ctermfg=254 ctermbg=26
 hi CommentURL cterm=underline ctermfg=69
@@ -88,6 +89,3 @@ hi javaScript ctermfg=151
 hi DjangoBlock ctermfg=35 cterm=none
 hi CtrlPMatch ctermbg=220 ctermfg=16
 hi TaglistTagName gui=bold ctermfg=169 
-" for the reason behind this, see
-" https://github.com/tomasr/molokai/issues/22
-set background=dark
