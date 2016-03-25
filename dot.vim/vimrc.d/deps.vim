@@ -16,8 +16,6 @@ if has('vim_starting')
  NeoBundle 'sudo.vim'
  " auto ctags
  NeoBundle 'soramugi/auto-ctags.vim'
- " Vim rooter
- NeoBundle 'airblade/vim-rooter'
  " Documentation reference
  NeoBundle 'thinca/vim-ref'
  " QuickRun
@@ -38,8 +36,11 @@ if has('vim_starting')
  "NeoBundle 'itchyny/lightline.vim'
  NeoBundle 'vim-airline/vim-airline'
  NeoBundle 'vim-airline/vim-airline-themes'
+ " Git plugins
  NeoBundle 'airblade/vim-gitgutter'
  NeoBundle 'tpope/vim-fugitive'
+ NeoBundle 'cohama/agit.vim'
+ NeoBundle 'rhysd/committia.vim'
  " Regex
  NeoBundle 'terryma/vim-multiple-cursors'
  " javascript jade
