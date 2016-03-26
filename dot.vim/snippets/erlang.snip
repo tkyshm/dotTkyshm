@@ -1,3 +1,65 @@
+snippet lager_sysconf
+snippet lagerconf
+ {lager, [
+ {log_root, "./log/"},
+     {handlers, [
+         {lager_console_backend, [info,
+             {lager_default_formatter,
+                 [
+                     "level:", severity, 
+                     "\tnode:", node,
+                     "\tpid:",pid,
+                     "\tmsg:\"", message, "\"",
+                     "\tmodule:", module,
+                     "\tfunction:", function,
+                     "\tline:", line,
+                     "\ttimestamp:", date, "T", time,
+                     "\n"
+                 ]
+             }
+         ]},
+         {lager_file_backend, [
+             {file, "errorl.log"}, 
+             {level, error}
+         ]},
+         {lager_file_backend, [{file, "console.log"}, 
+             {level, info},
+             {formatter, lager_default_formatter},
+             {formatter_config, 
+                 [   
+                     "level:", severity, 
+                     "\tnode:", node,
+                     "\tpid:",pid,
+                     "\tmsg:\"", message, "\"",
+                     "\tmodule:", module,
+                     "\tfunction:", function,
+                     "\tline:", line,
+                     "\ttimestamp:", date, "T", time,
+                     "\n"
+                 ]
+             }
+         ]}
+     ]}
+ ]}
+
+snippet cowboy_disp
+alias cwdisp
+ Dispatch = cowboy_router:compile([
+     { '_', 
+         [ { "${1:pattern}", ${2:handler}, [${3:opts}] } ]
+     }
+ ]),
+
+snippet cowboy_spec
+alias cwspec
+ ranch:child_spec(${1}
+     , ${2:connection_pool_size}
+     , ranch_tcp
+     , [ { port, ${3:port_num} } ]
+     , cowboy_protocol 
+     , [ { env, [ { dispatch, ${4:dispatcher} } ] } ]
+ ),
+
 snippet cowboy_websocket
 alias cwws
   -module(`expand('%:t:r')`).
