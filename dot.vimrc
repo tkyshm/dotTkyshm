@@ -34,13 +34,18 @@ nnoremap <C-h>e <C-w>v
 nnoremap <C-h>x <C-w>c
 
 "" insert completion
-inoremap { {  }<left><left>
-inoremap [ [  ]<left><left>
-inoremap ( (  )<left><left>
+inoremap { {}<left>
+inoremap [ []<left>
+inoremap ( ()<left>
 
 inoremap {<Enter> {}<left><CR><ESC><S-o>
 inoremap [<Enter> []<left><CR><ESC><S-o>
 inoremap (<Enter> ()<left><CR><ESC><S-o>
+
+"" buffer motion
+nnoremap <silent>bn :bn<CR> 
+nnoremap <silent>bd :bd<CR> 
+nnoremap <silent>bp :bp<CR> 
 
 "" autocmd list
 autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
