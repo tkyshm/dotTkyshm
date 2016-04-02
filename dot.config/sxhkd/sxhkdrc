@@ -3,9 +3,9 @@
 #
 
 # Toggle panels
-super + q
- {pkill panel; pkill cat; pkill conky; bspc config top_padding 0 ,\
- bspc config top_padding 14; $HOME/.config/bspwm/panel/panel & }
+#super + q
+# {pkill panel; pkill cat; pkill conky; bspc config top_padding 0 ,\
+# bspc config top_padding 14; $HOME/.config/bspwm/panel/panel & }
 
 super + shift + q
 	bspc quit
