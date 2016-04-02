@@ -58,10 +58,8 @@ autocmd FileType python setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
 autocmd FileType html setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
 
 " erlang fmt
-"set equalprg=$HOME/bin/efmt
 autocmd FileType erlang setl noexpandtab shiftwidth=4 tabstop=4
 au BufNewFile,BufRead *.?rl setf erlang
-"au FileType erlang setlocal errorformat=%f:%l:\ %m
 
 autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent

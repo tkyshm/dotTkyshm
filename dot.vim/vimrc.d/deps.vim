@@ -88,7 +88,8 @@ if has('vim_starting')
  NeoBundle 'rhysd/rust-doc.vim'
 
  " Indent visualization
- NeoBundle 'Yggdroot/indentLine'
+ "NeoBundle 'Yggdroot/indentLine'
+ NeoBundle 'nathanaelkane/vim-indent-guides'
 
  "" Lua 
  NeoBundle 'xolox/vim-lua-ftplugin'
