@@ -19,7 +19,7 @@ set showmatch
 set smarttab
 set smartindent
 set tabstop=1
-set clipboard=unnamed,autoselect
+set clipboard=unnamedplus,autoselect
 
 
 " filetype
@@ -59,7 +59,7 @@ autocmd FileType html setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
 
 " erlang fmt
 "set equalprg=$HOME/bin/efmt
-autocmd FileType erlang setl expandtab shiftwidth=4 
+autocmd FileType erlang setl noexpandtab shiftwidth=4 tabstop=4
 au BufNewFile,BufRead *.?rl setf erlang
 "au FileType erlang setlocal errorformat=%f:%l:\ %m
 

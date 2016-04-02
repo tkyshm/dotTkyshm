@@ -27,6 +27,7 @@ if has('vim_starting')
  NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
  NeoBundle 'vim-erlang/vim-compot'
  NeoBundle 'vim-erlang/vim-erlang-skeletons'
+ NeoBundle 'vim-erlang/vim-dialyzer'
  " Csearch
  NeoBundle 'brandonbloom/csearch.vim'
 
