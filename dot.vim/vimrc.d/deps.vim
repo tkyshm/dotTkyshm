@@ -28,8 +28,11 @@ if has('vim_starting')
  NeoBundle 'vim-erlang/vim-compot'
  NeoBundle 'vim-erlang/vim-erlang-skeletons'
  NeoBundle 'vim-erlang/vim-dialyzer'
- " Csearch
- NeoBundle 'brandonbloom/csearch.vim'
+ NeoBundle 'vim-erlang/vim-erlang-tags'
+
+ " Quickfix
+ NeoBundle 'cohama/vim-hier'
+ NeoBundle "dannyob/quickfixstatus"
 
  " HTML5 syntax
  NeoBundle 'othree/html5.vim'
@@ -109,6 +112,9 @@ if has('vim_starting')
 
  "" Slim
  NeoBundle 'slim-template/vim-slim'
+
+ "" Crystal lang
+ NeoBundle 'rhysd/vim-crystal'
 
  "" quick string quote plugins
  NeoBundle 'tpope/vim-surround'

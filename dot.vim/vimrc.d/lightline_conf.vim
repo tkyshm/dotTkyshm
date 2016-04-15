@@ -112,5 +112,3 @@
 "       \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
 "       \ ('' != MyModified() ? ' ' . MyModified() : '')
 "endfunction
-
-

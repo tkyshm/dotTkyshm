@@ -50,6 +50,8 @@ nnoremap <silent>bp :bp<CR>
 "" autocmd list
 autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
+autocmd FileType yaml setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+
 autocmd FileType python let g:pydiction_location = '~/.vim/pydiction/complete-dict'
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
