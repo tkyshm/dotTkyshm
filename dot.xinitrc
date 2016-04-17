@@ -4,6 +4,8 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 DEFAULT_SESSION=bspwm
 
+export BSPWM_SHOW_BATTERY=1
+
 # input and output setting
 xrdb ~/.Xresources 
 xset +fp ~/.fonts
