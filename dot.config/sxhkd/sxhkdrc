@@ -13,6 +13,9 @@ super + shift + q
 super + w
 	bspc window -c
 
+super + ctrl + l
+ xscreensaver-command --lock
+
 super + t
 	bspc desktop -l next
 
