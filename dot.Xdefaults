@@ -20,7 +20,7 @@ URxvt*keysym.End: \033[4~
 !------!
 
 URxvt*perl-lib:             /usr/pkg/lib/urxvt/perl/
-URxvt*perl-ext-common:      default,clipboard
+URxvt*perl-ext-common:      default,clipboard,tabbed
 URxvt*keysym.M-c:           perl:clipboard:copy
 URxvt*keysym.M-v:           perl:clipboard:paste
 URxvt*clipboard.copycmd:    pbcopy
@@ -29,7 +29,6 @@ URxvt*keysym.M-u:           perl:url-select:select_next
 Urxvt-url-select.launcher:  open -a safari
 URxvt*url-select.underline: true
 URxvt*iso14755:             False
-
 
 ! =  Appearance = !
 
@@ -43,12 +42,15 @@ URxvt*internalBorder:	2
 URxvt*cursorColor: 	#F2C2CA
 URxvt*scrollBar:	false
 URxvt*termName: rxvt-256color
+URxvt*internalBorder: 10
 
 !URxvt*font: xft:Inconsolata:pixelsize=14
 !URxvt*boldFont: xft:Inconsolata:pixelsize=14
-URxvt*font: xft:Inconsolata for Powerline:pixelsize=12;antialias=true
-URxvt*boldFont: xft:Inconsolata for Powerline:pixelsize=12;antialias=true
+URxvt*font: xft:Hack:pixelsize=11;antialias=true
+URxvt*boldFont: xft:Hack:pixelsize=11;antialias=true
 
+URxvt.urlLauncher     : google-chrome-stable
+URxvt.matcher.button  : 1
 
 !--------------!
 ! Xft Settings !
@@ -68,37 +70,43 @@ URxvt*boldFont: xft:Inconsolata for Powerline:pixelsize=12;antialias=true
 
 ! -- light -- !
 
-URxvt*background: #262020
-URxvt*foreground: #d2d2d2
+URxvt*background: #414136
+URxvt*foreground: #eeeeee
 
 ! black
 URxvt*color15  : #66666a
 URxvt*color7  : #30303a
 
 ! red
-URxvt*color1: #da637e
+URxvt*color1: #fa938e
 URxvt*color9: #f0a3a3
 
 ! yellow/orange
-URxvt*color3: #ab93b9
-URxvt*color11: #cbb6d7
+URxvt*color3: #fbd399
+URxvt*color11: #fbf6a7
 
 ! purple
-URxvt*color5: #ac8ac1
-URxvt*color13: #d2bbe4
+URxvt*color5: #ecaaf1
+URxvt*color13: #f2cbf4
 
 ! blue
-URxvt*color4: #7787a3
-URxvt*color12: #44c3fb
+URxvt*color4: #67a7fe
+URxvt*color12: #84c8ff
 
 ! green
-URxvt*color2 : #167534
+URxvt*color2 : #36e564
 URxvt*color10  : #58F698
 
 ! cyan
-URxvt*color6 : #63918b
-URxvt*color14  : #92b5b0
+URxvt*color6 : #93f1eb
+URxvt*color14  : #b2eefe
 
 ! white
-URxvt*color0 : #b1b8c3
-URxvt*color8  : #cdcdcd
+URxvt*color0 : #f1f8f3
+URxvt*color8  : #fdfdfd
+
+! tabs color
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: 7
+URxvt.tabbed.tab-fg: 10
+URxvt.tabbed.tab-bg: 7
