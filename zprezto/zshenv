@@ -45,6 +45,7 @@ alias gpul='git pull'
 alias gpus='git push'
 alias globi='hub browse kayac/nakamap'
 alias ojisan='cd $HOME/programs/ruby/animeojisan'
+alias u27='cd $HOME/programs/erlang/u27'
 alias r3='rebar3'
 
 # Lua path
