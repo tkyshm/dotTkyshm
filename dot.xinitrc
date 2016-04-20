@@ -6,8 +6,10 @@ DEFAULT_SESSION=bspwm
 
 export BSPWM_SHOW_BATTERY=1
 
+# setting urxvt 
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
 # input and output setting
-xrdb ~/.Xresources 
 xset +fp ~/.fonts
 xset fp rehash 
 
