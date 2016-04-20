@@ -18,6 +18,7 @@ yaourt -S --noconfirm tint2 xdotool vnstat docky mpc mpd
 yaourt -S --noconfirm smc pm
 yaourt -S --noconfirm otf-ipaexfont
 sudo pacman -S --noconfirm gmrun
+sudo pacman -S --noconfirm xorg-xrdb urxvt-perls
 # for conky panel
 yaourt -S --noconfirm acpi bc
 # You must check VIDEO CARD
