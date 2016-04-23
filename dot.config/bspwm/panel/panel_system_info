@@ -13,11 +13,11 @@ MEM_INFO="  ^fg(#36D7B7)^i(./dzen_icons/mem.xbm) ^fg(#F8F8F8)$MEM_USAGE($MEM_PER
 USER_NAME=`whoami`
 USER_FIELD="^fg(#F2F1EF)^i(./dzen_icons/corner.xbm) ${USER_NAME}"
 
-BATTERY_INFO=" ^fg(#EE8578)^i(./dzen_icons/battery.xbm) ^fg(#F8F8F8)$BATTERY_DISCHARG"
+BATTERY_INFO=" ^fg(#EE8578)^i(./dzen_icons/battery.xbm)"
 
-if [[ $BSPWM_SHOW_BATTERY == 0 ]] ; then
+if [[ $BSPWM_SHOW_BATTERY = 0 ]] ; then
     echo -e "   ^fg(#F4D03F)^i(./dzen_icons/corner.xbm) bspwm > ${USER_FIELD} > $CPU_INFO > $MEM_INFO "
 else 
     BATTERY_DISCHARG=`acpi -b | awk -F ", " '{print $2}' `
-    echo -e "   ^fg(#F4D03F)^i(./dzen_icons/corner.xbm) bspwm > ${USER_FIELD} > $CPU_INFO > $MEM_INFO > $BATTERY_INFO "
+    echo -e "   ^fg(#F4D03F)^i(./dzen_icons/corner.xbm) bspwm > ${USER_FIELD} > $CPU_INFO > $MEM_INFO > $BATTERY_INFO ^fg(#F8F8F8)$BATTERY_DISCHARG"
 fi
