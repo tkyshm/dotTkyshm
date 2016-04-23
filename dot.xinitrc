@@ -37,6 +37,9 @@ fcitx -d                          # input method
 pulseaudio --start                # sound envrionment
 sxhkd &                           # keybind for bspwm
 
+# urxvt daemon 
+urxvtd -q -f -o
+
 ## SSH Agents
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa_work 
