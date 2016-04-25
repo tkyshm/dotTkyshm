@@ -1,0 +1,44 @@
+#!/bin/bash
+source $(dirname $0)/config
+
+# WIFI ICONS
+# 
+
+SSID=`iw wlp3s0 link | grep SSID | sed -e 's/.*SSID: \(.*\)/\1/g'`
+if [[ ${#SSID} -ge 10 ]] ; then
+    cnt=${#SSID}
+    tail_start=$((cnt - 4))
+    SSID_HEAD=`echo $SSID | cut -c 1-4`
+    SSID_TAIL=`echo $SSID | cut -c ${tail_start}-${cnt}`
+    SSID="${SSID_HEAD}...${SSID_TAIL}"
+elif [[ ${#SSID} = 0 ]] ; then
+    SSID="----------"
+fi
+
+QUAL=`iwconfig wlp3s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $3}'`
+MAX=`iwconfig wlp3s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $4}'`
+PERC=`echo "$QUAL*100/$MAX" | bc`
+
+icon=""
+case $PERC in
+    [0-4])
+        icon="^i(./dzen_icons/wireless1.xbm)"
+        ;;
+    [4-9])
+        icon="^i(./dzen_icons/wireless1.xbm)"
+        ;;
+    [2-3]*)
+        icon="^i(./dzen_icons/wireless2.xbm)"
+        ;;
+    [4-5]*)
+        icon="^i(./dzen_icons/wireless3.xbm)"
+        ;;
+    [6-7]*)
+        icon="^i(./dzen_icons/wireless4.xbm)"
+        ;;
+    *)
+        icon="^i(./dzen_icons/wireless5.xbm)"
+        ;;
+esac
+
+echo "^fg(#31f351)$icon $SSID"
