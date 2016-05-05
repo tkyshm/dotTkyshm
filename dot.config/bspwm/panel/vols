@@ -1,0 +1,27 @@
+#!/bin/bash
+panel_vol() {
+    local volStat=$(amixer get Master | tail -n 1 | cut -d '[' -f 3 | sed 's/].*//g')
+    local volume=$(amixer get Master | tail -n 1 | cut -d'[' -f 2 | sed -e 's/%.*//g')
+    local head="^fg(#19B5FE)"
+    # checks status is muted
+    if [[ $volStat = 'on' ]] ; then
+        if [[ $volume -ge 0 && $volume -le 25 ]] ; then
+            local image="^i(./dzen_icons/volume25.xbm)"
+            echo "$head $image $volume % "
+        elif [[ $volume -ge 26 && $volume -le 50 ]] ; then
+            local image="^i(./dzen_icons/volume50.xbm)"
+            echo "$head $image $volume %"
+        elif [[ $volume -ge 51 && $volume -le 75 ]] ; then
+            local image="^i(./dzen_icons/volume75.xbm)"
+            echo "$head $image $volume %"
+        elif [[ $volume -ge 76 && $volume -le 100 ]] ; then
+            local image="^i(./dzen_icons/volume100.xbm)"
+            echo "$head $image $volume %"
+        fi
+    else 
+        local image="^i(./dzen_icons/volume0.xbm)"
+        echo "$head $image $volume"
+    fi
+}
+
+panel_vol 

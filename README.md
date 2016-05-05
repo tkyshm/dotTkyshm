@@ -6,7 +6,7 @@
 * zsh
  > dot.zsh.d、dot.zshrcはzshの初期設定用のファイル
 * urxvt
- > dot.Xdefaultsはurxvtの設定ファイル
+ > dot.Xresourcesはurxvtの設定ファイル
 * vim
  > dot.vimrc 
 

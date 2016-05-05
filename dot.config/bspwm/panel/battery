@@ -1,0 +1,34 @@
+#!/bin/bash
+source $(dirname $0)/config
+
+BAT=`acpi -b | awk '{gsub(/%,/,""); print $4}' | sed 's/%//g'`
+STATUS=`acpi -b | awk '{gsub(/,/,""); print $3}'`
+
+# Set Icon
+icon=""
+bat_color="^fg(#F4D03F)"
+if [[ $STATUS = "Charging" ]]; then
+    icon="^i(./dzen_icons/ac_01.xbm)"
+elif [[ $BAT -lt 10 ]]; then
+    icon="^i(./dzen_icons/battery10.xbm)"
+elif [[ $BAT -lt 20 ]]; then
+    icon="^i(./dzen_icons/battery20.xbm)"
+elif [[ $BAT -lt 30 ]]; then
+    icon="^i(./dzen_icons/battery30.xbm)"
+elif [[ $BAT -lt 40 ]]; then
+    icon="^i(./dzen_icons/battery40.xbm)"
+elif [[ $BAT -lt 50 ]]; then
+    icon="^i(./dzen_icons/battery40.xbm)"
+elif [[ $BAT -lt 60 ]]; then
+    icon="^i(./dzen_icons/battery40.xbm)"
+elif [[ $BAT -lt 70 ]]; then
+    icon="^i(./dzen_icons/battery70.xbm)"
+elif [[ $BAT -lt 80 ]]; then
+    icon="^i(./dzen_icons/battery80.xbm)"
+else
+    icon="^i(./dzen_icons/battery90.xbm)"
+fi
+s="«"
+
+# Create Bar
+echo "${bat_color}$icon ${BAT}%"

@@ -13,12 +13,12 @@ nnoremap <silent> ,g :<C-u>Unite -start-insert grep:. -buffer-name=search-buffer
 nnoremap <silent> ,cg :<C-u>Unite -start-insert grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
 
-let g:unite_source_rec_max_cache_files = 20000
+let g:unite_source_file_rec_max_cache_files = 20000
 "=====================================
 " Unite ag
 "=====================================
-
 if executable('ag')
+  let g:unite_source_rec_async_command = 'ag'
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
