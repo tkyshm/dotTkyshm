@@ -16,24 +16,39 @@ URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt*keysym.M-u:           perl:url-select:select_next
+URxvt*keysym.M-u:             perl:url-select:select_next
+URxvt.keysym.Control-t: perl:tabbedex:new_tab
+URxvt.keysym.Control-Tab: perl:tabbedex:next_tab
+URxvt.keysym.Control-Shift-Tab: perl:tabbedex:prev_tab
+URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
+URxvt.tabbed.no-tabbedex-keys: true
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
+!----------!
+! tabbedex !
+!----------!
+URxvt.tabbed.reopen-on-close: yes
+URxvt.tabbed.new-button: true
 
 !------!
 ! Perl !
 !------!
 
 URxvt*perl-lib:             /usr/pkg/lib/urxvt/perl/
-URxvt*perl-ext-common:      default,clipboard,tabbed,font-size
+URxvt*perl-ext-common:      default,clipboard,tabbedex,xim-onthespot,font-size,resize-font
 URxvt*clipboard.copycmd:    pbcopy
 URxvt*clipboard.pastecmd:   pbpaste
 Urxvt-url-select.launcher:  xdg-open
 URxvt*url-select.underline: true
-URxvt*iso14755:             False
-URxvt.clipboard.copycmd:  xsel -ib
-URxvt.clipboard.pastecmd: xsel -ob
+URxvt.iso14755:             False
+URxvt.iso14755_52:          False
+URxvt.clipboard.copycmd:    xsel -ib
+URxvt.clipboard.pastecmd:   xsel -ob
 
 ! Input Method
 URxvt.inputMethod: fcitx
+URxvt.preeditType: OnTheSpot
 
 ! =  Appearance = !
 URxvt*depth: 32
