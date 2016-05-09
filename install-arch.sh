@@ -11,14 +11,13 @@ yaourt -Sy --noconfirm file-roller transmission-gtk feh
 yaourt -Sy --noconfirm ncmpcpp mpd weechat thunar
 yaourt -S --noconfirm tcl tcllib aspell
 yaourt -S --noconfirm sound-theme-freedesktop 
-yaourt -Sy --noconfirm scrot feh rxvt-unicode dzen2 conky
+yaourt -Sy --noconfirm scrot feh dzen2 conky
 yaourt -Sy --noconfirm bspwm-git sxhkd-git
 yaourt -Sy --noconfirm compton dmenu xorg-server unclutter xcalib
 yaourt -S --noconfirm tint2 xdotool vnstat docky mpc mpd 
 yaourt -S --noconfirm smc pm
 yaourt -S --noconfirm otf-ipaexfont
 sudo pacman -S --noconfirm gmrun
-sudo pacman -S --noconfirm xorg-xrdb urxvt-perls
 # for conky panel
 yaourt -S --noconfirm acpi bc
 # You must check VIDEO CARD
@@ -39,6 +38,9 @@ yaourt -S --noconfirm numix-circle-icon-theme-git numix-themes-git
 yaourt -S --noconfirm gtk-chtheme gtk-theme-switch2 gtk2_prefs
 # other applications
 yaourt -S --noconfirm zathura terminator ranger
+# terminal emulator
+yaourt -S --noconfirm terminix gtkd rxvt-unicode
+sudo pacman -S --noconfirm xorg-xrdb urxvt-perls
 # Sound packages
 sudo pacman -S --noconfirm alsa-utils asoundconf
 sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa paprefs pavucontrol

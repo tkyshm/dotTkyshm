@@ -98,8 +98,9 @@ super + {y,u,i,o}
 # wm independent hotkeys
 #
 super + Return
-#  terminator
-  urxvtc
+ terminator
+#  termite
+#  urxvtc
 
 ctrl + 9
  dmenu_run
