@@ -37,14 +37,8 @@ while read -r line ; do
 			# system infos output
 			sys_infos="${line#?}"
 			;;
-  V*)
-			vol_infos="${line#?}"
-   ;;
-  B*)
-   bat_infos="${line#?}"
-   ;;
-  N*)
-   net_infos="${line#?}"
+  R*)
+   right_infos="${line#?}"
    ;;
 		W*)
 			# bspwm internal state
@@ -102,9 +96,7 @@ while read -r line ; do
 			IFS=$NORMIFS
 			;;
 	esac
- bar="$sys_infos^p(_CENTER)^p(-105)$wm_infos"
- bar="$bar ^p(_RIGHT)^p(-130)^fg()^fg($COLOR_ICON)^i(${ICON}clock.xbm) ^fg()$clock"
- bar="$bar ^p(-200)^fg()$net_infos^p(-100)^fg()$vol_infos^p(-70)^fg()$bat_infos"
+ bar="$sys_infos^p(_CENTER)^p(-105)$wm_infos $right_infos"
  printf "%s\n" "$bar"
 done
 

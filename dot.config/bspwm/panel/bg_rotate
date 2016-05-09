@@ -3,6 +3,7 @@
 min=$(expr `date +%M`)
 sec=$(expr `date +%S`)
 if [ $min -eq 0 -a $sec -eq 0 ] ; then
-  bgnum=$((1 + RANDOM % 13))
+  bgnum=$((1 + RANDOM % 10))
   feh --bg-fill --no-xinerama $HOME/Pictures/bg${bgnum}.jpg
+  sleep 1
 fi

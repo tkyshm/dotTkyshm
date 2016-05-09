@@ -28,7 +28,6 @@ elif [[ $BAT -lt 80 ]]; then
 else
     icon="^i(./dzen_icons/battery90.xbm)"
 fi
-s="«"
 
 # Create Bar
 echo "${bat_color}$icon ${BAT}%"

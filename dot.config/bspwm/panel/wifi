@@ -2,7 +2,6 @@
 source $(dirname $0)/config
 
 # WIFI ICONS
-# 
 
 SSID=`iw wlp3s0 link | grep SSID | sed -e 's/.*SSID: \(.*\)/\1/g'`
 if [[ ${#SSID} -ge 10 ]] ; then
