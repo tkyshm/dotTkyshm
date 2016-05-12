@@ -17,7 +17,7 @@ yaourt -Sy --noconfirm compton dmenu xorg-server unclutter xcalib
 yaourt -S --noconfirm tint2 xdotool vnstat docky mpc mpd 
 yaourt -S --noconfirm smc pm
 yaourt -S --noconfirm otf-ipaexfont
-sudo pacman -S --noconfirm gmrun
+sudo pacman -S --noconfirm gmrun dunst
 # for conky panel
 yaourt -S --noconfirm acpi bc
 # You must check VIDEO CARD
@@ -37,7 +37,7 @@ yaourt -S --noconfirm tcpdump
 yaourt -S --noconfirm numix-circle-icon-theme-git numix-themes-git
 yaourt -S --noconfirm gtk-chtheme gtk-theme-switch2 gtk2_prefs
 # other applications
-yaourt -S --noconfirm zathura terminator ranger
+yaourt -S --noconfirm zathura terminator ranger 
 # terminal emulator
 yaourt -S --noconfirm terminix gtkd rxvt-unicode
 sudo pacman -S --noconfirm xorg-xrdb urxvt-perls
