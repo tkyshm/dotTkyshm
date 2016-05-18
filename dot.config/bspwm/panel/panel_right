@@ -8,4 +8,4 @@ VOLS=$($PWD/vols)
 BATT=$($PWD/battery)
 CLOCK=$(date '+%Y/%m/%d %H:%M:%S')
 
-echo "^p(_RIGHT)^p(-290)$BATT $VOLS $WIFI ^fg($COLOR_ICON)^i(${ICON}clock.xbm)$CLOCK"
+echo "^p(_RIGHT)^p(-290)$BATT $VOLS $WIFI ^fg(#fff)^i(${ICON}clock.xbm) $CLOCK"

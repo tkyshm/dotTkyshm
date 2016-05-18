@@ -1,5 +1,5 @@
 [global]
-    font = Monospace 8
+    font = Hack 8
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -64,7 +64,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+20"
+    geometry = "350x30-30+20"
     
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -73,7 +73,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 0
+    transparency = 10
     
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -139,7 +139,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
     
     # Browser for opening urls in context menu.
-    browser = /usr/bin/firefox -new-tab
+    browser = xdg-open
 
     # Align icons left/right/off
     icon_position = off
@@ -148,8 +148,8 @@
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 [frame]
-    width = 3
-    color = "#aaaaaa"
+    width = 1
+    color = "#efefef"
 
 [shortcuts]
 
@@ -159,7 +159,7 @@
     # Xev might be helpful to find names for keys.
     
     # Close notification.
-    close = ctrl+space
+    close = ctrl+shift+comma
     
     # Close all notifications.
     close_all = ctrl+shift+space
@@ -176,16 +176,16 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#222222"
-    foreground = "#888888"
-    timeout = 10
-
-[urgency_normal]
-    background = "#285577"
     foreground = "#ffffff"
     timeout = 10
 
+[urgency_normal]
+    background = "#efefef"
+    foreground = "#323263"
+    timeout = 10
+
 [urgency_critical]
-    background = "#900000"
+    background = "#e02020"
     foreground = "#ffffff"
     timeout = 0
 
