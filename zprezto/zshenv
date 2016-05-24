@@ -63,10 +63,10 @@ export LC_CTYPE=ja_JP.UTF-8
 
 # Golang path
 export GOROOT=/usr/local/go
-export GOPATH=/home/tkyshm/gocode
+export GOPATH=/home/tkyshm/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # PATH
-export PATH=$PATH:/opt/jdk1.8/bin:/usr/local/bin:/home/tkyshm/bin/:/home/tkyshm/.rbenv/bin:/usr/bin:/opt/jdk1.8/bin:/usr/local/go/bin:/home/tkyshm/gocobe/bin:/bin:/usr/sbin/:::/usr/local/go/bin:/home/tkyshm/gocobe/bin
-export PATH=$PATH:$HOME/.anyenv/bin
+export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/usr/local/node/node-v0.12.2/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
