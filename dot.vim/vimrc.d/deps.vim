@@ -129,6 +129,11 @@ if has('vim_starting')
  "" Crystal lang
  NeoBundle 'rhysd/vim-crystal'
 
+ "" Markdown
+ NeoBundle 'plasticboy/vim-markdown'
+ NeoBundle 'kannokanno/previm'
+ NeoBundle 'tyru/open-browser.vim'
+
  "" quick string quote plugins
  NeoBundle 'tpope/vim-surround'
  call neobundle#end()
