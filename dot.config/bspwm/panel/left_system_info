@@ -1,0 +1,20 @@
+#!/bin/bash
+PWD=$(dirname $(readlink -f $0))
+source $PWD/config
+
+period=15
+
+while : 
+do
+    # left_info
+    left_info="L"
+    MEM_USAGE=`free -h | grep Mem |tail -n 1 | gawk '{print $3}'`
+    MEM_PERCENT=`free | grep Mem | awk '{print $3/$2 * 100.0}'`
+    MEM_PERCENT=`printf %03.02f $MEM_PERCENT`
+    MEM_INFO="  ^fg(#36D7B7)^i(./dzen_icons/mem.xbm) $MEM_USAGE($MEM_PERCENT %)"
+
+    left_info="$left_info^bg(#333333)^fg(#F8F8F8) $MEM_INFO "
+
+    echo "$left_info" > $PANEL_FIFO
+    sleep $period
+done

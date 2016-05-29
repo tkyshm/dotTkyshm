@@ -1,0 +1,18 @@
+#!/bin/bash
+PWD=$(dirname $(readlink -f $0))
+source $PWD/config
+
+period=10
+
+while : 
+do
+    # right info
+    right_info="R"
+    WIFI=$($PWD/wifi)
+    BATT=$($PWD/battery)
+
+    right_info="${right_info}^bg(#333333) $BATT $WIFI "
+
+    echo "$right_info" > $PANEL_FIFO
+    sleep $period
+done

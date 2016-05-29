@@ -1,0 +1,15 @@
+#!/bin/bash
+cd $(dirname $0)
+source $(dirname $0)/config
+
+while :
+do
+    info="C"
+    VOLS=$($PWD/vols)
+    CLOCK=$(date '+%Y/%m/%d %H:%M:%S')
+
+    info="${info}^bg(#333333) $VOLS ^fg(#fff)^i(${ICON}clock.xbm) $CLOCK "
+
+    echo $info > $PANEL_FIFO
+    sleep 1
+done

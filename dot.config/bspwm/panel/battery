@@ -30,4 +30,4 @@ else
 fi
 
 # Create Bar
-echo "${bat_color}$icon ${BAT}%"
+echo "${bat_color}    $icon ${BAT}%"

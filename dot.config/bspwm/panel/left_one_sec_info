@@ -1,0 +1,15 @@
+#!/bin/bash
+cd $(dirname $0)
+source $(dirname $0)/config
+
+while :
+do
+    info="B"
+    CPU_TEMP=`sensors | grep Physical | gawk '{print $4}'`
+    CPU_TEMP_INFO="^fg(#FF8d8e)^i(./dzen_icons/temp.xbm)^fg(#F8F8F8)${CPU_TEMP}"
+
+    info="${info}^bg(#333333)  $CPU_TEMP_INFO      "
+
+    echo $info > $PANEL_FIFO
+    sleep 1
+done

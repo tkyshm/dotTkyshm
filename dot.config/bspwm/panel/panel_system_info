@@ -1,8 +1,6 @@
 #!/bin/bash
 source $(dirname $0)/config
-PWD=$(dirname $0)
 
-source $(dirname $0)/bg_rotate
 SUM_MEM_VALUE=`free -h | grep Mem |tail -n 1 | gawk '{print $2}'`
 MEM_USAGE=`free -h | grep Mem |tail -n 1 | gawk '{print $3}'`
 MEM_PERCENT=`free | grep Mem | awk '{print $3/$2 * 100.0}'`

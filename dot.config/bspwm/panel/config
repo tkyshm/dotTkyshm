@@ -1,15 +1,17 @@
 # Fonts defined in xfontsel (xft not yet supported)
 #FONT1="-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1"
 #FONT2="-lokaltog-fixed-medium-r-normal--10-100-75-75-c-60-iso8859-1"
-FONT1="xft:Inconsolata for Powerline:pixelsize=10"
-FONT2="xft:Inconsolata for Powerline:pixelsize=10"
+FONT1="xtf:Hack:pixelsize=10"
+FONT2="xtf:Hack:pixelsize=10"
+#FONT1="-bitstream-hack-medium-i-normal--12-120-72-72-m-60-iso8859-1"
+#FONT2="-bitstream-hack-medium-i-normal--12-*-*-*-*-*-*-*"
 #FONT1="-misc-tamsyn-medium-r-normal--14-*-*-*-*-*-*-*"
 #FONT2="-*-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
 
 ICON="`pwd`/dzen_icons/"
 
-COLOR_BACKGROUND="#2b2b2b"
-COLOR_FOREGROUND="#ffffff"
+COLOR_BACKGROUND="#eeeeee"
+COLOR_FOREGROUND="#333333"
 COLOR_ICON="#757978"
 COLOR_ACTIVE="#1ebf79"
 COLOR_INACTIVE="#46423b"
@@ -17,10 +19,10 @@ COLOR_OCCUPIED="#c1c4bc"
 COLOR_URGENT="#a04363"
 
 # Height of underlines / overlines
-LINEHEIGHT="3"
+LINEHEIGHT="5"
 
 # Panel geometry
-PANEL_HEIGHT=18
+PANEL_HEIGHT=26
 PANEL_WIDTH=''
 PANEL_GEOMETRY="${PANEL_WIDTH}x${PANEL_HEIGHT}+0+0"
 PANEL_FIFO="/tmp/panel-fifo"

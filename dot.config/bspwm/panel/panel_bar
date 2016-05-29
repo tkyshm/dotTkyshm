@@ -1,17 +1,28 @@
-#! /bin/sh
+#!/bin/bash
 
 source $(dirname $0)/config
 
 while read -r line ; do
     case $line in
-        S*)
-            sys_infos="%{r}${line#?}"
+        C*)
+            ros_info="${line#?}"
+            ;;
+        B*)
+            los_info="${line#?}"
+            ;;
+        L*)
+            l_infos="${line#?}"
+            ;;
+        R*)
+            r_infos="${line#?}"
             ;;
         T*)
-            title=" %{F$COLOR_ICON}%{F-} bspwm"
+            username="^fg(#2435a8)^i(./dzen_icons/cat.xbm) ${USER_NAME} `whoami`"
+            title=" ^fg(#c4803F)^i(./dzen_icons/grid.xbm) bspwm ${username}"
             ;;
         W*)
-            wm_infos="%{c}"
+            wm_infos="^bg($COLOR_BACKGROUND) "
+            mark="■"
             IFS=':'
             set -- ${line#?}
             while [ $# -gt 0 ] ; do
@@ -20,29 +31,29 @@ while read -r line ; do
                 case $item in
                     [OFU]*)
                         # active desktop
-                        wm_infos="$wm_infos %{U$COLOR_ACTIVE}%{+u}   %{-u}"
+                        wm_infos="$wm_infos ^fg($COLOR_ACTIVE)$mark "
                         ;;
                     o*)
                         # inactive but occupied desktop
-                        wm_infos="$wm_infos %{U$COLOR_OCCUPIED}%{+u}   %{-u}"
+                        wm_infos="$wm_infos ^fg($COLOR_OCCUPIED)$mark "
                         ;;
                     f*)
                         # inactive desktop
-                        wm_infos="$wm_infos %{U$COLOR_INACTIVE}%{+u}   %{-u}"
+                        wm_infos="$wm_infos ^fg($COLOR_INACTIVE)$mark "
                         ;;
                     u*)
                         # urgent desktop
-                        wm_infos="$wm_infos %{U$COLOR_URGENT}%{+u}   %{-u}"
+                        wm_infos="$wm_infos ^fg($COLOR_URGENT)$mark "
                         ;;
                     L*)
                         # layout
-                        layout=$(printf "%s" "${name}" | sed 's/\(.\).*/\U\1/')
-                        wm_infos="$wm_infos $layout"
+                        #layout=$(printf "%s" "${name}" | sed 's/\(.\).*/\U\1/')
+                        #wm_infos="$wm_infos $layout"
                         ;;
                 esac
                 shift
             done
             ;;
     esac
-    printf "%s\n" "$title$wm_infos$sys_infos"
+    printf "%s\n" " ${title}^p(_LEFT)^p(105)${l_infos} ${los_info}   ^p(_CENTER)^p(-105)$wm_infos ^p(_RIGHT)^p(-305)$r_infos $ros_info   "
 done
