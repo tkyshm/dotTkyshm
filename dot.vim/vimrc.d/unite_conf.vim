@@ -11,19 +11,21 @@ nnoremap <silent>,f  :<C-u>Unite -start-insert file_rec/async:.<CR>
 " UG or ,g で全文検索する
 nnoremap <silent> ,g :<C-u>Unite -start-insert grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ,cg :<C-u>Unite -start-insert grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+nnoremap <silent> ,t  :<C-u>Unite tab<CR>
 nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
 
-let g:unite_source_file_rec_max_cache_files = 20000
+let g:unite_source_rec_max_cache_files = 60000
 "=====================================
 " Unite ag
 "=====================================
 if executable('ag')
-  let g:unite_source_rec_async_command = 'ag'
+  "let g:unite_source_file_async_command = 'ag -l --nocolor --nogroup'
+  "let g:unite_source_rec_async_command = 
+  "            \ ['ag', '--follow', '--nocolor', '--nogroup',
+  "            \  '--hidden', '-g', '']
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
-  ""let g:unite_source_rec_async_command='ag --nocolor --nogroup --hidden -g ""'
-  ""let g:unite_enable_smart_case
 endif
 
 "if executable('csearch') 
