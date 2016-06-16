@@ -88,4 +88,8 @@ hi pythonDoctest ctermfg=97
 hi javaScript ctermfg=151
 hi DjangoBlock ctermfg=35 cterm=none
 hi CtrlPMatch ctermbg=220 ctermfg=16
-hi TaglistTagName gui=bold ctermfg=169 
+hi TaglistTagName gui=bold ctermfg=169
+"" End of line highlight
+hi WhitespaceEOL ctermbg=219 guibg=#f89183
+match WhitespaceEOL /\s\+$/
+autocmd WinEnter * match WhitespaceEOL /\s\+$/
