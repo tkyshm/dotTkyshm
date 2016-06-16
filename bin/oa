@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOST="https://github.com/"
+HOST="https://github.com"
 OPEN_CMD="xdg-open"
 REPO="kayac/nakamap"
 QUERY='?utf8=✓&q='
@@ -20,10 +20,10 @@ main() {
             $OPEN_CMD "$HOST/$REPO/wiki${QUERY}$2"
             ;;
         s)
-            __search $2
+            __search ${@:2}
             ;;
         search)
-            __search $2
+            __search ${@:2}
             ;;
         infra)
             $OPEN_CMD "$HOST/$REPO/labels/インフラ${QUERY}$2"
@@ -35,7 +35,7 @@ main() {
 }
 
 __search() {
-    $OPEN_CMD "$HOST/$REPO/search${QUERY}${1}&type=issues"
+    $OPEN_CMD "$HOST/$REPO/search${QUERY}$*&type=issues"
 }
 
 main $@
