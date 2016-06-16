@@ -6,9 +6,10 @@ while :
 do
     info="B"
     CPU_TEMP=`sensors | grep Physical | gawk '{print $4}'`
-    CPU_TEMP_INFO="^fg(#FF8d8e)^i(./dzen_icons/temp.xbm)^fg(#F8F8F8)${CPU_TEMP}"
+    CPU_TEMP_INFO="^fg(#FF8d8e)^i(./dzen_icons/temp.xbm)^fg(#F8F8F8) ${CPU_TEMP} "
+    FAN_FPM=`./fan`
 
-    info="${info}^bg(#333333)  $CPU_TEMP_INFO      "
+    info="${info}^bg(#333333)    $CPU_TEMP_INFO    $FAN_FPM  "
 
     echo $info > $PANEL_FIFO
     sleep 1

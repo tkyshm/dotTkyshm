@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo -e "  ^fg(#def8ef)^i(./dzen_icons/fs_02.xbm) `sensors | grep RPM | awk '{print $4}'` rpm"
