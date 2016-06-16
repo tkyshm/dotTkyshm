@@ -104,7 +104,7 @@ super + Return
 #  urxvtc
 
 ctrl + 9
- dmenu_run -fn "Hack 20" -p "command > " -b
+ dmenu_run -fn "Hack 20" -p "command > "
 
 ctrl + 8
  $HOME/scripts/lens 
