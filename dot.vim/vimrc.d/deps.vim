@@ -130,7 +130,6 @@ if has('vim_starting')
  NeoBundle 'rhysd/vim-crystal'
 
  "" Markdown
- NeoBundle 'plasticboy/vim-markdown'
  NeoBundle 'kannokanno/previm'
  NeoBundle 'tyru/open-browser.vim'
 
