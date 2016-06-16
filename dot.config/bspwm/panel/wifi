@@ -11,7 +11,7 @@ if [[ ${#SSID} -ge 10 ]] ; then
     SSID_TAIL=`echo $SSID | cut -c ${tail_start}-${cnt}`
     SSID="${SSID_HEAD}...${SSID_TAIL}"
 elif [[ ${#SSID} = 0 ]] ; then
-    SSID="----------"
+    SSID="-----------"
 fi
 
 QUAL=`iwconfig wlp3s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $3}'`
