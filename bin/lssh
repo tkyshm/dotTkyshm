@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+logpath=$HOME/lssh/logs
+
+if [ ! -d $HOME/.lssh ] ; then
+    mkdir -p $logpath
+fi
+
+filename="`date +'%Y-%m-%d_%H-%M-%S'`-lssh.log"
+script -q -c "ssh $@" $logpath/$filename
