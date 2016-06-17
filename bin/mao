@@ -1,0 +1,58 @@
+#!/bin/bash
+slpt=$1
+timelog="date +%Y-%m-%d_%H:%M:%S"
+mao_conf="$HOME/.config/mao"
+break_voice="$mao_conf/breaktime.wav"
+work_voice="$mao_conf/working.wav"
+
+if [[ ! -d $mao_conf ]] ; then
+    mkdir -p $mao_conf
+fi
+
+logger() {
+    local level=$1
+    local msg=$2
+
+    case $level in
+        0)
+            echo "[INFO][$($timelog)] $msg"
+            ;;
+        1)
+            echo "[WARN][$($timelog)] $msg"
+            ;;
+        2)
+            echo "[ERROR][$($timelog)] $msg"
+            ;;
+    esac
+}
+
+if [[ $# -ne 1 ]] ; then
+    logger 2 "wrong number of arguments."
+    exit 1
+fi
+
+if [[ $slpt -ge 36000 ]] ; then
+    echo "cannot set timer more than 10 hours."
+    exit 1
+fi
+
+logger 0 "start timer!"
+
+break_flag=0
+break_time=600
+while : 
+do
+    if [[ $break_flag -eq 1 ]] ; then
+        logger 0 "Break time!"
+        notify-send -u critical "Break Time Notification" "Break time!!!"
+        break_flag=0
+        aplay $break_voice
+        sleep $break_time
+    else
+        logger 0 "Working time!"
+        notify-send -u critical "Working Time Notification" "Working time!!!"
+        break_flag=1
+        aplay $work_voice
+        sleep $slpt 
+    fi
+done
