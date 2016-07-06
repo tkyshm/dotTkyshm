@@ -10,10 +10,12 @@ nnoremap <silent>,b :<C-u>Unite -start-insert buffer<CR>
 nnoremap <silent>,f  :<C-u>Unite -start-insert file_rec/async:.<CR>
 " UG or ,g で全文検索する
 nnoremap <silent> ,g :<C-u>Unite -start-insert grep:. -buffer-name=search-buffer<CR>
-nnoremap <silent> ,cg :<C-u>Unite -start-insert grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 nnoremap <silent> ,t  :<C-u>Unite tab<CR>
 nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+" unite-giti
+nnoremap <silent> ,c :<C-u>Unite -vertical -start-insert giti:.<CR>
 
+call unite#custom#source('file_rec,file_rec/async', 'ignore_pattern', '_build/.*')
 let g:unite_source_rec_max_cache_files = 60000
 "=====================================
 " Unite ag

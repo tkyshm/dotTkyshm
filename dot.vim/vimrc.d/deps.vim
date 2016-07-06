@@ -8,8 +8,8 @@ if has('vim_starting')
  NeoBundleFetch 'Shougo/neobundle.vim'
  " Debug plugin
  NeoBundle 'scrooloose/syntastic'
- NeoBundle 'osyo-manga/vim-watchdogs'
  NeoBundle 'osyo-manga/shabadou.vim'
+ NeoBundle 'osyo-manga/vim-watchdogs'
  " vim-scripts
  NeoBundle 'freeo/vim-kalisi'
  " sudo.vim
@@ -33,16 +33,12 @@ if has('vim_starting')
  " for Erlang
  NeoBundle 'vim-erlang/vim-erlang-runtime'
  NeoBundle 'vim-erlang/vim-erlang-compiler'
- NeoBundle 'edkolev/erlang-motions.vim'
  NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
- NeoBundle 'vim-erlang/vim-compot'
  NeoBundle 'vim-erlang/vim-erlang-skeletons'
  NeoBundle 'vim-erlang/vim-dialyzer'
  NeoBundle 'vim-erlang/vim-erlang-tags'
-
- " Quickfix
- NeoBundle 'cohama/vim-hier'
- NeoBundle "dannyob/quickfixstatus"
+ NeoBundle 'edkolev/erlang-motions.vim'
+ NeoBundle 'vim-erlang/vim-compot'
 
  " HTML5 syntax
  NeoBundle 'othree/html5.vim'
@@ -55,6 +51,8 @@ if has('vim_starting')
  NeoBundle 'tpope/vim-fugitive'
  NeoBundle 'cohama/agit.vim'
  NeoBundle 'rhysd/committia.vim'
+ NeoBundle 'kmnk/vim-unite-giti.git'
+
  " Regex
  NeoBundle 'terryma/vim-multiple-cursors'
  " javascript jade
@@ -69,9 +67,10 @@ if has('vim_starting')
  NeoBundle 'tpope/vim-rails'
  NeoBundle 'tpope/vim-endwise'
 
- "" Filer 
+ "" Filer
  NeoBundle 'Shougo/vimfiler'
  NeoBundle 'Shougo/unite.vim'
+ NeoBundle 'tsukkee/unite-tag'
  NeoBundle 'Shougo/vimproc', {
        \ 'build' : {
        \     'mac' : 'make -f make_mac.mak',
