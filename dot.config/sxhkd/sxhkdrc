@@ -98,9 +98,9 @@ super + {y,u,i,o}
 # wm independent hotkeys
 #
 super + Return
- termite
+ terminator
+# termite
 #  termite -e tmux
-# terminator
 #  urxvtc
 
 ctrl + 9
