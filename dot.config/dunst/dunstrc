@@ -1,5 +1,5 @@
 [global]
-    font = Hack 8
+    font = Hack 14
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -42,7 +42,7 @@
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
-    show_age_threshold = 60
+    show_age_threshold = 30
     
     # Split notifications into multiple lines if they don't fit into
     # geometry.
@@ -64,7 +64,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "350x30-30+20"
+    geometry = "450x40+30+20"
     
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -78,7 +78,7 @@
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
     # Set to 0 to disable.
-    idle_threshold = 120
+    idle_threshold = 0
     
     # Which monitor should the notifications be displayed on.
     monitor = 0
