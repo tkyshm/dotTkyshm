@@ -6,15 +6,15 @@ INSTALLER_DIR=$SCRIPT_DIR/installer-kits
 # standard pacakges
 sudo pacman -S --noconfirm ag openssh
 sudo pacman -S --noconfirm xsel xclip neovim
-yaourt -Sy --noconfirm mercurial git zsh lua 
+yaourt -Sy --noconfirm mercurial git zsh lua
 yaourt -Sy --noconfirm file-roller transmission-gtk feh
 yaourt -Sy --noconfirm ncmpcpp mpd weechat thunar
 yaourt -S --noconfirm tcl tcllib aspell
-yaourt -S --noconfirm sound-theme-freedesktop 
+yaourt -S --noconfirm sound-theme-freedesktop
 yaourt -Sy --noconfirm scrot feh dzen2 conky
 yaourt -Sy --noconfirm bspwm-git sxhkd-git
 yaourt -Sy --noconfirm compton dmenu xorg-server unclutter xcalib
-yaourt -S --noconfirm tint2 xdotool vnstat docky mpc mpd 
+yaourt -S --noconfirm tint2 xdotool vnstat docky mpc mpd
 yaourt -S --noconfirm smc pm
 yaourt -S --noconfirm otf-ipaexfont
 sudo pacman -S --noconfirm gmrun dunst
@@ -30,14 +30,14 @@ yaourt -S --noconfirm fcitx-im fcitx-mozc fcitx-configtool fcitx-qt4 fcitx-gtk2
 # font
 yaourt -S --noconfirm fontforge-git
 yaourt -S --noconfirm otf-inconsolata-dz-powerline
-# performance tool 
+# performance tool
 yaourt -S --noconfirm wget htop lsof net-tools iotop sysstat iftop nmon
-yaourt -S --noconfirm tcpdump 
+yaourt -S --noconfirm tcpdump
 # Numix theme
 yaourt -S --noconfirm numix-circle-icon-theme-git numix-themes-git
 yaourt -S --noconfirm gtk-chtheme gtk-theme-switch2 gtk2_prefs
 # other applications
-yaourt -S --noconfirm zathura terminator ranger 
+yaourt -S --noconfirm zathura terminator ranger
 # terminal emulator
 yaourt -S --noconfirm terminix gtkd rxvt-unicode
 sudo pacman -S --noconfirm xorg-xrdb urxvt-perls
@@ -81,7 +81,7 @@ done
 ## Install dot files.
 sudo cp profiles/* /etc/zsh
 cp dot.xinitrc ~/.xinitrc
-ln -s $SCRIPT_DIR/zprezto/zpreztorc $HOME/.zprezto/runcoms/zpreztorc 
+ln -s $SCRIPT_DIR/zprezto/zpreztorc $HOME/.zprezto/runcoms/zpreztorc
 ln -s $SCRIPT_DIR/dot.vimrc $HOME/.vimrc
 ln -s $SCRIPT_DIR/dot.vim $HOME/.vim
 ln -s $SCRIPT_DIR/dot.tmux.conf $HOME/.tmux.conf
@@ -95,6 +95,8 @@ ln -s $SCRIPT_DIR/dot.gtkrc-2.0 $HOME/.gtkrc-2.0
 ln -s $SCRIPT_DIR/dot.config/bspwm $HOME/.config/bspwm
 ln -s $SCRIPT_DIR/dot.config/sxhkd ~/.config/sxhkd
 ln -s $SCRIPT_DIR/dot.config/nvim ~/.config/nvim
+ln -s $SCRIPT_DIR/dot.config/peco ~/.config/peco
+ln -s $SCRIPT_DIR/dot.gitconfig $HOME/.gitconfig
 
 # background
 mkdir -p ~/Pictures
@@ -105,7 +107,7 @@ mv bg001.jpg ~/Pictures/
 # Fonts Configuration
 $INSTALLER_DIR/fonts-installer.sh $INSTALLER_DIR
 
-## Install software 
+## Install software
 $INSTALLER_DIR/vim-installer.sh
 $INSTALLER_DIR/erlang-insteller.sh
 $INSTALLER_DIR/golang-installer.sh
