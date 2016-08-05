@@ -1,0 +1,18 @@
+[alias]
+    search-log = git log -S
+    t = status
+    st = status -s
+    suno = status -uno
+    a = add
+    c = commit -v
+    o = checkout
+    ot = checkout -t
+    ob = checkout -b
+    l = git log
+    lo = git log --oneline
+[core]
+    editor = vim
+    excludesfile = /home/tkyshm/.gitignore_global
+[user]
+    email = yoshimura-takuya@kayac.com
+    name = moulin
