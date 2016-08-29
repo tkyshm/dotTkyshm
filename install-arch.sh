@@ -113,3 +113,7 @@ $INSTALLER_DIR/erlang-insteller.sh
 $INSTALLER_DIR/golang-installer.sh
 $INSTALLER_DIR/rust-installer.sh
 $INSTALLER_DIR/rbenv-installer.sh
+
+## install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install

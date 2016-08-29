@@ -8,6 +8,7 @@ nnoremap <silent>,b :<C-u>Unite -start-insert buffer<CR>
 "nnoremap ,f  :<C-u>Unite find:<CR>
 "
 nnoremap <silent>,f  :<C-u>Unite -start-insert file_rec/async:.<CR>
+nnoremap <silent>\f  :<C-u>Unite -start-insert file_rec/async:./
 " UG or ,g で全文検索する
 nnoremap <silent> ,g :<C-u>Unite -start-insert grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ,t  :<C-u>Unite tab<CR>
