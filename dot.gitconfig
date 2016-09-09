@@ -10,6 +10,7 @@
     ob = checkout -b
     l = git log
     lo = git log --oneline
+    b = branch
 [core]
     editor = vim
     excludesfile = /home/tkyshm/.gitignore_global
