@@ -13,7 +13,7 @@ super + shift + q
 super + w
 	bspc window -c
 
-super + ctrl + l
+super + shift + l
  xscreensaver-command --lock
 
 super + t
@@ -98,8 +98,8 @@ super + {y,u,i,o}
 # wm independent hotkeys
 #
 super + Return
- terminator
-# termite
+ termite
+# terminator
 #  termite -e tmux
 #  urxvtc
 
