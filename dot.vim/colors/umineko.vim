@@ -3,11 +3,11 @@ hi clear
 set background=dark
 let g:colors_name = "umineko"
 "hi Normal ctermbg=none ctermfg=255
-hi Normal ctermbg=236 ctermfg=255 guibg=#38444e guifg=#eee
-hi CursorLine ctermbg=58 term=none cterm=none guibg=#766
-hi CursorColumn ctermbg=58 guibg=#766
+hi Normal ctermbg=236 ctermfg=255 guibg=#38444e guifg=#eeeeee
+hi CursorLine ctermbg=58 term=none cterm=none guibg=#776666
+hi CursorColumn ctermbg=58 guibg=#776666
 "hi NonText ctermbg=none ctermfg=102
-hi NonText ctermbg=236 ctermfg=102 guibg=#38444e guifg=#eee
+hi NonText ctermbg=236 ctermfg=102 guibg=#38444e guifg=#eeeeee
 hi Conceal ctermbg=236 ctermfg=230
 hi Comment ctermfg=254 ctermbg=26
 hi CommentURL cterm=underline ctermfg=69
