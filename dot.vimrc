@@ -25,6 +25,9 @@ set clipboard=unnamedplus,autoselect
 " filetype
 filetype plugin indent on
 
+" jsonのダブルクォート非表示機能OFF
+autocmd Filetype json setl conceallevel=0
+
 " Turn off paste mode when leaving insert
 autocmd InsertLeave * set nopaste
 
