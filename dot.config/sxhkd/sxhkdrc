@@ -98,6 +98,7 @@ super + {y,u,i,o}
 # wm independent hotkeys
 #
 super + Return
+# terminator
  termite
 # terminator
 #  termite -e tmux

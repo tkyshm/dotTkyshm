@@ -139,6 +139,9 @@ if has('vim_starting')
  "" nginx vim
  NeoBundle 'vim-scripts/nginx.vim'
 
+ "" completion for python
+ NeoBundle 'davidhalter/jedi-vim'
+
  "" quick string quote plugins
  NeoBundle 'tpope/vim-surround'
  call neobundle#end()

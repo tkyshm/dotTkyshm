@@ -1,0 +1,30 @@
+#compdef goenv
+
+_goenv() {
+    local -a cmds
+    if (( CURRENT == 2 )) ; then
+        _values 'mode' \
+            'help[display how to use command.]' \
+            'list[lists your go versions.]' \
+            'install[install go.]' \
+            'fetch[caches go versions for completions.]' \
+            'uninstall[uninstall your installed go.]' \
+            'use[switches the version of your installed go.]'
+    else
+        case $words[CURRENT-1] in
+            use|uninstall)
+                _values "installed your go versions" `ls $HOME/.goenv/root`
+                ;;
+            install)
+                if [[ -f "$HOME/.goenv/.version_list" ]] ; then
+                    _values "available install versions" `cat $HOME/.goenv/.version_list`
+                fi
+                ;;
+            help)
+                _values "command list" list install use fetch uninstall
+                ;;
+        esac
+    fi
+}
+
+compdef _goenv goenv
