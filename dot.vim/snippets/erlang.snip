@@ -1,5 +1,9 @@
+snippet dump
+alias dump
+	io:format("dump: ~p~n", [${1:val}]),
+
 snippet lager_sysconf
-snippet lagerconf
+alias lagerconf
  {lager, [
  {log_root, "./log/"},
      {handlers, [

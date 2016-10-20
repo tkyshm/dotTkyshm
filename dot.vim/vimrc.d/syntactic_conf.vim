@@ -8,6 +8,7 @@ let g:syntastic_erlang_checkers=['escript']
 let g:syntastic_ruby_checkers=['mri', 'rubylint', 'rubocop']
 let g:syntastic_haskell_checkers=['ghc-mod', 'hlint', 'hdevtools']
 let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = ['perl', 'podchecker']
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 
 let g:syntastic_mode_map = { 'mode': 'active',

@@ -136,6 +136,8 @@ if has('vim_starting')
  NeoBundle 'junegunn/fzf.vim'
  NeoBundle 'junegunn/fzf'
 
+ "" nginx vim
+ NeoBundle 'vim-scripts/nginx.vim'
 
  "" quick string quote plugins
  NeoBundle 'tpope/vim-surround'
