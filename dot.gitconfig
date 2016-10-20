@@ -10,6 +10,11 @@
     ob = checkout -b
     l = git log
     lo = git log --oneline
+    b = branch
+    f = fetch
+    pul = pull
+    pl = pull
+    psh = push
 [core]
     editor = vim
     excludesfile = /home/tkyshm/.gitignore_global

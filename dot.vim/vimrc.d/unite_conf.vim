@@ -7,9 +7,7 @@ nnoremap <silent>,b :<C-u>Unite -start-insert buffer<CR>
 "nnoremap <silent>,f :<C-u>Unite -start-insert file_rec/git:--cached:--others:--exclude-standard<CR>
 "nnoremap ,f  :<C-u>Unite find:<CR>
 "
-nnoremap <silent>,f  :<C-u>Unite -start-insert file_rec/async:.<CR>
 " UG or ,g で全文検索する
-nnoremap <silent> ,g :<C-u>Unite -start-insert grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ,t  :<C-u>Unite tab<CR>
 nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
 " unite-giti

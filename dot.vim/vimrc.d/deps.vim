@@ -106,7 +106,7 @@ if has('vim_starting')
  "NeoBundle 'Yggdroot/indentLine'
  NeoBundle 'nathanaelkane/vim-indent-guides'
 
- "" Lua 
+ "" Lua
  NeoBundle 'xolox/vim-lua-ftplugin'
  NeoBundle 'xolox/vim-misc'
 
@@ -116,7 +116,7 @@ if has('vim_starting')
  "" Perl plugins
  NeoBundle 'vim-perl/vim-perl'
 
- "" Golang plugins 
+ "" Golang plugins
  NeoBundle 'vim-jp/vim-go-extra'
 
  "" Toml syntax
@@ -131,6 +131,11 @@ if has('vim_starting')
  "" Markdown
  NeoBundle 'kannokanno/previm'
  NeoBundle 'tyru/open-browser.vim'
+
+ "" fzf love vim
+ NeoBundle 'junegunn/fzf.vim'
+ NeoBundle 'junegunn/fzf'
+
 
  "" quick string quote plugins
  NeoBundle 'tpope/vim-surround'
