@@ -136,6 +136,8 @@ if has('vim_starting')
  NeoBundle 'junegunn/fzf.vim'
  NeoBundle 'junegunn/fzf'
 
+ "" completion for python
+ NeoBundle 'davidhalter/jedi-vim'
 
  "" quick string quote plugins
  NeoBundle 'tpope/vim-surround'

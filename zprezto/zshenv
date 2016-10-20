@@ -66,10 +66,12 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # Android sdk path
 export ANDROID_HOME=/usr/local/android/android-sdk-linux
 
-# pyenv
+# pyenv & python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+PYTHONSTARTUP=$HOME/.pythonrc.py
+export PYTHONSTARTUP
 
 # PATH
 export PATH=$PATH:$HOME/bin
