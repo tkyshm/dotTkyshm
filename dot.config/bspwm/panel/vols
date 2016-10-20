@@ -21,7 +21,7 @@ panel_vol() {
         fi
     else 
         local image="^i(./dzen_icons/volume0.xbm)"
-        echo "$head $image  0 %"
+        echo "${head}${image} 0 %"
     fi
 }
 

@@ -98,8 +98,8 @@ super + {y,u,i,o}
 # wm independent hotkeys
 #
 super + Return
- terminator
-# termite
+# terminator
+ termite
 #  termite -e tmux
 #  urxvtc
 

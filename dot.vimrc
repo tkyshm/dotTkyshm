@@ -49,6 +49,7 @@ nnoremap <silent>bp :bp<CR>
 
 "" autocmd list
 autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+autocmd FileType eruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
 autocmd FileType yaml setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 
@@ -57,7 +58,7 @@ autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-autocmd FileType html setl expandtab tabstop=4 shiftwidth=2 softtabstop=2
+autocmd FileType html setl expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " erlang fmt
 autocmd FileType erlang setl noexpandtab shiftwidth=4 tabstop=4
