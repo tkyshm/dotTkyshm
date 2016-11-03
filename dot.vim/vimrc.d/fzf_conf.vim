@@ -1,5 +1,5 @@
 " find
-nnoremap <silent>,f  :<C-u>call fzf#run({'sink': 'e', 'options': '--multi --reverse'})<CR>
+nnoremap <silent>,f  :<C-u>call FzfFileSearch()<CR>
 
 " grep
-nnoremap ,g :<C-u>Ag 
+nnoremap ,g :<C-u>Ag
