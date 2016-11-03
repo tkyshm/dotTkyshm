@@ -1,14 +1,7 @@
 " Return top level directory path of Git project.
-function GitTopDir()
-    return system("git rev-parse --show-toplevel")
-endfunction
-
-function UniteFileSearch()
-    if isdirectory(GitTopDir() . "/.git")
-        command Unite -start-insert file_rec/git:--cached:--others:--exclude-standard
-    else
-        command Unite -start-insert file/async:!
-    endif
+function IsGitRepo()
+    let gitdir = system("echo -n $(git rev-parse --show-toplevel)/.git")
+    return isdirectory(gitdir)
 endfunction
 
 " Restore cursor position, window position, and last search after running a
@@ -42,4 +35,14 @@ endfunction
 " Re-indent the whole buffer.
 function! Indent()
   call Preserve('normal gg=G')
+endfunction
+
+" for fzf file-search
+function! FzfFileSearch()
+  if IsGitRepo()
+      echo GitTopDir()
+      call fzf#run({'source': 'git ls-files', 'sink': 'e', 'options': '--multi --reverse'})
+  else
+      call fzf#run({'sink': 'e', 'options': '--multi --reverse'})
+  endif
 endfunction
