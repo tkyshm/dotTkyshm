@@ -5,46 +5,49 @@ alias dump
 snippet lager_sysconf
 alias lagerconf
  {lager, [
- {log_root, "./log/"},
-     {handlers, [
-         {lager_console_backend, [info,
-             {lager_default_formatter,
-                 [
-                     "level:", severity, 
-                     "\tnode:", node,
-                     "\tpid:",pid,
-                     "\tmsg:\"", message, "\"",
-                     "\tmodule:", module,
-                     "\tfunction:", function,
-                     "\tline:", line,
-                     "\ttimestamp:", date, "T", time,
-                     "\n"
-                 ]
-             }
-         ]},
-         {lager_file_backend, [
-             {file, "errorl.log"}, 
-             {level, error}
-         ]},
-         {lager_file_backend, [{file, "console.log"}, 
-             {level, info},
-             {formatter, lager_default_formatter},
-             {formatter_config, 
-                 [   
-                     "level:", severity, 
-                     "\tnode:", node,
-                     "\tpid:",pid,
-                     "\tmsg:\"", message, "\"",
-                     "\tmodule:", module,
-                     "\tfunction:", function,
-                     "\tline:", line,
-                     "\ttimestamp:", date, "T", time,
-                     "\n"
-                 ]
-             }
-         ]}
-     ]}
- ]}
+          {log_root, "./logs/lager"},
+          {handlers, [
+                      {lager_console_backend, [info,
+                                               {lager_default_formatter,
+                                                [
+                                                 "level:", severity,
+                                                 "\tnode:", node,
+                                                 "\tpid:",pid,
+                                                 "\tmsg:\"", message, "\"",
+                                                 "\tmodule:", module,
+                                                 "\tfunction:", function,
+                                                 "\tline:", line,
+                                                 "\ttimestamp:", date, "T", time,
+                                                 "\n"
+                                                ]
+                                               }
+                                              ]
+                      },
+                      {lager_file_backend, [{file, "access.log"},
+                                            {level, info},
+                                            {count, 5},
+                                            {date, "$D0"},
+                                            {size, 10485760},
+                                            {formatter, lager_default_formatter},
+                                            {formatter_config,
+                                             [
+                                              "level:", severity,
+                                              "\tnode:", node,
+                                              "\tpid:",pid,
+                                              "\tmsg:\"", message, "\"",
+                                              "\tmodule:", module,
+                                              "\tfunction:", function,
+                                              "\tline:", line,
+                                              "\ttimestamp:", date, "T", time,
+                                              "\n"
+                                             ]
+                                            }
+                                           ]
+                      }
+                     ]
+          }
+         ]
+ }
 
 snippet cowboy_disp
 alias cwdisp
@@ -63,37 +66,3 @@ alias cwspec
      , cowboy_protocol 
      , [ { env, [ { dispatch, ${4:dispatcher} } ] } ]
  ),
-
-snippet cowboy_websocket
-alias cwws
-  -module(`expand('%:t:r')`).
-  -behaviour(cowboy_websocket_handler).
-  
-  -export([init/3]).
-  -export([websocket_init/3]).
-  -export([websocket_handle/3]).
-  -export([websocket_info/3]).
-  -export([websocket_terminate/3]).
-  
-  -record(state, {
-  }).
-  
-  init(_, _, _) ->
-      {upgrade, protocol, cowboy_websocket}.
-  
-  websocket_init(_, Req, _Opts) ->
-      Req2 = cowboy_req:compact(Req),
-      {ok, Req2, #state{}}.
-  
-  websocket_handle({text, Data}, Req, State) ->
-      {reply, {text, Data}, Req, State};
-  websocket_handle({binary, Data}, Req, State) ->
-      {reply, {binary, Data}, Req, State};
-  websocket_handle(_Frame, Req, State) ->
-      {ok, Req, State}.
-  
-  websocket_info(_Info, Req, State) ->
-      {ok, Req, State}.
-  
-  websocket_terminate(_Reason, _Req, _State) ->
-      ok.

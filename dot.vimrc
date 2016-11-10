@@ -66,7 +66,7 @@ autocmd FileType html setl expandtab tabstop=2 shiftwidth=2 softtabstop=2
 " erlang fmt
 autocmd FileType erlang setl expandtab shiftwidth=4 tabstop=4 softtabstop=4
 au BufNewFile,BufRead *.?rl setf erlang
-autocmd FileType erlang autocmd BufWritePre <buffer> call Indent()
+"autocmd FileType erlang autocmd BufWritePre <buffer> call Indent()
 
 autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
