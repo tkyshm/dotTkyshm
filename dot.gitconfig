@@ -14,7 +14,9 @@
     f = fetch
     pul = pull
     pl = pull
-    psh = push
+    pus = push
+    ps = push
+    m = merge
 [core]
     editor = vim
     excludesfile = /home/tkyshm/.gitignore_global
