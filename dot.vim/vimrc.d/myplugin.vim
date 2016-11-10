@@ -40,7 +40,6 @@ endfunction
 " for fzf file-search
 function! FzfFileSearch()
   if IsGitRepo()
-      echo GitTopDir()
       call fzf#run({'source': 'git ls-files', 'sink': 'e', 'options': '--multi --reverse'})
   else
       call fzf#run({'sink': 'e', 'options': '--multi --reverse'})
