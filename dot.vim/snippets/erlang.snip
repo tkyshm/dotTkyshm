@@ -1,3 +1,27 @@
+snippet module
+alias mod
+ -module(`expand('%:t:r')`).
+
+snippet eunit
+alias eunit
+ -include_lib("eunit/include/eunit.hrl").
+ 
+ main_test_() ->
+     {foreach,
+      fun setup/0, %% setup
+      fun teardown/1,  %% teardown
+      [
+       fun sample_test/1
+      ]
+     }.
+
+ setup() -> ok.
+ teardown(_Config) -> ok.
+ sample_test(_Config) ->
+     %% Test
+     [
+     ].
+
 snippet dump
 alias dump
 	io:format("dump: ~p~n", [${1:val}]),
