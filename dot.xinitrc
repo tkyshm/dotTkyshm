@@ -6,12 +6,12 @@ DEFAULT_SESSION=bspwm
 
 export BSPWM_SHOW_BATTERY=1
 
-# setting urxvt 
+# setting urxvt
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 # input and output setting
 xset +fp ~/.fonts
-xset fp rehash 
+xset fp rehash
 
 wmname LG3D
 xcalib $HOME/x230.icm &
@@ -35,17 +35,12 @@ compton &
 unclutter -grab -noevents -root & # mouse event
 fcitx -d                          # input method
 pulseaudio --start                # sound envrionment
-sxhkd &                           # keybind for bspwm
-
-# urxvt daemon 
-urxvtd -q -f -o
-
-## SSH Agents
-eval `ssh-agent`
-ssh-add ~/.ssh/id_rsa_work 
-ssh-add ~/.ssh/id_rsa_tkyshm
 
 case "$1" in
-  "bspwm" ) exec $1 -c $HOME/.config/bspwm/bspwmrc ;;
+  "bspwm")
+      exec $1 -c $HOME/.config/bspwm/bspwmrc
+      sxhkd & # keybind for bspwm
+      ;;
+  "i3") exec i3 >> $HOME/.config/i3/i3log-$(date +'%Y%m%d') 2>&1 ;;
   * ) exec bspwm -c $HOME/.config/bspwm/bspwmrc ;;
 esac
