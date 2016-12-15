@@ -6,7 +6,7 @@ INSTALLER_DIR=$SCRIPT_DIR/installer-kits
 # standard pacakges
 sudo pacman -S --noconfirm ag openssh
 sudo pacman -S --noconfirm xsel xclip neovim
-sudo pacman -S --noconfirm i3-wm i3-status
+sudo pacman -S --noconfirm i3-wm i3status
 yaourt -Sy --noconfirm mercurial git zsh lua
 yaourt -Sy --noconfirm file-roller transmission-gtk feh
 yaourt -Sy --noconfirm ncmpcpp mpd weechat thunar
