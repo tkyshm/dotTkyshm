@@ -1,0 +1,193 @@
+# i3 config file (v4)
+#
+# please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# this config file uses keycodes (bindsym) and was written for the qwerty
+# layout.
+#
+# to get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# font for window titles. will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 8
+
+# this font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:dejavu sans mono 8
+
+# before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-c-70-iso10646-1
+# the font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. however, its unicode glyph coverage is limited, the old
+# x core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
+# use mouse+mod4 to drag floating windows to their wanted position
+floating_modifier mod4
+
+# start a terminal
+bindsym mod4+Return exec "termite"
+
+# kill focused window
+bindsym mod4+w kill
+
+# start dmenu (a program launcher)
+bindsym ctrl+9 exec dmenu_run -fn "Hack 20" -p "command > "
+bindsym ctrl+8 exec $HOME/scripts/lens
+# there also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. it is a wrapper around dmenu, so you need that
+# installed.
+# bindsym mod4+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym mod4+$left focus left
+bindsym mod4+$down focus down
+bindsym mod4+$up focus up
+bindsym mod4+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym mod4+Left workspace prev
+bindsym mod4+Right workspace next
+
+# move focused window
+bindsym mod4+shift+$left move left
+bindsym mod4+shift+$down move down
+bindsym mod4+shift+$up move up
+bindsym mod4+shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym mod4+shift+Left move left
+bindsym mod4+shift+Down move down
+bindsym mod4+shift+Up move up
+bindsym mod4+shift+Right move right
+
+# split in horizontal orientation
+bindsym mod4+ctrl+h focus left, split h
+bindsym mod4+ctrl+l split h
+
+# split in vertical orientation
+bindsym mod4+ctrl+j split v
+bindsym mod4+ctrl+k focus up, split v
+
+# enter fullscreen mode for the focused container
+bindsym mod4+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym mod4+s layout stacking
+bindsym mod4+t layout tabbed
+bindsym mod4+e layout toggle split
+
+# toggle tiling / floating
+bindsym mod4+shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym mod4+space focus mode_toggle
+
+# focus the parent container
+bindsym mod4+a focus parent
+
+# focus the child container
+#bindsym mod4+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym mod4+shift+minus move scratchpad
+
+# show the next scratchpad window or hide the focused scratchpad window.
+# if there are multiple scratchpad windows, this command cycles through them.
+bindsym mod4+minus scratchpad show
+
+# switch to workspace
+bindsym mod4+1 workspace slack[1]
+bindsym mod4+2 workspace chrome[2]
+bindsym mod4+3 workspace termite[3]
+bindsym mod4+4 workspace termite[4]
+bindsym mod4+5 workspace termite[5]
+bindsym mod4+6 workspace ssh[6]
+bindsym mod4+7 workspace ssh[7]
+bindsym mod4+8 workspace termite[8]
+bindsym mod4+9 workspace termite[9]
+bindsym mod4+0 workspace chrome[10]
+
+# move focused container to workspace
+bindsym mod4+shift+1 move container to workspace slack[1]
+bindsym mod4+shift+2 move container to workspace chrome[2]
+bindsym mod4+shift+3 move container to workspace termite[3]
+bindsym mod4+shift+4 move container to workspace termite[4]
+bindsym mod4+shift+5 move container to workspace termite[5]
+bindsym mod4+shift+6 move container to workspace ssh[6]
+bindsym mod4+shift+7 move container to workspace ssh[7]
+bindsym mod4+shift+8 move container to workspace termite[8]
+bindsym mod4+shift+9 move container to workspace termite[9]
+bindsym mod4+shift+0 move container to workspace chrome[10]
+
+# reload the configuration file
+bindsym mod4+shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym mod4+shift+r restart
+# exit i3 (logs you out of your x session)
+bindsym mod4+shift+q exec "i3-nagbar -t warning -m 'you pressed the exit shortcut. do you really want to exit i3? this will end your x session.' -b 'yes, exit i3' 'i3-msg exit'"
+# screen saver
+bindsym mod1+shift+l exec "xscreensaver-command --lock"
+
+# resize window (you can also use the mouse for that)
+#mode "resize" {
+#    # these bindings trigger as soon as you enter the resize mode
+#
+#    # pressing left will shrink the window’s width.
+#    # pressing right will grow the window’s width.
+#    # pressing up will shrink the window’s height.
+#    # pressing down will grow the window’s height.
+#    bindsym $left       resize shrink width 10 px or 10 ppt
+#    bindsym $down       resize grow height 10 px or 10 ppt
+#    bindsym $up         resize shrink height 10 px or 10 ppt
+#    bindsym $right      resize grow width 10 px or 10 ppt
+#
+#    # same bindings, but for the arrow keys
+#    bindsym left        resize shrink width 10 px or 10 ppt
+#    bindsym down        resize grow height 10 px or 10 ppt
+#    bindsym up          resize shrink height 10 px or 10 ppt
+#    bindsym right       resize grow width 10 px or 10 ppt
+#
+#    # back to normal: enter or escape
+#    bindsym return mode "default"
+#    bindsym escape mode "default"
+#}
+#
+#bindsym mod4+r mode "resize"
+
+# start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bindsym mod4+m bar mode toggle
+bar {
+    position top
+    tray_padding 10px
+    status_command i3status
+    colors {
+        background #eeeeee
+        separator #cccccc
+        statusline #000000
+
+    }
+}
+# my settings
+new_window 1pixel
+
+#######################################################################
+# automatically start i3-config-wizard to offer the user to create a
+# keysym-based config which used their favorite modifier (alt or windows)
+#
+# i3-config-wizard will not launch if there already is a config file
+# in ~/.i3/config.
+#
+# please remove the following exec line:
+#######################################################################
+exec i3-config-wizard

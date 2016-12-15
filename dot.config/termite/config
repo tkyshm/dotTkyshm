@@ -62,7 +62,7 @@ cursor_shape = block
 #color11 = #657b83
 #color12 = #839496
 #color13 = #6c71c4
-#color14 = #93a1a1
+#color14 = #636161
 #color15 = #fdf6e3
 
 ## Solarized-dark
@@ -78,7 +78,7 @@ cursor = #a3c1c1
 #highlight = #839496
 
 # colors from color0 to color254 can be set
-color0 = #aaaaaa
+color0 = #666666
 color1 = #fb8b66
 color2 = #d5e930
 color3 = #d5f980

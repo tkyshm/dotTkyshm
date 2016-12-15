@@ -3,13 +3,13 @@
 "===================================
 " UB でBUffer検索する
 nnoremap <silent>,b :<C-u>Unite -start-insert buffer<CR>
+
 " UF でファイル名検索する
-"nnoremap <silent>,f :<C-u>Unite -start-insert file_rec/git:--cached:--others:--exclude-standard<CR>
-"nnoremap ,f  :<C-u>Unite find:<CR>
-"
-" UG or ,g で全文検索する
+nnoremap <silent>,u :<C-u>Unite -start-insert file_rec/async<CR>
+
+" Unite tab
 nnoremap <silent> ,t  :<C-u>Unite tab<CR>
-nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+
 " unite-giti
 nnoremap <silent> ,c :<C-u>Unite -vertical -start-insert giti:.<CR>
 

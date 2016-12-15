@@ -13,7 +13,7 @@ super + shift + q
 super + w
 	bspc window -c
 
-super + shift + l
+shift + alt + l
  xscreensaver-command --lock
 
 super + t
