@@ -6,6 +6,7 @@ INSTALLER_DIR=$SCRIPT_DIR/installer-kits
 # standard pacakges
 sudo pacman -S --noconfirm ag openssh
 sudo pacman -S --noconfirm xsel xclip neovim
+sudo pacman -S --noconfirm i3-wm i3-status
 yaourt -Sy --noconfirm mercurial git zsh lua
 yaourt -Sy --noconfirm file-roller transmission-gtk feh
 yaourt -Sy --noconfirm ncmpcpp mpd weechat thunar
@@ -17,6 +18,7 @@ yaourt -Sy --noconfirm compton dmenu xorg-server unclutter xcalib
 yaourt -S --noconfirm tint2 xdotool vnstat docky mpc mpd
 yaourt -S --noconfirm smc pm
 yaourt -S --noconfirm otf-ipaexfont
+yaourt -S --noconfirm polybar
 sudo pacman -S --noconfirm gmrun dunst
 # for conky panel
 yaourt -S --noconfirm acpi bc
@@ -39,13 +41,13 @@ yaourt -S --noconfirm gtk-chtheme gtk-theme-switch2 gtk2_prefs
 # other applications
 yaourt -S --noconfirm zathura terminator ranger
 # terminal emulator
-yaourt -S --noconfirm terminix gtkd rxvt-unicode
-sudo pacman -S --noconfirm xorg-xrdb urxvt-perls
+yaourt -S --noconfirm terminix gtkd termite-git
+sudo pacman -S --noconfirm xorg-xrdb
 # Sound packages
 sudo pacman -S --noconfirm alsa-utils asoundconf
 sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa paprefs pavucontrol
 
-# neovim python plugin 
+# neovim python plugin
 sudo pip3 install neovim
 
 # lemonbar install
