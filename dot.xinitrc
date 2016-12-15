@@ -2,7 +2,7 @@
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
-DEFAULT_SESSION=bspwm
+DEFAULT_SESSION=i3
 
 export BSPWM_SHOW_BATTERY=1
 
