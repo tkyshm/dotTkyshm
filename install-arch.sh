@@ -7,6 +7,12 @@ INSTALLER_DIR=$SCRIPT_DIR/installer-kits
 sudo pacman -S --noconfirm ag openssh
 sudo pacman -S --noconfirm xsel xclip neovim
 sudo pacman -S --noconfirm i3-wm i3status
+
+## for polybar-giy
+sudo pacman -S --noconfirm cmake clang35 boost xcb-util-wm xcb-util-image libxft
+sudo pacman -S --noconfirm jsoncpp wireless_tools alsa-lib libmpdclient
+yaourt -S --noconfirm polybar-git
+
 yaourt -Sy --noconfirm mercurial git zsh lua
 yaourt -Sy --noconfirm file-roller transmission-gtk feh
 yaourt -Sy --noconfirm ncmpcpp mpd weechat thunar
@@ -18,7 +24,6 @@ yaourt -Sy --noconfirm compton dmenu xorg-server unclutter xcalib
 yaourt -S --noconfirm tint2 xdotool vnstat docky mpc mpd
 yaourt -S --noconfirm smc pm
 yaourt -S --noconfirm otf-ipaexfont
-yaourt -S --noconfirm polybar
 sudo pacman -S --noconfirm gmrun dunst
 # for conky panel
 yaourt -S --noconfirm acpi bc
