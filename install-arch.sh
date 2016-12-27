@@ -9,8 +9,11 @@ sudo pacman -S --noconfirm xsel xclip neovim
 sudo pacman -S --noconfirm i3-wm i3status
 
 ## for polybar-giy
-sudo pacman -S --noconfirm cmake clang35 boost xcb-util-wm xcb-util-image libxft
+sudo pacman -S --noconfirm cmake clang35 boost xcb-util xcb-util-wm xcb-util-image libxft
 sudo pacman -S --noconfirm jsoncpp wireless_tools alsa-lib libmpdclient
+sudo pacman -S --noconfirm bdf-unifont
+sudo pacman -S --noconfirm xorg-xfd
+yaourt -S --noconfirm siji-git # iconic font
 yaourt -S --noconfirm polybar-git
 
 yaourt -Sy --noconfirm mercurial git zsh lua
