@@ -144,6 +144,19 @@ if has('vim_starting')
 
  "" quick string quote plugins
  NeoBundle 'tpope/vim-surround'
+
+ "" c#
+ NeoBundleLazy 'OmniSharp/omnisharp-vim', {
+             \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
+             \   'build': {
+             \     'windows' : 'msbuild server/OmniSharp.sln',
+             \     'mac': 'xbuild server/OmniSharp.sln',
+             \     'unix': 'xbuild server/OmniSharp.sln',
+             \   },
+             \ }
+
+ NeoBundle 'tpope/vim-dispatch.git'
+
  call neobundle#end()
 endif
 
