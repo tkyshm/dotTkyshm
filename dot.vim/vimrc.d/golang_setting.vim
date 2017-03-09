@@ -12,3 +12,4 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 let g:syntastic_go_checkers = ['go', 'golint']
 
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
+let g:go_fmt_command = "goimports"

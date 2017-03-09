@@ -10,9 +10,9 @@ fpath=(~/.zsh.d/zsh-completions_dir/src $fpath)
 
 # setting termite
 export TERM=xterm-256color
-if [[ $TERM == xterm-termite ]]; then
-    . /etc/profile.d/vte.sh
-fi
+#if [[ $TERM == xterm-termite ]]; then
+. /etc/profile.d/vte.sh
+#fi
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
@@ -54,7 +54,7 @@ export LUA_CPATH='/home/tkyshm/.luarocks/lib/lua/5.3/?.so;/usr/lib/lua/5.3/?.so;
 #export JAVA_HOME=/opt/jdk1.8
 
 # Erlang Path
-. ~/erlang/19.1/activate
+. ~/erlang/19.2/activate
 export ERL_LIBS=$HOME/erlang/lib/proper
 # export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export LC_CTYPE=ja_JP.UTF-8
