@@ -1,0 +1,21 @@
+#!/bin/bash
+version=2.9
+file=$1
+tmpfile=`basename $file`
+erl_dir=$(dirname $(dirname `which erl`))
+erl_tool=$erl_dir/lib/tools-$version/emacs
+script=$(cat <<__CMD__
+(progn (find-file "$file")
+    (setq load-path (cons "$erl_tool" load-path))
+    (require 'erlang-start)
+    (setq erlang-root-dir "$erl_dir/")
+    (setq exec-path (cons "$erl_dir/bin" exec-path))
+    (erlang-mode)
+    (untabify (point-min) (point-max))
+    (delete-trailing-whitespace)
+    (erlang-indent-current-buffer)
+    (write-region (point-min) (point-max) "$tmpfile")
+    (kill-emacs))
+__CMD__
+)
+emacs --batch --eval "$script"
