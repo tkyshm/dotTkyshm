@@ -10,9 +10,6 @@ nnoremap <silent>,u :<C-u>Unite -start-insert file_rec/async<CR>
 " Unite tab
 nnoremap <silent> ,t  :<C-u>Unite tab<CR>
 
-" unite-giti
-nnoremap <silent> ,c :<C-u>Unite -vertical -start-insert giti:.<CR>
-
 call unite#custom#source('file_rec,file_rec/async', 'ignore_pattern', '_build/.*')
 let g:unite_source_rec_max_cache_files = 60000
 "=====================================
