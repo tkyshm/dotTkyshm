@@ -119,10 +119,9 @@ $INSTALLER_DIR/fonts-installer.sh $INSTALLER_DIR
 
 ## Install software
 $INSTALLER_DIR/vim-installer.sh
-$INSTALLER_DIR/erlang-insteller.sh
-$INSTALLER_DIR/golang-installer.sh
-$INSTALLER_DIR/rust-installer.sh
 $INSTALLER_DIR/rbenv-installer.sh
+mkdir ~/.erlenv/
+cp ./erlenv/configure_opts $SCRIPT_DIR/.erlenv/
 
 ## install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
