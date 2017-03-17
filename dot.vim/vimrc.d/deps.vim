@@ -118,6 +118,7 @@ if has('vim_starting')
 
  "" Golang plugins
  NeoBundle 'vim-jp/vim-go-extra'
+ NeoBundle 'fatih/vim-go'
 
  "" Toml syntax
  NeoBundle 'cespare/vim-toml'
