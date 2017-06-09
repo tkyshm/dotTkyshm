@@ -74,6 +74,10 @@ au BufNewFile,BufRead *.erl,*.es,*.hrl,*.yaws,*.xrl setf erlang
 autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
 
+" baal
+autocmd BufRead,BufNewFile *.faced setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab fileformat=unix encoding=utf-8
+autocmd BufRead,BufNewFile *.tmpl setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab fileformat=unix encoding=utf-8
+
 " trim white space
 autocmd FileType c,cpp,java,go,php,python,twig,xml,yml,erl,javascript,coffee autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 function! StripTrailingWhitespace()
