@@ -12,6 +12,9 @@ options=(
   -lines           "15"
   -fixed-num-lines
   -sidebar-mode
+  -columns 1
+  -bw 0
+  -eh 1
 
   ##  key bindings  ##
   -kb-cancel        "Escape,Control+g,Control+bracketleft,Control+c"
@@ -19,16 +22,16 @@ options=(
   -kb-mode-previous "Shift+Left,Control+Shift+i"
 
   -separator-style solid
-  -line-margin 10
+  -line-margin 8
 
   #### color scheme
   -color-enabled   "true"
 
   ## window         bg          border      separator
-  -color-window    "argb:ffc3c1a8, argb:ff57564d, argb:ff57564d"
+  -color-window    "argb:ffd1ccb6, argb:ff57564d, argb:ff57564d"
 
   ## text & cursor  bg          fg          bg (alt)    bg (highlight)       fg (highlight)
-  -color-normal    "argb:ffc3c1a8, argb:ff57564d, argb:ffc3c1a8, argb:ff57564d, argb:ffcfcfbd"
+  -color-normal    "argb:ffb8b3a0, argb:ff57564d, argb:ffb8b3a0, argb:ff57564d, argb:ffcfcfbd"
   -color-active    "argb:ff57564d, argb:ffcfcfbd, argb:ffc3c1a8, argb:ff57564d, argb:ffcfcfbd"
   -color-urgent    "argb:ffc3c1a8, argb:ffb16286, argb:ffc3c1a8, argb:ff57564d, argb:ffcfcfbd"
 )
