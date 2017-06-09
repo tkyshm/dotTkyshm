@@ -1,0 +1,36 @@
+#!/bin/bash
+
+user_bin=$HOME/bin/
+
+# rofi launcher
+options=(
+  -modi            "window,run,ssh,system:$user_bin/rofi_system_menu"
+  -show            "run"
+  -font            "Hack 10"
+  -width           "50"
+  -padding         "25"
+  -lines           "15"
+  -fixed-num-lines
+  -sidebar-mode
+
+  ##  key bindings  ##
+  -kb-cancel        "Escape,Control+g,Control+bracketleft,Control+c"
+  -kb-mode-next     "Shift+Right,Control+i,Control+Tab"
+  -kb-mode-previous "Shift+Left,Control+Shift+i"
+
+  -separator-style solid
+  -line-margin 10
+
+  #### color scheme
+  -color-enabled   "true"
+
+  ## window         bg          border      separator
+  -color-window    "argb:ffc3c1a8, argb:ff57564d, argb:ff57564d"
+
+  ## text & cursor  bg          fg          bg (alt)    bg (highlight)       fg (highlight)
+  -color-normal    "argb:ffc3c1a8, argb:ff57564d, argb:ffc3c1a8, argb:ff57564d, argb:ffcfcfbd"
+  -color-active    "argb:ff57564d, argb:ffcfcfbd, argb:ffc3c1a8, argb:ff57564d, argb:ffcfcfbd"
+  -color-urgent    "argb:ffc3c1a8, argb:ffb16286, argb:ffc3c1a8, argb:ff57564d, argb:ffcfcfbd"
+)
+
+rofi "$@" "${options[@]}"

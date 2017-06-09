@@ -41,8 +41,9 @@ bindsym mod4+Return exec "termite"
 bindsym mod4+w kill
 
 # start dmenu (a program launcher)
-bindsym ctrl+9 exec dmenu_run -fn "Hack 20" -p "command > "
-bindsym ctrl+8 exec $HOME/scripts/lens
+#bindsym ctrl+9 exec dmenu_run -fn "Hack 20" -p "command > "
+bindsym ctrl+9 exec $HOME/bin/myrofi
+#bindsym ctrl+8 exec $HOME/scripts/lens
 # there also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. it is a wrapper around dmenu, so you need that
 # installed.
