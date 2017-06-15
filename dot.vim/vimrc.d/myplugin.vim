@@ -37,6 +37,12 @@ function! Indent()
   call Preserve('normal gg=G')
 endfunction
 
+function! ErlFmt()
+  let out = system('ei ' . expand('%:p'))
+  call writefile(split(out, "\n"), expand('%:p'))
+  exec ":e!"
+endfunction
+
 " for fzf file-search
 function! FzfFileSearch()
   if IsGitRepo()
