@@ -95,8 +95,20 @@ endfunction
 " colorscheme
 syntax on
 set t_Co=256
-set background=dark
-colorscheme umineko
+set background=light
+"let g:solarized_termcolors=256
+"colorscheme solarized
+"colorscheme umineko
+let g:lucius_style='light'
+let g:lucius_contrast='high'
+let g:lucius_no_term_bg=1
+colorscheme lucius
+
 " in case t_Co alone doesn't work, add this as well:
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
+
+" 
+hi WhitespaceEOL ctermbg=219 guibg=#f89183
+match WhitespaceEOL /\s\+$/
+autocmd WinEnter * match WhitespaceEOL /\s\+$/

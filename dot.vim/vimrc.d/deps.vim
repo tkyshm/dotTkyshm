@@ -158,6 +158,9 @@ if has('vim_starting')
 
  NeoBundle 'tpope/vim-dispatch.git'
 
+ NeoBundle 'altercation/vim-colors-solarized'
+ NeoBundle 'vim-scripts/CSApprox'
+
  call neobundle#end()
 endif
 
