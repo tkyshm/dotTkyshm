@@ -39,6 +39,12 @@ if has('vim_starting')
  NeoBundle 'vim-erlang/vim-erlang-tags'
  NeoBundle 'edkolev/erlang-motions.vim'
  NeoBundle 'vim-erlang/vim-compot'
+ " for Elixir
+ NeoBundle 'elixir-lang/vim-elixir'
+ NeoBundle 'mattreduce/vim-mix'
+ NeoBundle 'slashmili/alchemist.vim'
+ " https://qiita.com/syossan27/items/960438bda250ce9a3182
+ NeoBundle 'BjRo/vim-extest'
 
  " HTML5 syntax
  NeoBundle 'othree/html5.vim'
@@ -142,6 +148,7 @@ if has('vim_starting')
 
  "" completion for python
  NeoBundle 'davidhalter/jedi-vim'
+ NeoBundle 'lambdalisue/vim-pyenv'
 
  "" quick string quote plugins
  NeoBundle 'tpope/vim-surround'
