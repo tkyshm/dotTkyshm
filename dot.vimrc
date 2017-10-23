@@ -21,6 +21,7 @@ set smartindent
 set tabstop=1
 set clipboard=unnamedplus,autoselect
 
+let mapleader = "<Space>"
 
 " filetype
 filetype plugin indent on
