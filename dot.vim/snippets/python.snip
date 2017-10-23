@@ -1,0 +1,13 @@
+snippet falcon_handler
+ # -*- coding: utf-8 -*-
+ import falcon
+ import json
+
+
+ class ${1:resource}Resource(object):
+
+     def on_get(self, req, resp):
+         resp.status = falcon.HTTP_501
+
+     def on_post(self, req, resp):
+         resp.status = falcon.HTTP_501
