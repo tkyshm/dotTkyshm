@@ -28,25 +28,14 @@ cursor_shape = block
 # emit escape sequences for other keys modified by Control
 #modify_other_keys = false
 
+### Solarized-dark
 #[colors]
 ##cursor = #dcdccc
 #foreground = #dcdccc
 #foreground_bold = #ffffff
 ##background = #4e4e5f
 #
-## 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 83, 0.85)
-#
-## if unset, will reverse foreground and background
-#highlight = #2f2f2f
-#
-## colors from color0 to color254 can be set
 ## Solarized dark color scheme
-
-
-## if unset, will reverse foreground and background
-##highlight = #839496
-#
 ## colors from color0 to color254 can be set
 #color0 = #073642
 #color1 = #dc322f
@@ -65,63 +54,63 @@ cursor_shape = block
 #color14 = #636161
 #color15 = #fdf6e3
 
-## Solarized-dark
+### umineko
 [colors]
-#foreground = #ffffff
-#foreground_bold = #eee8d5
-##foreground_dim = #888888
-##background = rgba(85, 78, 70, 0.95)
-#background = rgb(35, 38, 40)
-#cursor = #a3c1c1
-#
-# if unset, will reverse foreground and background
-#highlight = #839496
-# colors from color0 to color254 can be set
-# umineko
-#color0 = #666666
-#color1 = #fb8b66
-#color2 = #d5e930
-#color3 = #d5f980
-#color4 = #56cbf2
-#color5 = #d33682
-#color6 = #2aa198
-#color7 = #eee8d5
-#color8 = #cccccc
-#color9 = #fb7b56
-#color10 = #85fba3
-#color11 = #fbfb63
-#color12 = #26cbf8
-#color13 = #9ca1e4
-#color14 = #c3b1f1
-#color15 = #fdf6e3
-
-# Solarized light
-foreground = #486a73
-foreground_bold = #073642
+foreground = #ffffff
+foreground_bold = #eee8d5
 #foreground_dim = #888888
-background = #fdf6e3
-cursor = #586e75
+#background = rgba(85, 78, 70, 0.95)
+background = rgb(35, 38, 40)
+cursor = #a3c1c1
 
-# if unset, will reverse foreground and background
-#highlight = #839496
+highlight = #839496
 
-# colors from color0 to color254 can be set
-color0 = #073642
-color1 = #dc322f
-color2 = #859900
-color3 = #b58900
-color4 = #268bd2
+## 20% background transparency (requires a compositor)
+#background = rgba(63, 63, 83, 0.85)
+color0 = #666666
+color1 = #fb8b66
+color2 = #d5e930
+color3 = #d5f980
+color4 = #56cbf2
 color5 = #d33682
 color6 = #2aa198
-color7 = #999985
-color8 = #002b36
-color9 = #cb4b16
-color10 = #586e75
-color11 = #657b83
-color12 = #839496
-color13 = #6c71c4
-color14 = #93a1a1
+color7 = #eee8d5
+color8 = #cccccc
+color9 = #fb7b56
+color10 = #85fba3
+color11 = #fbfb63
+color12 = #26cbf8
+color13 = #9ca1e4
+color14 = #c3b1f1
 color15 = #fdf6e3
+
+## Solarized light
+#foreground = #486a73
+#foreground_bold = #073642
+##foreground_dim = #888888
+#background = #fdf6e3
+#cursor = #586e75
+#
+## if unset, will reverse foreground and background
+##highlight = #839496
+#
+## colors from color0 to color254 can be set
+#color0 = #073642
+#color1 = #dc322f
+#color2 = #859900
+#color3 = #b58900
+#color4 = #268bd2
+#color5 = #d33682
+#color6 = #2aa198
+#color7 = #999985
+#color8 = #002b36
+#color9 = #cb4b16
+#color10 = #586e75
+#color11 = #657b83
+#color12 = #839496
+#color13 = #6c71c4
+#color14 = #93a1a1
+#color15 = #fdf6e3
 
 [hints]
 font = Hack 12
