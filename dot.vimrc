@@ -95,14 +95,14 @@ endfunction
 " colorscheme
 syntax on
 set t_Co=256
-set background=light
+"set background=light
 "let g:solarized_termcolors=256
 "colorscheme solarized
-"colorscheme umineko
-let g:lucius_style='light'
-let g:lucius_contrast='high'
-let g:lucius_no_term_bg=1
-colorscheme lucius
+"let g:lucius_style='light'
+"let g:lucius_contrast='high'
+"let g:lucius_no_term_bg=1
+"colorscheme lucius
+colorscheme umineko
 
 " in case t_Co alone doesn't work, add this as well:
 let &t_AB="\e[48;5;%dm"
