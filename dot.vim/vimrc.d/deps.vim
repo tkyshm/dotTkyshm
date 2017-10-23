@@ -49,9 +49,8 @@ if has('vim_starting')
  " Git plugins
  NeoBundle 'airblade/vim-gitgutter'
  NeoBundle 'tpope/vim-fugitive'
- NeoBundle 'cohama/agit.vim'
  NeoBundle 'rhysd/committia.vim'
- NeoBundle 'kmnk/vim-unite-giti.git'
+ NeoBundle 'gregsexton/gitv'
 
  " Regex
  NeoBundle 'terryma/vim-multiple-cursors'
