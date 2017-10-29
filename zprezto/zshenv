@@ -45,6 +45,7 @@ alias globi='hub browse kayac/nakamap'
 alias ojisan='cd $HOME/programs/ruby/animeojisan'
 alias u27='cd $HOME/programs/erlang/u27'
 alias r3='rebar3'
+alias jnry='cd $HOME/python/junray-server'
 
 # Lua path
 export LUA_PATH='/home/tkyshm/.luarocks/share/lua/5.3/?.lua;/home/tkyshm/.luarocks/share/lua/5.3/?/init.lua;/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua'
@@ -54,18 +55,20 @@ export LUA_CPATH='/home/tkyshm/.luarocks/lib/lua/5.3/?.so;/usr/lib/lua/5.3/?.so;
 #export JAVA_HOME=/opt/jdk1.8
 
 # Erlang Path
-export ERLENV_BIN=$HOME/.erlenv/bin
+export ERLCH_BIN=$HOME/.erlch/bin
 export ERL_LIBS=$HOME/erlang/lib/proper
 # export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export LC_CTYPE=ja_JP.UTF-8
 
+export PATH=$PATH:$HOME/elixir/elixir/bin
+
 # Golang path
 export GOROOT=/usr/local/go
 export GOPATH=/home/tkyshm/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$ERLENV_BIN
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$ERLCH_BIN
 
-# Android sdk path
-export ANDROID_HOME=/usr/local/android/android-sdk-linux
+# Android
+export PATH=$PATH:/opt/android-studio/bin
 
 # pyenv & python
 export PYENV_ROOT="$HOME/.pyenv"
@@ -84,3 +87,8 @@ CAML_LD_LIBRARY_PATH="$HOME/.opam/4.04.1/lib/stublibs"; export CAML_LD_LIBRARY_P
 MANPATH="$HOME/.opam/4.04.1/man:"; export MANPATH;
 PERL5LIB="$HOME/.opam/4.04.1/lib/perl5"; export PERL5LIB;
 OCAML_TOPLEVEL_PATH="$HOME/.opam/4.04.1/lib/toplevel"; export OCAML_TOPLEVEL_PATH;
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+

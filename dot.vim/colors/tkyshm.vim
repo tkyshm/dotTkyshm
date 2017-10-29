@@ -55,7 +55,7 @@ hi SpecialKey     gui=BOLD   guifg=#ab508d   guibg=NONE
 hi Title          gui=BOLD   guifg=#af4f4b   guibg=NONE
 hi Visual         gui=NONE   guifg=#eeeeee   guibg=#4e4e8f
 
-hi Comment        gui=NONE   guifg=#dddddd   guibg=#2744c3
+hi Comment        gui=NONE   guifg=#bbbbbb
 "hi Constant       gui=NONE   guifg=#ffcd8b   guibg=NONE
 hi Constant       gui=NONE   guifg=#ff6d6b   guibg=NONE
 hi String         gui=NONE   guifg=#cfad7b   guibg=#404040

@@ -79,20 +79,6 @@ autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 
 autocmd BufRead,BufNewFile *.faced setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab fileformat=unix encoding=utf-8
 autocmd BufRead,BufNewFile *.tmpl setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab fileformat=unix encoding=utf-8
 
-" trim white space
-autocmd FileType c,cpp,java,go,php,python,twig,xml,yml,erl,javascript,coffee autocmd BufWritePre <buffer> call StripTrailingWhitespace()
-function! StripTrailingWhitespace()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " do the business:
-    %s/\s\+$//e
-    " clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-
 " colorscheme
 syntax on
 set t_Co=256
