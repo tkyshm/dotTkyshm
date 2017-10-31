@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Shougo/neosnippet.vim'
   Plug 'Shougo/neosnippet-snippets'
   Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
   Plug 'scrooloose/syntastic'
 
@@ -28,8 +29,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-erlang/vim-erlang-tags'
   Plug 'edkolev/erlang-motions.vim'
   Plug 'vim-erlang/vim-compot'
+
   " for Elixir
-  Plug 'elixir-editors/vim-elixir'
+  Plug 'elixir-lang/vim-elixir'
   Plug 'mattreduce/vim-mix'
   Plug 'slashmili/alchemist.vim'
 

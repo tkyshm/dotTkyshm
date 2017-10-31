@@ -10,4 +10,4 @@ let g:auto_ctags_filetype_mode = 1
 
 " vim-erlang-tags setting
 autocmd BufWritePost *.erl call vimproc#system_bg(
-      \ '~/.vim/bundle/vim-erlang-tags/bin/vim-erlang-tags.erl --otp')
+      \ '~/.vim/plugged/vim-erlang-tags/bin/vim-erlang-tags.erl --otp')
