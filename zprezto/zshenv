@@ -46,6 +46,7 @@ alias ojisan='cd $HOME/programs/ruby/animeojisan'
 alias u27='cd $HOME/programs/erlang/u27'
 alias r3='rebar3'
 alias jnry='cd $HOME/python/junray-server'
+alias vim='nvim'
 
 # Lua path
 export LUA_PATH='/home/tkyshm/.luarocks/share/lua/5.3/?.lua;/home/tkyshm/.luarocks/share/lua/5.3/?/init.lua;/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua'
