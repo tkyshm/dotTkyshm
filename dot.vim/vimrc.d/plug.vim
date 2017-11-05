@@ -6,7 +6,13 @@ call plug#begin('~/.vim/plugged')
   " Add or remove your plugins here:
   Plug 'Shougo/neosnippet.vim'
   Plug 'Shougo/neosnippet-snippets'
-  Plug 'Shougo/deoplete.nvim'
+  if has('nvim')
+      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+      Plug 'Shougo/deoplete.nvim'
+      Plug 'roxma/nvim-yarp'
+      Plug 'roxma/vim-hug-neovim-rpc'
+  endif
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
   Plug 'scrooloose/syntastic'
