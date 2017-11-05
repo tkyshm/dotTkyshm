@@ -10,9 +10,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
   Plug 'scrooloose/syntastic'
+  Plug 'tpope/vim-endwise'
 
   " auto ctags
   Plug 'soramugi/auto-ctags.vim'
+  Plug 'ludovicchabant/vim-gutentags'
+  let g:gutentags_cache_dir = '~/.tags_cache'
 
   " Documentation reference
   Plug 'thinca/vim-ref'
@@ -34,6 +37,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'elixir-lang/vim-elixir'
   Plug 'mattreduce/vim-mix'
   Plug 'slashmili/alchemist.vim'
+  Plug 'c-brenn/phoenix.vim'
+  Plug 'tpope/vim-projectionist'
 
   " for rust
   Plug 'rust-lang/rust.vim'
