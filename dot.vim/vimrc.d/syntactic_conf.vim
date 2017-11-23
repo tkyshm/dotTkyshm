@@ -13,7 +13,7 @@ let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': ['ruby','haskell','go','rust'],
-  \ 'passive_filetypes': ['erlang'] }
+  \ 'passive_filetypes': ['erlang', 'elixir'] }
 
 nnoremap <C-\> :lnext <CR>
 nnoremap <C-\|> :lprevious <CR>

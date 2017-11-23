@@ -1,27 +1,24 @@
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
   " Add or remove your plugins here:
   Plug 'Shougo/neosnippet.vim'
   Plug 'Shougo/neosnippet-snippets'
-  if has('nvim')
-      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  else
-      Plug 'Shougo/deoplete.nvim'
-      Plug 'roxma/nvim-yarp'
-      Plug 'roxma/vim-hug-neovim-rpc'
-  endif
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
-  Plug 'scrooloose/syntastic'
+  " Polyglot loads language support on demand!
+  Plug 'sheerun/vim-polyglot'
+
+  "Plug 'scrooloose/syntastic'
   Plug 'tpope/vim-endwise'
 
   " auto ctags
   Plug 'soramugi/auto-ctags.vim'
-  Plug 'ludovicchabant/vim-gutentags'
-  let g:gutentags_cache_dir = '~/.tags_cache'
 
   " Documentation reference
   Plug 'thinca/vim-ref'
@@ -41,8 +38,8 @@ call plug#begin('~/.vim/plugged')
 
   " for Elixir
   Plug 'elixir-lang/vim-elixir'
+  Plug 'slashmili/alchemist.vim', {'tag': '2.8.2'}
   Plug 'mattreduce/vim-mix'
-  Plug 'slashmili/alchemist.vim'
   Plug 'c-brenn/phoenix.vim'
   Plug 'tpope/vim-projectionist'
 
