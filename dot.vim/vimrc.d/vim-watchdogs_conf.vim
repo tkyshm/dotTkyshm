@@ -11,7 +11,7 @@
 "    \     "type" : "watchdogs_checker/flymake",
 "    \ },
 "    \ "watchdogs_checker/flymake" : {
-"    \     "command"   : expand('~/.vim/bundle/vim-erlang-compiler/compiler/erlang_check.erl'),
+"    \     "command"   : expand('~/.vim/plugged/vim-erlang-compiler/compiler/erlang_check.erl'),
 "    \     "exec"      : "%c %o %s:p ",
 "    \ },
 "    \ }

@@ -46,8 +46,13 @@ endfunction
 " for fzf file-search
 function! FzfFileSearch()
   if IsGitRepo()
-      call fzf#run({'source': 'git ls-files', 'sink': 'e', 'options': '--multi --reverse'})
+      call fzf#run({
+          \ 'source': 'git ls-files',
+          \ 'sink': 'e',
+          \ 'options': '--multi --reverse'})
   else
-      call fzf#run({'sink': 'e', 'options': '--multi --reverse'})
+      call fzf#run({
+          \ 'sink': 'e',
+          \ 'options': '--multi --reverse'})
   endif
 endfunction

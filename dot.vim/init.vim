@@ -1,3 +1,4 @@
+
 runtime! vimrc.d/*.vim
 
 imap <C-e> <End>
@@ -19,7 +20,10 @@ set showmatch
 set smarttab
 set smartindent
 set tabstop=1
-set clipboard=unnamedplus,autoselect
+" vim
+"set clipboard=unnamedplus,autoselect
+" neovim
+set clipboard=unnamedplus,unnamed
 
 let mapleader = "<Space>"
 
@@ -82,20 +86,8 @@ autocmd BufRead,BufNewFile *.tmpl setlocal tabstop=4 softtabstop=4 shiftwidth=4 
 " colorscheme
 syntax on
 set t_Co=256
-"set background=light
-"let g:solarized_termcolors=256
-"colorscheme solarized
-"let g:lucius_style='light'
-"let g:lucius_contrast='high'
-"let g:lucius_no_term_bg=1
-"colorscheme lucius
+set background=dark
 colorscheme umineko
-
 " in case t_Co alone doesn't work, add this as well:
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
-
-" 
-hi WhitespaceEOL ctermbg=219 guibg=#f89183
-match WhitespaceEOL /\s\+$/
-autocmd WinEnter * match WhitespaceEOL /\s\+$/

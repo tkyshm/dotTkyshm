@@ -9,7 +9,7 @@ hi CursorColumn ctermbg=58 guibg=#776666
 "hi NonText ctermbg=none ctermfg=102
 hi NonText ctermbg=236 ctermfg=102 guibg=#38444e guifg=#eeeeee
 hi Conceal ctermbg=236 ctermfg=230
-hi Comment ctermfg=254 ctermbg=26
+hi Comment ctermfg=244
 hi CommentURL cterm=underline ctermfg=69
 hi CommentEmail cterm=underline ctermfg=69
 hi Constant cterm=bold ctermfg=209
