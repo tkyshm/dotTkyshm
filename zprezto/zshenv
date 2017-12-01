@@ -48,6 +48,24 @@ alias r3='rebar3'
 alias jnry='cd $HOME/python/junray-server'
 alias vim='nvim'
 
+# Alias
+alias nkmp='cd $WEB'
+alias mnth='cd $GOPATH/src/github.com/kayac/month'
+alias mnthb='cd $GOPATH/src/github.com/kayac/month-baal'
+
+# Global Alias
+alias -g B='`git branch | fzf --reverse --ansi --prompt "git branch> " | head -n 1 | sed -e "s/^\*\s*//g"`'
+alias -g T='`git branch -r | fzf --reverse --ansi --prompt "git remote branch> " | head -n 1 | sed -e "s/^\*\s*//g"`'
+alias -g S='`git status -s | fzf -m --reverse --ansi --prompt "git status> " | sed -e "s/^\s*\S*\s*//g"`'
+
+# Git alias
+alias g='git'
+alias gt='git status'
+alias local-branch-clean='git checkout master && git branch --merged | grep -v master | xargs -I % git branch -d %'
+
+# Erlang alias
+alias r3='rebar3'
+
 # Lua path
 export LUA_PATH='/home/tkyshm/.luarocks/share/lua/5.3/?.lua;/home/tkyshm/.luarocks/share/lua/5.3/?/init.lua;/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua'
 export LUA_CPATH='/home/tkyshm/.luarocks/lib/lua/5.3/?.so;/usr/lib/lua/5.3/?.so;/usr/lib/lua/5.3/loadall.so;./?.so'
@@ -58,9 +76,9 @@ export LUA_CPATH='/home/tkyshm/.luarocks/lib/lua/5.3/?.so;/usr/lib/lua/5.3/?.so;
 # Erlang Path
 export ERLCH_BIN=$HOME/.erlch/bin
 export ERL_LIBS=$HOME/erlang/lib/proper
-# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export LC_CTYPE=ja_JP.UTF-8
 
+# Elixir
 export PATH=$PATH:$HOME/elixir/elixir/bin
 
 # Golang path
@@ -93,3 +111,5 @@ OCAML_TOPLEVEL_PATH="$HOME/.opam/4.04.1/lib/toplevel"; export OCAML_TOPLEVEL_PAT
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 
+## Termite config
+#. /etc/profile.d/vte.sh
