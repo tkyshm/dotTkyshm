@@ -103,6 +103,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " You can specify revision/branch/tag.
   " Plug 'Shougo/vimshell', { 'rev': '3787e5' }
+  Plug 'neomake/neomake'
 
 call plug#end()
 
