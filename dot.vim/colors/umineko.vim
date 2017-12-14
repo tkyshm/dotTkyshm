@@ -55,7 +55,7 @@ hi SpellLocal cterm=undercurl ctermfg=51 ctermbg=none
 hi SpellRare cterm=undercurl ctermfg=205 ctermbg=none
 hi Search cterm=bold ctermbg=148 ctermfg=16
 hi IncSearch cterm=reverse ctermbg=16 ctermfg=220
-hi Error cterm=underline ctermbg=52 ctermfg=217
+hi Error cterm=underline ctermbg=202 ctermfg=217
 hi ErrorMsg cterm=bold ctermbg=160 ctermfg=224
 hi WarningMsg ctermfg=221
 hi WildMenu ctermbg=148 ctermfg=16
