@@ -8,13 +8,16 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Shougo/neosnippet.vim'
   Plug 'Shougo/neosnippet-snippets'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
+  Plug 'zchee/deoplete-go', {'do': 'make'}
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
+
+  " Perfomance improvement tools
+  Plug 'Konfekt/FastFold'
 
   " Polyglot loads language support on demand!
   Plug 'sheerun/vim-polyglot'
 
-  "Plug 'scrooloose/syntastic'
+  Plug 'scrooloose/syntastic' " あとで消したい
   Plug 'tpope/vim-endwise'
 
   " auto ctags
