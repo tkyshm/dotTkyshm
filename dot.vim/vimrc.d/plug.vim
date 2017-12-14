@@ -8,7 +8,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Shougo/neosnippet.vim'
   Plug 'Shougo/neosnippet-snippets'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'zchee/deoplete-go', {'do': 'make'}
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
   " Perfomance improvement tools
