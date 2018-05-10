@@ -44,6 +44,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'mattreduce/vim-mix'
   Plug 'c-brenn/phoenix.vim'
   Plug 'tpope/vim-projectionist'
+  Plug 'mhinz/vim-mix-format'
 
   " for rust
   Plug 'rust-lang/rust.vim'
