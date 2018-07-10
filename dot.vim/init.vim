@@ -34,7 +34,7 @@ filetype plugin indent on
 autocmd Filetype json setl conceallevel=0
 
 " Turn off paste mode when leaving insert
-autocmd InsertLeave * set nopaste
+" autocmd InsertLeave * set nopaste
 
 "" 画面の分割ショートカット
 nnoremap <C-h>o <C-w>s
@@ -78,6 +78,13 @@ au BufNewFile,BufRead *.erl,*.es,*.hrl,*.yaws,*.xrl setf erlang
 
 autocmd FileType go setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.go set nowrap tabstop=4 shiftwidth=4 softtabstop=4 autoindent
+
+autocmd FileType javascript setl expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd BufNewFile,BufRead *.js set nowrap tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+autocmd BufNewFile,BufRead *.json set nowrap tabstop=2 shiftwidth=2 softtabstop=2 autoindent
+
+" vue
+autocmd FileType vue setl expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " baal
 autocmd BufRead,BufNewFile *.faced setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab fileformat=unix encoding=utf-8

@@ -40,7 +40,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " for Elixir
   Plug 'elixir-lang/vim-elixir'
-  Plug 'slashmili/alchemist.vim', {'tag': '2.8.2'}
+  Plug 'slashmili/alchemist.vim'
   Plug 'mattreduce/vim-mix'
   Plug 'c-brenn/phoenix.vim'
   Plug 'tpope/vim-projectionist'
@@ -80,7 +80,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/fzf.vim'
 
   " for python
-  Plug 'lambdalisue/vim-pyenv'
+  " Plug 'lambdalisue/vim-pyenv'
 
   " vim-scripts
   Plug 'freeo/vim-kalisi'
