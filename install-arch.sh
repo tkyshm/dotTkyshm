@@ -56,7 +56,10 @@ sudo pacman -S --noconfirm alsa-utils asoundconf
 sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa paprefs pavucontrol
 
 # neovim python plugin
-sudo pip3 install neovim
+pip3 install --user neovim
+
+# dart install
+sudo pacman -S dart
 
 # lemonbar install
 git clone https://github.com/LemonBoy/bar.git ~/bar
