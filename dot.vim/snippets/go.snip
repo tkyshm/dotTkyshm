@@ -1,0 +1,37 @@
+snippet printDebug
+    fmt.Printf("%#v\n", lvupc)
+
+snippet montherr
+alias mnther
+    errors.NewError(errors.${1:err_type}, "${2:message}", ${3:info_data})
+
+snippet trycatch
+alias try
+    if err != nil {
+        return err
+    }
+
+snippet mPlayer
+alias mplayer
+    mPlayer := NewPlayer(m.Models)
+
+
+snippet transaction
+alias tx
+	tx, err := m.DB().Master().Begin()
+	if err != nil {
+		return nil, errors.NewError(errors.SystemErr, "begin transaction failed", err)
+	}
+	defer tx.End()
+
+snippet commit
+alias cmit
+	if err = tx.Commit(); err != nil {
+		return nil, errors.NewError(errors.SystemErr, "commit transaction failed", err)
+	}
+
+snippet refetchforupdate
+alias refetch
+	if err = table.New${1:model}(m.DB().Master()).RefetchForUpdate(${2:param}); err != nil {
+		return nil, errors.NewError(errors.SystemErr, "refetch ${2:param} for update failed", err)
+	}

@@ -51,6 +51,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'racer-rust/vim-racer'
   Plug 'rhysd/rust-doc.vim'
 
+  " for Dart
+  Plug 'dart-lang/dart-vim-plugin'
+
   " indent guide
   Plug 'nathanaelkane/vim-indent-guides'
 
