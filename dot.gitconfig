@@ -18,7 +18,7 @@
     ps = push
     m = merge
 [core]
-    editor = vim
+    editor = nvim
     excludesfile = /home/tkyshm/.gitignore_global
 [user]
     email = yoshimura-takuya@kayac.com
