@@ -11,3 +11,6 @@
 " vim-erlang-tags setting
 autocmd BufWritePost *.erl call vimproc#system_bg(
       \ '~/.config/nvim/plugged/vim-erlang-tags/bin/vim-erlang-tags.erl --otp')
+
+autocmd BufWritePost *.dart call vimproc#system_bg(
+      \ 'pub global run dart_ctags:tags -o tags')
