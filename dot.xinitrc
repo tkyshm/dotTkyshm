@@ -9,6 +9,7 @@ export BSPWM_SHOW_BATTERY=1
 # input and output setting
 xset +fp ~/.fonts
 xset fp rehash
+xset r rate 200 30
 
 wmname LG3D
 xcalib $HOME/x230.icm &
@@ -21,8 +22,8 @@ xrandr --output eDP1 --mode 1920x1200
 xrandr --output HDMI2 --above eDP1 --mode 1920x1080
 
 # Background and compton
-bgnum=$((1 + RANDOM % 10))
-feh --bg-fill --no-xinerama $HOME/Pictures/bg${bgnum}.jpg
+#bgnum=$((1 + RANDOM % 10))
+feh --bg-fill --no-xinerama $HOME/Pictures/bg.png
 compton &
 
 # screen saver
