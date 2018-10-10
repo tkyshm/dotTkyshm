@@ -1,4 +1,5 @@
 #!/bin/bash
+xset -e
 echo -e "\e[32m<< Install script for ArchLinux >>\e[39m"
 SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 INSTALLER_DIR=$SCRIPT_DIR/installer-kits
@@ -9,48 +10,56 @@ sudo pacman -S --noconfirm xsel xclip neovim
 sudo pacman -S --noconfirm i3-wm i3status
 
 ## for polybar-giy
-sudo pacman -S --noconfirm cmake clang35 boost xcb-util xcb-util-wm xcb-util-image libxft
+sudo pacman -S --noconfirm cmake boost xcb-util xcb-util-wm xcb-util-image libxft
 sudo pacman -S --noconfirm jsoncpp wireless_tools alsa-lib libmpdclient
 sudo pacman -S --noconfirm bdf-unifont
 sudo pacman -S --noconfirm xorg-xfd
-yaourt -S --noconfirm siji-git # iconic font
-yaourt -S --noconfirm polybar-git
+yay -S --noconfirm siji-git # iconic font
+yay -S --noconfirm polybar-git
 
-yaourt -Sy --noconfirm mercurial git zsh lua
-yaourt -Sy --noconfirm file-roller transmission-gtk feh
-yaourt -Sy --noconfirm ncmpcpp mpd weechat thunar
-yaourt -S --noconfirm tcl tcllib aspell
-yaourt -S --noconfirm sound-theme-freedesktop
-yaourt -Sy --noconfirm scrot feh dzen2 conky
-yaourt -Sy --noconfirm bspwm-git sxhkd-git
-yaourt -Sy --noconfirm compton dmenu xorg-server unclutter xcalib
-yaourt -S --noconfirm tint2 xdotool vnstat docky mpc mpd
-yaourt -S --noconfirm smc pm
-yaourt -S --noconfirm otf-ipaexfont
+yay -Sy --noconfirm mercurial git zsh lua
+yay -Sy --noconfirm file-roller transmission-gtk feh
+yay -Sy --noconfirm ncmpcpp mpd weechat thunar
+yay -S --noconfirm tcl tcllib aspell
+yay -S --noconfirm sound-theme-freedesktop
+yay -Sy --noconfirm scrot feh dzen2 conky
+yay -Sy --noconfirm sxhkd-git
+yay -Sy --noconfirm compton dmenu xorg-server xorg-xinit unclutter xcalib slim
+yay -S --noconfirm tint2 xdotool vnstat docky mpc mpd
+yay -S --noconfirm smc pm
+yay -S --noconfirm otf-ipaexfont
 sudo pacman -S --noconfirm gmrun dunst
+
 # for conky panel
-yaourt -S --noconfirm acpi bc
+yay -S --noconfirm acpi bc
+
 # You must check VIDEO CARD
 # lspci | grep VGA
-yaourt -S --noconfirm xf86-video-intel
-yaourt -S --noconfirm xorg-server xorg-server-utils xorg-utils
-yaourt -S --noconfirm xcb-util xcb-util-keysyms libxcb xcb-util-wm
+yay -S --noconfirm xf86-video-intel
+yay -S --noconfirm xorg-server-utils xorg-utils
+yay -S --noconfirm xcb-util xcb-util-keysyms libxcb xcb-util-wm
+
 # Input method
-yaourt -S --noconfirm fcitx-im fcitx-mozc fcitx-configtool fcitx-qt4 fcitx-gtk2
+yay -S --noconfirm fcitx-im fcitx-mozc fcitx-configtool fcitx-qt4 fcitx-gtk2
+
 # font
-yaourt -S --noconfirm fontforge-git
-yaourt -S --noconfirm otf-inconsolata-dz-powerline
+yay -S --noconfirm fontforge-git
+yay -S --noconfirm otf-inconsolata-dz-powerline
+
 # performance tool
-yaourt -S --noconfirm wget htop lsof net-tools iotop sysstat iftop nmon
-yaourt -S --noconfirm tcpdump
+yay -S --noconfirm wget htop lsof net-tools iotop sysstat iftop nmon
+yay -S --noconfirm tcpdump
+
 # Numix theme
-yaourt -S --noconfirm numix-circle-icon-theme-git numix-themes-git
-yaourt -S --noconfirm gtk-chtheme gtk-theme-switch2 gtk2_prefs
+yay -S --noconfirm numix-circle-icon-theme-git numix-themes-git
+yay -S --noconfirm gtk-chtheme gtk-theme-switch2 gtk2_prefs
+
 # other applications
-yaourt -S --noconfirm zathura terminator ranger
+yay -S --noconfirm zathura terminte ranger rofi
 # terminal emulator
-yaourt -S --noconfirm terminix gtkd termite-git
+yay -S --noconfirm terminix gtkd termite-git
 sudo pacman -S --noconfirm xorg-xrdb
+
 # Sound packages
 sudo pacman -S --noconfirm alsa-utils asoundconf
 sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa paprefs pavucontrol
@@ -58,30 +67,13 @@ sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa paprefs pavucontrol
 # neovim python plugin
 pip3 install --user neovim
 
-# dart install
-sudo pacman -S dart
-
 # lemonbar install
-git clone https://github.com/LemonBoy/bar.git ~/bar
-cd ~/bar
-make
-sudo cp lemonbar /usr/local/bin
-rm -rf ~/bar
-cd $SCRIPT_DIR
-
-# yaourt completion
-echo -e "Now, install aur-git for auto completion package name on zsh."
-echo -n -e "But, the install require so many time. Are you ok? (y/n): "
-read install_ok
-if [ "$install_ok" = "y" ] ; then
-  yaourt -S aur-git
-  sudo aur
-fi
-
-## Cloning my dotfiles.
-mkdir -p $HOME/bin
-git clone https://github.com/tkyshm/dotTkyshm.git ~/dotTkyshm
-cd ~/dotTkyshm
+#git clone https://github.com/LemonBoy/bar.git ~/bar
+#cd ~/bar
+#make
+#sudo cp lemonbar /usr/local/bin
+#rm -rf ~/bar
+#cd $SCRIPT_DIR
 
 ## Prezto install
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -104,11 +96,13 @@ ln -s $SCRIPT_DIR/dot.Xdefaults $HOME/.Xdefaults
 ln -s $SCRIPT_DIR/dot.Xresources $HOME/.Xresources
 ln -s $SCRIPT_DIR/dot.compton.conf $HOME/.compton.conf
 ln -s $SCRIPT_DIR/dot.gtkrc.mine $HOME/.gtkrc.mine
-ln -s $SCRIPT_DIR/dot.gtkrc-2.0 $HOME/.gtkrc-2.0
 ln -s $SCRIPT_DIR/dot.config/bspwm $HOME/.config/bspwm
 ln -s $SCRIPT_DIR/dot.config/sxhkd ~/.config/sxhkd
 ln -s $SCRIPT_DIR/dot.config/nvim ~/.config/nvim
 ln -s $SCRIPT_DIR/dot.config/peco ~/.config/peco
+ln -s $SCRIPT_DIR/dot.config/i3 ~/.config/i3
+ln -s $SCRIPT_DIR/dot.config/gtk-3.0 ~/.config/gtk-3.0
+ln -s $SCRIPT_DIR/dot.config/polybar ~/.config/polybar
 ln -s $SCRIPT_DIR/dot.gitconfig $HOME/.gitconfig
 
 # background
@@ -121,10 +115,10 @@ mv bg001.jpg ~/Pictures/
 $INSTALLER_DIR/fonts-installer.sh $INSTALLER_DIR
 
 ## Install software
-$INSTALLER_DIR/vim-installer.sh
-$INSTALLER_DIR/rbenv-installer.sh
-mkdir ~/.erlenv/
-cp ./erlenv/configure_opts $SCRIPT_DIR/.erlenv/
+#$INSTALLER_DIR/vim-installer.sh
+#$INSTALLER_DIR/rbenv-installer.sh
+#mkdir ~/.erlenv/
+#cp ./erlenv/configure_opts $SCRIPT_DIR/.erlenv/
 
 ## install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
