@@ -2,26 +2,30 @@
 " Unite Setting
 "===================================
 " UB でBUffer検索する
-nnoremap <silent>UB :<C-u>Unite -start-insert buffer<CR>
-" UF でファイル名検索する
-"nnoremap <silent>,f :<C-u>Unite -start-insert file_rec/git:--cached:--others:--exclude-standard<CR>
-nnoremap ,f  :<C-u>Unite find:.<CR><C-u>' -type f<C-b>-iname *'
-nnoremap <silent>,uf  :<C-u>Unite -start-insert file_rec<CR>
-" UG or ,g で全文検索する
-nnoremap <silent>,g :<C-u>Unite -start-insert grep:.<CR>
+nnoremap <silent>,b :<C-u>Denite buffer<CR>
+"
+"" UF でファイル名検索する
+"nnoremap <silent>,u :<C-u>Unite -start-insert file_rec/async<CR>
+"
+"" Unite tab
+"nnoremap <silent> ,t  :<C-u>Unite tab<CR>
+"
+"call unite#custom#source('file_rec,file_rec/async', 'ignore_pattern', '_build/.*')
+"let g:unite_source_rec_max_cache_files = 60000
+""=====================================
+"" Unite ag
+""=====================================
+"if executable('ag')
+"  "let g:unite_source_file_async_command = 'ag -l --nocolor --nogroup'
+"  "let g:unite_source_rec_async_command = 
+"  "            \ ['ag', '--follow', '--nocolor', '--nogroup',
+"  "            \  '--hidden', '-g', '']
+"  let g:unite_source_grep_command = 'ag'
+"  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+"  let g:unite_source_grep_recursive_opt = ''
+"endif
 
-"=====================================
-" Unite ag
-"=====================================
-
-if executable('ag')
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup --hidden -g ""'
-  ""let g:unite_source_rec_async_command=['ag', '--nocolor', '--nogroup', '--hidden', '-g', '""']
-  "let g:unite_source_find_command ='ag --nocolor --nogroup --hidden -g ""'
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-  ""let g:unite_enable_smart_case
-endif
-
-
+"if executable('csearch') 
+"  let g:unite_source_find_command = 'csearch'
+"  let g:unite_source_find_default_opts = '-l'
+"endif

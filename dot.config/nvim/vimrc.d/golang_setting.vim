@@ -1,9 +1,7 @@
 ""--------------------------------------------
 "" Golang Setting
 ""--------------------------------------------
-set rtp+=$GOROOT/misc/vim
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-set completeopt=menuone
+autocmd Filetype go autocmd BufWritePre <buffer> Fmt
 
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+let g:go_fmt_command = 'goimports'
+set completeopt=menuone
