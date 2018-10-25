@@ -14,6 +14,7 @@ sudo pacman -S --noconfirm cmake boost xcb-util xcb-util-wm xcb-util-image libxf
 sudo pacman -S --noconfirm jsoncpp wireless_tools alsa-lib libmpdclient
 sudo pacman -S --noconfirm bdf-unifont
 sudo pacman -S --noconfirm xorg-xfd
+sudo pacman -S --noconfirm ifnotify-tools
 yay -S --noconfirm siji-git # iconic font
 yay -S --noconfirm polybar-git
 
