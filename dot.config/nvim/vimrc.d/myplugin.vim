@@ -47,7 +47,7 @@ endfunction
 function! FzfFileSearch()
   if IsGitRepo()
       call fzf#run({
-          \ 'source': 'git ls-files',
+          \ 'source': 'git ls-files --exclude-standard -oc',
           \ 'sink': 'e',
           \ 'options': '--multi --reverse'})
   else

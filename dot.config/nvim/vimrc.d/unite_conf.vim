@@ -2,7 +2,7 @@
 " Unite Setting
 "===================================
 " UB でBUffer検索する
-nnoremap <silent>,b :<C-u>Denite buffer<CR>
+nnoremap <silent>,b :<C-u>Buffers<CR>
 "
 "" UF でファイル名検索する
 "nnoremap <silent>,u :<C-u>Unite -start-insert file_rec/async<CR>
