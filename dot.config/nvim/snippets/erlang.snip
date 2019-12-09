@@ -1,0 +1,44 @@
+snippet child_spec
+alias child
+ SupFlags = #{
+     strategy  => one_for_one,
+     intensity => 1000,
+     period    => 3600
+  },
+
+ Spec = #{
+     id       => 'id',
+     start    => {'module', start_link, [Args]},
+     restart  => permanent,
+     shutdown => 2000,
+     type     => worker,
+     modules  => ['module']
+ },
+
+snippet module
+alias mod
+ -module(`expand('%:t:r')`).
+
+snippet eunit
+alias eunit
+ -include_lib("eunit/include/eunit.hrl").
+ 
+ main_test_() ->
+     {foreach,
+      fun setup/0, %% setup
+      fun teardown/1,  %% teardown
+      [
+       fun sample_test/1
+      ]
+     }.
+
+ setup() -> ok.
+ teardown(_Config) -> ok.
+ sample_test(_Config) ->
+     %% Test
+     [
+     ].
+
+snippet dump
+alias dump
+	io:format("dump: ~p~n", [${1:val}]),
