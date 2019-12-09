@@ -14,8 +14,8 @@ elif [[ ${#SSID} = 0 ]] ; then
     SSID="-----------"
 fi
 
-QUAL=`iwconfig wlp3s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $3}'`
-MAX=`iwconfig wlp3s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $4}'`
+QUAL=`iwconfig wlp2s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $3}'`
+MAX=`iwconfig wlp2s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $4}'`
 PERC=`echo "$QUAL*100/$MAX" | bc`
 
 icon=""
