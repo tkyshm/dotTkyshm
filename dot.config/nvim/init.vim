@@ -1,6 +1,16 @@
 
 runtime! vimrc.d/*.vim
 
+" plyglotとvim-goが共存できない
+if exists('g:loaded_polyglot')
+    let g:polyglot_disabled = ['go']
+endif
+
+let g:python_host_prog  = '/usr/bin/python2'
+let g:python3_host_prog  = '/usr/bin/python3'
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider = 0
+
 imap <C-e> <End>
 imap <C-h> <Home>
 set autoindent
