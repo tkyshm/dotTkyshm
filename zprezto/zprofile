@@ -8,7 +8,6 @@
 #
 # Browser
 #
-$HOME/.config/bspwm/panel/panel &
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
@@ -75,3 +74,5 @@ fi
 TMPPREFIX="${TMPDIR%/}/zsh"
 
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
