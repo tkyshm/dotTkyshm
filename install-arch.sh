@@ -36,9 +36,13 @@ yay -S --noconfirm acpi bc
 
 # You must check VIDEO CARD
 # lspci | grep VGA
-yay -S --noconfirm xf86-video-intel
+# yay -S --noconfirm xf86-video-intel # 非推奨になったので入れない
+yay -S --noconfirm x86-video-vesa
 yay -S --noconfirm xorg-server-utils xorg-utils
 yay -S --noconfirm xcb-util xcb-util-keysyms libxcb xcb-util-wm
+
+# network
+sudo pacman -S networkmanager network-manager-applet gnome-keyring wpa_supplicant dialog
 
 # Input method
 yay -S --noconfirm fcitx-im fcitx-mozc fcitx-configtool fcitx-qt4 fcitx-gtk2
