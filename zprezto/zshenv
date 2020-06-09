@@ -88,7 +88,7 @@ export GOPATH=/home/tkyshm/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Android
-export PATH=$PATH:/opt/android-studio/bin
+export PATH=$PATH:$HOME/apps/android-studio/bin
 
 # pyenv & python
 #export PYENV_ROOT="$HOME/.pyenv"
@@ -127,3 +127,6 @@ export PATH=$HOME/apps/android-studio/bin:$PATH
 
 # Ruby
 export PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
+
+# Android SDK
+export PATH=$PATH:$HOME/Android/Sdk/platform-tools/:$HOME/Android/Sdk/tools/bin/
