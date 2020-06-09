@@ -69,7 +69,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " for Golang
   Plug 'vim-jp/vim-go-extra'
-  Plug 'fatih/vim-go'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
   " for Toml
   Plug 'cespare/vim-toml'
