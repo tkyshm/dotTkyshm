@@ -90,6 +90,9 @@ bindsym mod4+e layout toggle split
 # toggle tiling / floating
 bindsym mod4+shift+space floating toggle
 
+# sticky window toggle
+bindsym mod4+shift+s sticky toggle
+
 # change focus between tiling / floating windows
 bindsym mod4+space focus mode_toggle
 
