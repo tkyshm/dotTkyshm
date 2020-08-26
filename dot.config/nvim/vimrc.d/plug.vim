@@ -7,7 +7,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Add or remove your plugins here:
   Plug 'Shougo/neosnippet.vim'
   Plug 'Shougo/neosnippet-snippets'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'Shougo/vimproc.vim', {'do': 'make'}
 
   " Perfomance improvement tools
@@ -68,8 +68,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-perl/vim-perl'
 
   " for Golang
-  Plug 'vim-jp/vim-go-extra'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  "Plug 'vim-jp/vim-go-extra'
+  "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
   " for Toml
   Plug 'cespare/vim-toml'
@@ -110,6 +110,18 @@ call plug#begin('~/.config/nvim/plugged')
   " You can specify revision/branch/tag.
   " Plug 'Shougo/vimshell', { 'rev': '3787e5' }
   Plug 'neomake/neomake'
+
+  " complete
+  Plug 'prabirshrestha/async.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'prabirshrestha/vim-lsp'
+
+  Plug 'mattn/vim-goimports'
+  Plug 'mattn/vim-lsp-settings'
+
+  " trailing
+  Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
 

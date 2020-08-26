@@ -130,3 +130,6 @@ export PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin
 
 # Android SDK
 export PATH=$PATH:$HOME/Android/Sdk/platform-tools/:$HOME/Android/Sdk/tools/bin/
+
+# anyenv
+export PATH=$HOME/.anyenv/bin:$PATH
