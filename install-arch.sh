@@ -40,9 +40,10 @@ yay -S --noconfirm acpi bc
 yay -S --noconfirm x86-video-vesa
 yay -S --noconfirm xorg-server-utils xorg-utils
 yay -S --noconfirm xcb-util xcb-util-keysyms libxcb xcb-util-wm
+sudo pacman -S --noconfirm xorg-xrandr
 
 # network
-sudo pacman -S networkmanager network-manager-applet gnome-keyring wpa_supplicant dialog
+sudo pacman -S --noconfirm networkmanager network-manager-applet gnome-keyring wpa_supplicant dialog
 
 # Input method
 yay -S --noconfirm fcitx-im fcitx-mozc fcitx-configtool fcitx-qt4 fcitx-gtk2
@@ -101,7 +102,7 @@ ln -s $SCRIPT_DIR/dot.Xdefaults $HOME/.Xdefaults
 ln -s $SCRIPT_DIR/dot.Xresources $HOME/.Xresources
 ln -s $SCRIPT_DIR/dot.compton.conf $HOME/.compton.conf
 ln -s $SCRIPT_DIR/dot.gtkrc.mine $HOME/.gtkrc.mine
-ln -s $SCRIPT_DIR/dot.config/bspwm $HOME/.config/bspwm
+# ln -s $SCRIPT_DIR/dot.config/bspwm $HOME/.config/bspwm
 ln -s $SCRIPT_DIR/dot.config/sxhkd ~/.config/sxhkd
 ln -s $SCRIPT_DIR/dot.config/nvim ~/.config/nvim
 ln -s $SCRIPT_DIR/dot.config/peco ~/.config/peco
