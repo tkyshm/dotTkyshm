@@ -33,7 +33,7 @@ set tabstop=1
 " vim
 "set clipboard=unnamedplus,autoselect
 " neovim
-set clipboard=unnamedplus,unnamed
+set clipboard+=unnamedplus,unnamed
 
 let mapleader = "<Space>"
 

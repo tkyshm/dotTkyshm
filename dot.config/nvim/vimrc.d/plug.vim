@@ -70,6 +70,7 @@ call plug#begin('~/.config/nvim/plugged')
   " for Golang
   "Plug 'vim-jp/vim-go-extra'
   "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'mattn/vim-goimports'
 
   " for Toml
   Plug 'cespare/vim-toml'
@@ -116,7 +117,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
   Plug 'prabirshrestha/vim-lsp'
-
   Plug 'mattn/vim-goimports'
   Plug 'mattn/vim-lsp-settings'
 

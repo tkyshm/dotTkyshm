@@ -12,13 +12,14 @@ sudo pacman -S --noconfirm i3-wm i3status
 ## for polybar-giy
 sudo pacman -S --noconfirm cmake boost xcb-util xcb-util-wm xcb-util-image libxft
 sudo pacman -S --noconfirm jsoncpp wireless_tools alsa-lib libmpdclient
-sudo pacman -S --noconfirm bdf-unifont
+sudo pacman -S --noconfirm bdf-unifont openssh
 sudo pacman -S --noconfirm xorg-xfd
 sudo pacman -S --noconfirm ifnotify-tools
+sudo pacman -S --noconfirm xscreensaver
 yay -S --noconfirm siji-git # iconic font
 yay -S --noconfirm polybar-git
 
-yay -Sy --noconfirm mercurial git zsh lua
+yay -Sy --noconfirm mercurial git fish fisher lua
 yay -Sy --noconfirm file-roller transmission-gtk feh
 yay -Sy --noconfirm ncmpcpp mpd weechat thunar
 yay -S --noconfirm tcl tcllib aspell
@@ -30,6 +31,9 @@ yay -S --noconfirm tint2 xdotool vnstat docky mpc mpd
 yay -S --noconfirm smc pm
 yay -S --noconfirm otf-ipaexfont
 sudo pacman -S --noconfirm gmrun dunst
+sudo pacman -S --noconfirm the_silver_searcher jq
+
+fisher install jethrokuan/fzf
 
 # for conky panel
 yay -S --noconfirm acpi bc
@@ -81,18 +85,9 @@ sudo pacman -S --noconfirm neovim
 #rm -rf ~/bar
 #cd $SCRIPT_DIR
 
-## Prezto install
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-setopt EXTENDED_GLOB
-cp zprezto/* ~/.zprezto/runcoms  # move my setting files
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md\(.N\); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-
 ## Install dot files.
 sudo cp profiles/* /etc/zsh
 cp dot.xinitrc ~/.xinitrc
-ln -s $SCRIPT_DIR/zprezto/zpreztorc $HOME/.zprezto/runcoms/zpreztorc
 ln -s $SCRIPT_DIR/dot.vimrc $HOME/.vimrc
 ln -s $SCRIPT_DIR/dot.vim $HOME/.vim
 ln -s $SCRIPT_DIR/dot.tmux.conf $HOME/.tmux.conf
@@ -102,7 +97,6 @@ ln -s $SCRIPT_DIR/dot.Xdefaults $HOME/.Xdefaults
 ln -s $SCRIPT_DIR/dot.Xresources $HOME/.Xresources
 ln -s $SCRIPT_DIR/dot.compton.conf $HOME/.compton.conf
 ln -s $SCRIPT_DIR/dot.gtkrc.mine $HOME/.gtkrc.mine
-# ln -s $SCRIPT_DIR/dot.config/bspwm $HOME/.config/bspwm
 ln -s $SCRIPT_DIR/dot.config/sxhkd ~/.config/sxhkd
 ln -s $SCRIPT_DIR/dot.config/nvim ~/.config/nvim
 ln -s $SCRIPT_DIR/dot.config/peco ~/.config/peco
@@ -112,13 +106,10 @@ ln -s $SCRIPT_DIR/dot.config/polybar ~/.config/polybar
 ln -s $SCRIPT_DIR/dot.gitconfig $HOME/.gitconfig
 
 # background
-mkdir -p ~/Pictures
-wget http://feelgrafix.com/data_images/out/16/907950-triangle-wallpaper.jpg bg001.jpg
-mv 907950-triangle-wallpaper.jpg bg001.jpg
-mv bg001.jpg ~/Pictures/
 
 # Fonts Configuration
 $INSTALLER_DIR/fonts-installer.sh $INSTALLER_DIR
+sudo pacman -S --noconfirm ttf-hack
 
 ## Install software
 #$INSTALLER_DIR/vim-installer.sh
@@ -129,3 +120,4 @@ $INSTALLER_DIR/fonts-installer.sh $INSTALLER_DIR
 ## install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+sudo systemctl enable slim

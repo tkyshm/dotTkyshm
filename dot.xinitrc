@@ -4,8 +4,6 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 DEFAULT_SESSION=i3
 
-export BSPWM_SHOW_BATTERY=1
-
 # input and output setting
 xset +fp ~/.fonts
 xset fp rehash
@@ -16,14 +14,15 @@ xcalib $HOME/x230.icm &
 
 xmodmap ~/.Xmodmap
 
-xcalib $HOME/x230.icm &
 xsetroot -cursor_name left_ptr
-xrandr --output eDP1 --mode 1920x1200
-xrandr --output HDMI2 --above eDP1 --mode 1920x1080
+# xrandr --output eDP1 --mode 1920x1200
+# xrandr --output HDMI2 --above eDP1 --mode 1920x1080
+xrandr --output DP-1 --mode 2560x1080
+xrandr --output eDP-1 --mode 1920x1080 --same-as DP-1 --scale 1.333x1
 
 # Background and compton
 #bgnum=$((1 + RANDOM % 10))
-feh --bg-fill --no-xinerama $HOME/Pictures/bg.png
+feh --bg-fill --no-xinerama $HOME/Pictures/bg.jpg
 compton &
 
 # screen saver

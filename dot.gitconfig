@@ -17,9 +17,13 @@
     pus = push
     ps = push
     m = merge
+    g = git
 [core]
     editor = nvim
     excludesfile = /home/tkyshm/.gitignore_global
 [user]
 	email = tkyshm@gmail.com
 	name = tkyshm
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/

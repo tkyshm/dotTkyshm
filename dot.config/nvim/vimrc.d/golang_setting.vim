@@ -5,3 +5,5 @@
 
 "let g:go_fmt_command = 'goimports'
 "set completeopt=menuone
+let g:goimports = 1
+let g:goimports_simplify = 1
