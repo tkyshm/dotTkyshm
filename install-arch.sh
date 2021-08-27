@@ -42,7 +42,7 @@ yay -S --noconfirm acpi bc
 # lspci | grep VGA
 # yay -S --noconfirm xf86-video-intel # 非推奨になったので入れない
 yay -S --noconfirm x86-video-vesa
-yay -S --noconfirm xorg-server-utils xorg-utils
+yay -S --noconfirm xorg-apps
 yay -S --noconfirm xcb-util xcb-util-keysyms libxcb xcb-util-wm
 sudo pacman -S --noconfirm xorg-xrandr
 
