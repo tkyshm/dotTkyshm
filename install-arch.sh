@@ -67,7 +67,7 @@ yay -S --noconfirm gtk-chtheme gtk-theme-switch2 gtk2_prefs
 # other applications
 yay -S --noconfirm zathura terminte ranger rofi
 # terminal emulator
-yay -S --noconfirm terminix gtkd termite-git
+yay -S --noconfirm gtkd termite
 sudo pacman -S --noconfirm xorg-xrdb
 
 # Sound packages
