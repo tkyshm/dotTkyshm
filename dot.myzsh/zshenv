@@ -1,0 +1,60 @@
+# termite
+export TERM=xterm-256color
+
+# Alias
+alias be='bundle exec'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias yao='yaourt'
+alias g='git'
+alias gad='git add'
+alias gt='git status'
+alias gtt='git status -uno'
+alias glogo='git log --oneline'
+alias glog='git log'
+alias gpul='git pull'
+alias gpus='git push'
+alias globi='hub browse kayac/nakamap'
+alias ojisan='cd $HOME/programs/ruby/animeojisan'
+alias u27='cd $HOME/programs/erlang/u27'
+alias r3='rebar3'
+alias jnry='cd $HOME/python/junray-server'
+alias vim='nvim'
+
+# Alias
+alias nkmp='cd $WEB'
+alias mnth='cd $GOPATH/src/github.com/kayac/month'
+alias mnthb='cd $GOPATH/src/github.com/kayac/month-baal'
+
+# Global Alias
+alias -g B='`git branch | fzf --reverse --ansi --prompt "git branch> " | head -n 1 | sed -e "s/^\*\s*//g"`'
+alias -g T='`git branch -r | fzf --reverse --ansi --prompt "git remote branch> " | head -n 1 | sed -e "s/^\*\s*//g"`'
+alias -g S='`git status -s | fzf -m --reverse --ansi --prompt "git status> " | sed -e "s/^\s*\S*\s*//g"`'
+
+# Git alias
+alias g='git'
+alias gt='git status'
+alias local-branch-clean='git checkout master && git branch --merged | grep -v master | xargs -I % git branch -d %'
+
+# bindkeys
+bindkey "^[[3~" delete-char
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+# PATH
+export GOPATH=/home/tkyshm/go
+export PATH=/usr/local/node/bin:/usr/local/bin:/usr/sbin:$GOPATH/bin:$HOME/bin:$PATH
+export PATH=$HOME/.cargo/bin:/usr/local/go/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/lib
+export PATH=$HOME/android-studio/bin:$HOME/flutter/bin:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools/bin:$PATH
+export CHROME_EXECUTABLE=/usr/sbin/google-chrome-stable
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval $(pyenv init --path)
+export CLOUDSDK_PYTHON=$HOME/.pyenv/shims/python
+
+# fzf layout
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --inline-info'
+
