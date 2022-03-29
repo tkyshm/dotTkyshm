@@ -19,21 +19,26 @@ sudo pacman -S --noconfirm xscreensaver
 yay -S --noconfirm siji-git # iconic font
 yay -S --noconfirm polybar-git
 
-yay -Sy --noconfirm mercurial git fish fisher lua
+## shell
+sudo pacman -S --noconfirm zsh
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+yay -Sy --noconfirm mercurial git lua
 yay -Sy --noconfirm file-roller transmission-gtk feh
 yay -Sy --noconfirm ncmpcpp mpd weechat thunar
 yay -S --noconfirm tcl tcllib aspell
 yay -S --noconfirm sound-theme-freedesktop
 yay -Sy --noconfirm scrot feh dzen2 conky
 yay -Sy --noconfirm sxhkd-git
-yay -Sy --noconfirm compton dmenu xorg-server xorg-xinit unclutter xcalib slim
+yay -Sy --noconfirm compton dmenu xorg-server xorg-xinit unclutter xcalib
 yay -S --noconfirm tint2 xdotool vnstat docky mpc mpd
 yay -S --noconfirm smc pm
 yay -S --noconfirm otf-ipaexfont
 sudo pacman -S --noconfirm gmrun dunst
 sudo pacman -S --noconfirm the_silver_searcher jq
 
-fisher install jethrokuan/fzf
+## login manager
+yay -S --noconfirm ly
 
 # for conky panel
 yay -S --noconfirm acpi bc
@@ -120,4 +125,3 @@ sudo pacman -S --noconfirm ttf-hack
 ## install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
-sudo systemctl enable slim
