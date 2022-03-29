@@ -82,17 +82,8 @@ sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa paprefs pavucontrol
 # neovim python plugin
 sudo pacman -S --noconfirm neovim
 
-# lemonbar install
-#git clone https://github.com/LemonBoy/bar.git ~/bar
-#cd ~/bar
-#make
-#sudo cp lemonbar /usr/local/bin
-#rm -rf ~/bar
-#cd $SCRIPT_DIR
-
 ## Install dot files.
-sudo cp profiles/* /etc/zsh
-cp dot.xinitrc ~/.xinitrc
+cp dot.xsession ~/.xsession
 ln -s $SCRIPT_DIR/dot.vimrc $HOME/.vimrc
 ln -s $SCRIPT_DIR/dot.vim $HOME/.vim
 ln -s $SCRIPT_DIR/dot.tmux.conf $HOME/.tmux.conf
@@ -109,18 +100,12 @@ ln -s $SCRIPT_DIR/dot.config/i3 ~/.config/i3
 ln -s $SCRIPT_DIR/dot.config/gtk-3.0 ~/.config/gtk-3.0
 ln -s $SCRIPT_DIR/dot.config/polybar ~/.config/polybar
 ln -s $SCRIPT_DIR/dot.gitconfig $HOME/.gitconfig
-
-# background
+ln -s $SCRIPT_DIR/dot.zshrc $HOME/.zshrc
+ln -s $SCRIPT_DIR/dot.myzsh $HOME/.myzsh
 
 # Fonts Configuration
 $INSTALLER_DIR/fonts-installer.sh $INSTALLER_DIR
 sudo pacman -S --noconfirm ttf-hack
-
-## Install software
-#$INSTALLER_DIR/vim-installer.sh
-#$INSTALLER_DIR/rbenv-installer.sh
-#mkdir ~/.erlenv/
-#cp ./erlenv/configure_opts $SCRIPT_DIR/.erlenv/
 
 ## install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
