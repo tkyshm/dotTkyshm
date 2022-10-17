@@ -105,9 +105,6 @@ call plug#begin('~/.config/nvim/plugged')
   " Regex
   Plug 'terryma/vim-multiple-cursors'
 
-  " yankring
-  Plug 'vim-scripts/YankRing.vim'
-
   " You can specify revision/branch/tag.
   " Plug 'Shougo/vimshell', { 'rev': '3787e5' }
   Plug 'neomake/neomake'
@@ -122,6 +119,15 @@ call plug#begin('~/.config/nvim/plugged')
 
   " trailing
   Plug 'bronson/vim-trailing-whitespace'
+
+  " Next.js + React
+  Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+  " Preitter
+  Plug 'prettier/vim-prettier', {
+    \ 'do': 'yarn install --frozen-lockfile --production',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 call plug#end()
 
