@@ -110,3 +110,8 @@ sudo pacman -S --noconfirm ttf-hack
 ## install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+
+## install autocfg (keyboard type delay)
+yay -S --noconfirm xautocfg
+systemctl --user enable xautocfg.service
+systemctl --user start xautocfg.service
