@@ -85,6 +85,9 @@ sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa paprefs pavucontrol
 # neovim python plugin
 sudo pacman -S --noconfirm neovim
 
+# install screenshot application
+sudo pacman -S --noconfirm maim
+
 ## Install dot files.
 cp dot.xsession ~/.xsession
 ln -s $SCRIPT_DIR/dot.vimrc $HOME/.vimrc

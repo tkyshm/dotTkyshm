@@ -35,7 +35,7 @@ set $right l
 floating_modifier mod4
 
 # start a terminal
-bindsym mod4+Return exec "termite"
+bindsym mod4+Return exec "alacritty"
 
 # kill focused window
 bindsym mod4+w kill
@@ -92,6 +92,7 @@ bindsym mod4+shift+space floating toggle
 
 # sticky window toggle
 bindsym mod4+shift+s sticky toggle
+bindsym mod4+ctrl+shift+s exec "maim -s | xclip -selection clipboard -t image/png -i"
 
 # change focus between tiling / floating windows
 bindsym mod4+space focus mode_toggle
@@ -121,6 +122,7 @@ bindsym mod4+8 workspace 8:termite
 bindsym mod4+9 workspace 9:termite
 bindsym mod4+0 workspace 0:chrome
 
+
 # move focused container to workspace
 bindsym mod4+shift+1 move container to workspace 1:slack
 bindsym mod4+shift+2 move container to workspace 2:chrome
@@ -141,6 +143,9 @@ bindsym mod4+shift+r restart
 bindsym mod4+shift+q exec "i3-nagbar -t warning -m 'you pressed the exit shortcut. do you really want to exit i3? this will end your x session.' -b 'yes, exit i3' 'i3-msg exit'"
 # screen saver
 bindsym mod1+shift+l exec "xscreensaver-command --lock"
+
+# screenshot
+bindsym ctrl+0 exec --no-startup-id "scrot -s ~/Pictures/scrot/scrot-%Y-%m-%d-%H-%M-%S.jpg"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -182,3 +187,5 @@ new_window pixel 5px
 # class border backgr text indicator child_border
 client.focused #2e9ef4 #2e9ef4 #ffffff #2e9ef4 #4ecefe
 client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a
+
+exec --no-startup-id fcitx
