@@ -75,6 +75,8 @@ yay -S --noconfirm zathura terminte ranger rofi
 yay -S --noconfirm gtkd
 sudo pacman -S alacritty
 sudo pacman -S --noconfirm xorg-xrdb
+mkdir -p ~/.config/alacritty/themes
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
 # Sound packages
 sudo pacman -S --noconfirm alsa-utils asoundconf
