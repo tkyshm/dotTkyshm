@@ -143,8 +143,6 @@ bindsym mod4+shift+r restart
 bindsym mod4+shift+q exec "i3-nagbar -t warning -m 'you pressed the exit shortcut. do you really want to exit i3? this will end your x session.' -b 'yes, exit i3' 'i3-msg exit'"
 
 # screen saver
-exec --no-startup-id xset s 900
-exec --no-startup-id xset dpms 0 0 1200
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock
 
 bindsym mod1+shift+l exec --no-startup-id "i3lock"

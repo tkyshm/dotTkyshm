@@ -1,0 +1,4 @@
+# screen saver 15m, 20m
+xset s 900
+xset +dpms
+xset dpms 0 0 1200
