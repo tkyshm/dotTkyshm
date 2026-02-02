@@ -7,7 +7,7 @@ INSTALLER_DIR=$SCRIPT_DIR/installer-kits
 # standard pacakges
 sudo pacman -S --noconfirm ag openssh
 sudo pacman -S --noconfirm xsel xclip neovim
-sudo pacman -S --noconfirm i3-wm i3status
+sudo pacman -S --noconfirm i3-wm i3status i3lock
 
 ## for polybar-giy
 sudo pacman -S --noconfirm cmake boost xcb-util xcb-util-wm xcb-util-image libxft
