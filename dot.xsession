@@ -25,9 +25,6 @@ xsetroot -cursor_name left_ptr
 feh --bg-fill --no-xinerama $HOME/Pictures/bg.jpg
 # compton &
 
-# screen saver
-/usr/bin/xscreensaver -no-splash &
-
 # start daemon
 unclutter -grab -noevents -root & # mouse event
 fcitx -d                          # input method

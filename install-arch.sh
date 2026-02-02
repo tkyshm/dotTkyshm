@@ -15,7 +15,6 @@ sudo pacman -S --noconfirm jsoncpp wireless_tools alsa-lib libmpdclient
 sudo pacman -S --noconfirm bdf-unifont openssh
 sudo pacman -S --noconfirm xorg-xfd
 sudo pacman -S --noconfirm ifnotify-tools
-sudo pacman -S --noconfirm xscreensaver
 yay -S --noconfirm siji-git # iconic font
 yay -S --noconfirm polybar-git
 
